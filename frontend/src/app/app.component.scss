@@ -1,0 +1,22 @@
+.good {
+  color: green;
+}
+
+.bad {
+  color: red;
+}
+
+#cats {
+  div {
+    width: 100px;
+    display: inline-block;
+    span {
+        cursor: pointer;
+        &:hover {
+            background-color: lightcoral;
+          }
+    }
+  }
+
+  padding-bottom: 20px;
+}

@@ -1,0 +1,17 @@
+pluginManagement {
+	repositories {
+		maven { url 'https://repo.spring.io/milestone' }
+		gradlePluginPortal()
+	}
+}
+
+dependencyResolutionManagement {
+	versionCatalogs {
+		libs {
+			version 'lombok', '1.18.30'
+			library('lombok', 'org.projectlombok', 'lombok').versionRef('lombok')
+		}
+	}
+}
+
+rootProject.name = 'demo'

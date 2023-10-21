@@ -1,0 +1,56 @@
+<div id="cats">
+  <div *ngFor="let c of categories">
+    <span (click)="getCategoryEntries(c)">{{ c }}</span>
+  </div>
+</div>
+
+<div *ngIf="categoryValues.length > 0">
+  <button (click)="dropCatValues()">done</button>
+  <div *ngFor="let v of categoryValues">
+    {{ v }}
+  </div>
+</div>
+
+<div>Session questions: {{ question.recordsRemaining }}</div>
+<div>
+  <button (click)="sessionReset()">session reset</button>
+  <button (click)="allQuestionsReset()">reschedule all questions</button>
+</div>
+
+<div *ngIf="question.recordsRemaining > 0">
+  <div *ngIf="categoryValues.length == 0">
+    <div>
+      Question:<br />
+      {{ question.question }}
+      <div *ngIf="question.explanation && question.japaneseAnswer">
+        {{ question.explanation }}
+      </div>
+    </div>
+
+    <div [hidden]="!question.japaneseAnswer">
+      Answer:<br />
+      <input
+        #answerInputJapanese
+        (keyup.enter)="onEnter()"
+        [(ngModel)]="answer"
+      />
+    </div>
+
+    <div [hidden]="question.japaneseAnswer">
+      Answer:<br />
+      <input
+        #answerInputEnglish
+        (keyup.enter)="onEnter()"
+        [(ngModel)]="answer"
+      />
+    </div>
+
+    <div *ngFor="let n of history">
+      {{ n.question }} &ndash; {{ n.answer }}
+      <span *ngIf="n.correct" class="good">✔</span>
+      <span *ngIf="!n.correct" class="bad">✗</span>
+      <span *ngIf="!n.correct">({{ n.correctAnswer }})</span>
+      ({{ n.stat.correct }} / {{ n.stat.incorrect }})
+    </div>
+  </div>
+</div>
