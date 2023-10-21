@@ -24,6 +24,7 @@ public class Database {
   private List<DatabaseRecord> pointers;
   private List<DatabaseRecord> thingies;
   private List<DatabaseRecord> doing;
+  private List<DatabaseRecord> days;
 
   private List<DatabaseRecord> everythingElse;
 }
