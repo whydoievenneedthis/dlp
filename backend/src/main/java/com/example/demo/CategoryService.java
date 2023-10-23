@@ -18,9 +18,11 @@ class CategoryService {
 
   public CategoriesResponse getCategories() {
     List<String> cats = new ArrayList<>();
-    ReflectionUtils.doWithFields(Database.class, f -> {
-      cats.add(f.getName());
-    });
+    ReflectionUtils.doWithFields(
+        Database.class,
+        f -> {
+          cats.add(f.getName());
+        });
     return new CategoriesResponse(cats);
   }
 
@@ -31,11 +33,12 @@ class CategoryService {
     field.setAccessible(true);
     List<DatabaseRecord> records = (List<DatabaseRecord>) field.get(database);
     List<String> pairs = new ArrayList<>();
-    records.forEach(r -> {
-      if (StringUtils.hasText(r.getEnglish())) {
-        pairs.add(r.getEnglish() + ": " + r.getJapanese());
-      }
-    });
+    records.forEach(
+        r -> {
+          if (StringUtils.hasText(r.getEnglish())) {
+            pairs.add(r.getEnglish() + ": " + r.getJapanese());
+          }
+        });
     pairs.sort(Comparator.naturalOrder());
     return new CategoriesResponse(pairs);
   }

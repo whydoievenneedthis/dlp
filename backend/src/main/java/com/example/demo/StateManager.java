@@ -24,7 +24,7 @@ public class StateManager {
 
   @SneakyThrows
   static void addToCompleted(int newKey) {
-    Set<Integer> completed = new HashSet<>( getCompleted());
+    Set<Integer> completed = new HashSet<>(getCompleted());
     completed.add(newKey);
     mapper.writeValue(new File("completed.json"), completed);
   }

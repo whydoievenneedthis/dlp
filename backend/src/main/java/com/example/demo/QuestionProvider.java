@@ -1,6 +1,8 @@
 package com.example.demo;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import static com.example.demo.StateManager.addToCompleted;
+import static com.example.demo.StateManager.getCompleted;
+
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,12 +11,11 @@ import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
-import static com.example.demo.StateManager.addToCompleted;
-import static com.example.demo.StateManager.getCompleted;
 
 @Slf4j
 @SuppressWarnings("unchecked")
@@ -25,6 +26,7 @@ class QuestionProvider {
   private final StatBuilder statBuilder;
   private final List<DatabaseRecord> records = new ArrayList<>();
   private final Map<Integer, DatabaseRecord> questions = new HashMap<>();
+  private final Deque<Integer> last10Excluded = new LinkedList<>();
 
   @PostConstruct
   void init() {
@@ -33,23 +35,26 @@ class QuestionProvider {
   }
 
   private void reinitRecords() {
-    ReflectionUtils.doWithFields(Database.class, field -> {
-      field.setAccessible(true);
-      List<DatabaseRecord> list = (List<DatabaseRecord>) field.get(database);
-      if (list == null) {
-        return;
-      }
-      list.forEach(dr -> {
-        if (StringUtils.hasText(dr.getEnglish())) {
-          dr.setCategory(field.getName());
-          records.add(dr);
-          if (questions.containsKey(dr.getId())) {
-            throw new IllegalStateException("Duplicate question id!");
+    ReflectionUtils.doWithFields(
+        Database.class,
+        field -> {
+          field.setAccessible(true);
+          List<DatabaseRecord> list = (List<DatabaseRecord>) field.get(database);
+          if (list == null) {
+            return;
           }
-          questions.put(dr.getId(), dr);
-        }
-      });
-    });
+          list.forEach(
+              dr -> {
+                if (StringUtils.hasText(dr.getEnglish())) {
+                  dr.setCategory(field.getName());
+                  records.add(dr);
+                  if (questions.containsKey(dr.getId())) {
+                    throw new IllegalStateException("Duplicate question id!");
+                  }
+                  questions.put(dr.getId(), dr);
+                }
+              });
+        });
   }
 
   QuestionResponse getNextQuestion() {
@@ -57,8 +62,18 @@ class QuestionProvider {
     if (recordsRemaining == 0) {
       return new QuestionResponse();
     }
-    DatabaseRecord record = records.get(random(recordsRemaining));
-    if ( Math.random() < englishChanceByRecord(record)) {
+    Deque<Integer> excluded;
+    if (recordsRemaining > 10) {
+      excluded = last10Excluded;
+    } else {
+      excluded = new LinkedList<>();
+    }
+    DatabaseRecord record = getRecord(recordsRemaining, excluded);
+    last10Excluded.add(record.getId());
+    if (last10Excluded.size() > 10) {
+      last10Excluded.removeFirst();
+    }
+    if (Math.random() < englishChanceByRecord(record)) {
       String question = record.getEnglish();
       return new QuestionResponse(record, question, true, recordsRemaining);
     }
@@ -66,12 +81,20 @@ class QuestionProvider {
     return new QuestionResponse(record, question, false, recordsRemaining);
   }
 
+  private DatabaseRecord getRecord(int recordsRemaining, Deque<Integer> excluded) {
+    DatabaseRecord record;
+    do {
+      record = records.get(random(recordsRemaining));
+    } while (excluded.contains(record.getId()));
+    return record;
+  }
+
   private double englishChanceByRecord(DatabaseRecord record) {
     StatBuilder.Stat stat = statBuilder.get(record);
     if (stat == null || stat.getCorrect() < 5) {
       return 0.5;
     }
-    return 1 - stat.getJapaneseCorrect() / (double)stat.getCorrect();
+    return 1 - stat.getJapaneseCorrect() / (double) stat.getCorrect();
   }
 
   private int random(int maxSize) {

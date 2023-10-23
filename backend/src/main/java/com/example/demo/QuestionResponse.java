@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
@@ -12,7 +11,8 @@ public class QuestionResponse {
   private final boolean japaneseAnswer;
   private final int recordsRemaining;
 
-  public QuestionResponse(DatabaseRecord record, String question, boolean japaneseAnswer, int recordsRemaining) {
+  public QuestionResponse(
+      DatabaseRecord record, String question, boolean japaneseAnswer, int recordsRemaining) {
     this.id = record.getId();
     this.explanation = record.getExplanation();
     this.category = record.getCategory();
@@ -22,11 +22,11 @@ public class QuestionResponse {
   }
 
   public QuestionResponse() {
-    this.id=0;
-    this.explanation=null;
-    this.category=null;
-    this.question=null;
-    this.japaneseAnswer=false;
-    this.recordsRemaining=0;
+    this.id = 0;
+    this.explanation = null;
+    this.category = null;
+    this.question = null;
+    this.japaneseAnswer = false;
+    this.recordsRemaining = 0;
   }
 }

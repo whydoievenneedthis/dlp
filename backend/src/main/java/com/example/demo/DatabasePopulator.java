@@ -10,336 +10,465 @@ class DatabasePopulator {
   @Bean
   Database database() {
     return new Database()
-        .setAnimal(List.of(
-             new DatabaseRecord("dog", "いぬ", "犬")
-            ,new DatabaseRecord("cat", "ねこ", "猫")
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-        ))
-        .setNumber(
-            List.of(
-                 new DatabaseRecord("one", "いち", "一")
-                ,new DatabaseRecord("two", "に", "二")
-                ,new DatabaseRecord("three", "さん", "三")
-                ,new DatabaseRecord("four", "よん", "四")
-                ,new DatabaseRecord("five", "ご", "五")
-                ,new DatabaseRecord("six", "ろく", "六")
-                ,new DatabaseRecord("seven", List.of("しち", "なな"), "七")
-                ,new DatabaseRecord("eight","はち", "八")
-                ,new DatabaseRecord("nine","きゅう", "九")
-                ,new DatabaseRecord("ten","じゅう", "十")
-                ,new DatabaseRecord("hundred","ひゃく", "百")
-                ,new DatabaseRecord("yen","えん", null)
-                ,new DatabaseRecord("thousand","せん", "千")
-                ,new DatabaseRecord("","", null)
-                ,new DatabaseRecord("","", null)
-                ,new DatabaseRecord("","", null)
-                ,new DatabaseRecord("","", null)
-                ,new DatabaseRecord("","", null)
-                ,new DatabaseRecord("","", null)
-                ,new DatabaseRecord("","", null)
-                ,new DatabaseRecord("","", null)
-            )
-        )
-        .setFood(
-            List.of(
-                 new DatabaseRecord("sushi", "すし", null)
-                ,new DatabaseRecord("green tea","おちゃ",null)
-                ,new DatabaseRecord("rice","ごはん",null)
-                ,new DatabaseRecord("water","みず","水")
-                ,new DatabaseRecord("curry","カレー",null)
-                ,new DatabaseRecord("ramen","ラーメン",null)
-                ,new DatabaseRecord("pizza","ピザ",null)
-                ,new DatabaseRecord("cake","ケーキ",null)
-                ,new DatabaseRecord("coffee","コーヒー",null)
-                ,new DatabaseRecord("vegetable","やさい",null)
-                ,new DatabaseRecord("bread","パン",null)
-                ,new DatabaseRecord("sandwich","サンドイッチ",null)
-                ,new DatabaseRecord("breakfast","あさごはん",null)
-                ,new DatabaseRecord("lunch","ひるごはん",null)
-                ,new DatabaseRecord("boxed lunch","べんとう",null)
-                ,new DatabaseRecord("dinner","ばんごはん",null)
-                ,new DatabaseRecord("udon","うどん",null)
-                ,new DatabaseRecord("miso soup","みそしる",null)
-                ,new DatabaseRecord("soba","そば",null)
-                ,new DatabaseRecord("iced coffee","アイスコーヒー",null)
-                ,new DatabaseRecord("black tea","こうちゃ",null)
-                ,new DatabaseRecord("ice cream","アイスクリーム",null)
-                ,new DatabaseRecord("salad","サラダ",null)
-                ,new DatabaseRecord("rice ball","おにぎり",null)
-                ,new DatabaseRecord("meal set","ていしょく",null)
-                ,new DatabaseRecord("tempura","てんぷら",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-            )
-        )
-        .setJob(
-            List.of(
-                 new DatabaseRecord("doctor","いしゃ",null)
-                ,new DatabaseRecord("teacher","せんせい",null)
-                ,new DatabaseRecord("lawyer","べんごし",null)
-                ,new DatabaseRecord("student","がくせい",null)
-                ,new DatabaseRecord("person","ひと","人")
-                ,new DatabaseRecord("nurse","かんごし",null)
-                ,new DatabaseRecord("engineer","エンジニア",null)
-                ,new DatabaseRecord("office worker","かいしゃいん",null)
-                ,new DatabaseRecord("warrior","ぶし",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-            )
-        )
-        .setEmotion(
-            List.of(
-                 new DatabaseRecord("nice", "a nice person","やさしい",null)
-                ,new DatabaseRecord("cool","かっこいい",null)
-                ,new DatabaseRecord("famous","ゆうめい",null)
-                ,new DatabaseRecord("quiet","しずか",null)
-                ,new DatabaseRecord("clean","きれい",null)
-                ,new DatabaseRecord("tasty","おいしい",null)
-                ,new DatabaseRecord("cheerful","あかるい",null)
-                ,new DatabaseRecord("funny","おもしろい",null)
-                ,new DatabaseRecord("lively","にぎやか",null)
-                ,new DatabaseRecord("big","おおきい","大きい")
-                ,new DatabaseRecord("small","ちいさい","小さい")
-                ,new DatabaseRecord("cute","かわいい",null)
-                ,new DatabaseRecord("busy","いそがしい",null)
-                ,new DatabaseRecord("very","とても",null)
-                ,new DatabaseRecord("smart","あたまがいい",null)
-                ,new DatabaseRecord("fashionable","おしゃれ",null)
-                ,new DatabaseRecord("new","あたらしい","新しい")
-                ,new DatabaseRecord("wanting","ほしい",null)
-                ,new DatabaseRecord("old","ふるい","古い")
-                ,new DatabaseRecord("hideous","ダサイ",null)
-                ,new DatabaseRecord("lovely","すてき",null)
-                ,new DatabaseRecord("cheap","やすい",null)
-                ,new DatabaseRecord("expensive","たかい",null)
-                ,new DatabaseRecord("nice", "a nice thing","いい",null)
-                ,new DatabaseRecord("a bit","すこし",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-            )
-        )
-        .setPoliteness(
-            List.of(
-                 new DatabaseRecord("please", "ください",null)
-                ,new DatabaseRecord("hello", "こんにちは",null)
-                ,new DatabaseRecord("good evening", "こんばんは",null)
-                ,new DatabaseRecord("see you tomorrow", "またあした",null)
-                ,new DatabaseRecord("bye", "じゃね",null)
-                ,new DatabaseRecord("excuse me", "すみません",null)
-                ,new DatabaseRecord("good morning", "おはようございます",null)
-                ,new DatabaseRecord("welcome", "ようこそ",null)
-                ,new DatabaseRecord("nice to meet you","first time meeting","はじめまして",null)
-                ,new DatabaseRecord("nice to meet you", "treat me well", List.of("どうぞよろしく", "よろしくおねがいします"),null)
-                ,new DatabaseRecord("how much", "いくら",null)
-                ,new DatabaseRecord("thank you", "ありがとうございます",null)
-                ,new DatabaseRecord("", "",null)
-                ,new DatabaseRecord("", "",null)
-            )
-        )
-        .setCountry(
-            List.of(
-                 new DatabaseRecord("america", "アメリカ", null)
-                ,new DatabaseRecord("canada","カナダ",null)
-                ,new DatabaseRecord("brazil","ブラジル",null)
-                ,new DatabaseRecord("britain","イギリス",null)
-                ,new DatabaseRecord("japan","にほん","日本")
-                ,new DatabaseRecord("from","しゅっしん",null)
-                ,new DatabaseRecord("live","すんでいます",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-            )
-        )
-        .setPlace(List.of(
-             new DatabaseRecord("hotel","ホテル",null)
-            ,new DatabaseRecord("bus stop","バスてい",null)
-            ,new DatabaseRecord("train station","えき",null)
-            ,new DatabaseRecord("convenience store","コンビニ",null)
-            ,new DatabaseRecord("department store","デパート",null)
-            ,new DatabaseRecord("subway","ちかてつ",null)
-            ,new DatabaseRecord("airport","くうこう",null)
-            ,new DatabaseRecord("town","まち",null)
-            ,new DatabaseRecord("city","とし",null)
-            ,new DatabaseRecord("university","だいがく",null)
-            ,new DatabaseRecord("store","みせ",null)
-            ,new DatabaseRecord("restaurant","レストラン",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-        ))
-        .setClothes(List.of(
-             new DatabaseRecord("coat","コート",null)
-            ,new DatabaseRecord("hat","ぼうし",null)
-            ,new DatabaseRecord("umbrella","かさ",null)
-            ,new DatabaseRecord("shoe","くつ",null)
-            ,new DatabaseRecord("map","ちず",null)
-            ,new DatabaseRecord("bag","かばん",null)
-            ,new DatabaseRecord("skirt","スカート",null)
-            ,new DatabaseRecord("shirt","シャツ",null)
-            ,new DatabaseRecord("wallet","さいふ",null)
-            ,new DatabaseRecord("clothes","ふく",null)
-            ,new DatabaseRecord("dress","ドレス",null)
-            ,new DatabaseRecord("necktie","ネクタイ",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-        ))
-        .setColor(List.of(
-             new DatabaseRecord("red","あかい",null)
-            ,new DatabaseRecord("white","しろい",null)
-            ,new DatabaseRecord("purple","むらさき","紫")
-            ,new DatabaseRecord("color","いろ","色")
-            ,new DatabaseRecord("blue","あおい",null)
-            ,new DatabaseRecord("black","くろい",null)
-            ,new DatabaseRecord("","",null)
-        ))
-        .setTime(List.of(
-             new DatabaseRecord("hour","じ",null)
-            ,new DatabaseRecord("half","はん","半")
-            ,new DatabaseRecord("about","ごろ",null)
-            ,new DatabaseRecord("now","いま","今")
-            ,new DatabaseRecord("years old","さい",null)
-            ,new DatabaseRecord("what time","なんじ",null)
-            ,new DatabaseRecord("often","よく",null)
-            ,new DatabaseRecord("sometimes","ときどき",null)
-            ,new DatabaseRecord("every","まい",null)
-            ,new DatabaseRecord("every day","まいにち",null)
-            ,new DatabaseRecord("morning","あさ",null)
-            ,new DatabaseRecord("every night","まいばん",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-        ))
-        .setFamily(List.of(
-             new DatabaseRecord("younger sister","いもうと",null)
-            ,new DatabaseRecord("older sister","あね",null)
-            ,new DatabaseRecord("younger brother","おとうと",null)
-            ,new DatabaseRecord("older brother","あに",null)
-            ,new DatabaseRecord("mother","はは","母")
-            ,new DatabaseRecord("father","ちち","父")
-            ,new DatabaseRecord("son","むすこ",null)
-            ,new DatabaseRecord("daughter","むすめ",null)
-            ,new DatabaseRecord("wife","つま",null)
-            ,new DatabaseRecord("husband","おっと",null)
-            ,new DatabaseRecord("family","かぞく",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-            ,new DatabaseRecord("","",null)
-        ))
-        .setPointers(
-            List.of(
-                 new DatabaseRecord("this one","これ",null)
-                ,new DatabaseRecord("that one","それ",null)
-                ,new DatabaseRecord("which one","どれ",null)
-                ,new DatabaseRecord("this","この",null)
-                ,new DatabaseRecord("that","その",null)
-                ,new DatabaseRecord("here","ここ",null)
-                ,new DatabaseRecord("there","そこ",null)
-                ,new DatabaseRecord("where","どこ",null)
-                ,new DatabaseRecord("how","どう",null)
-                ,new DatabaseRecord("these ones","これら",null)
-                ,new DatabaseRecord("those ones","それら",null)
-                ,new DatabaseRecord("that over there","あの",null)
-                ,new DatabaseRecord("that one over there","あれ",null)
-                ,new DatabaseRecord("over there","あそこ",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-                ,new DatabaseRecord("","",null)
-            )
-        )
-        .setThingies(List.of(
-             new DatabaseRecord("anime", "アニメ", null)
-            ,new DatabaseRecord("soccer", "サッカー", null)
-            ,new DatabaseRecord("basketball", "バスケットボール", null)
-            ,new DatabaseRecord("book", "ほん", "本")
-            ,new DatabaseRecord("tv", "テレビ", null)
-            ,new DatabaseRecord("movie", "えいが", null)
-            ,new DatabaseRecord("music", "おんがく", null)
-            ,new DatabaseRecord("magazine", "ざっし", null)
-            ,new DatabaseRecord("manga", "まんが", null)
-            ,new DatabaseRecord("baseball", "やきゅう", null)
-            ,new DatabaseRecord("passport","パスポート",null)
-            ,new DatabaseRecord("smartphone","スマホ",null)
-            ,new DatabaseRecord("ticket","きっぷ",null)
-            ,new DatabaseRecord("ticket gate", "かいさつ", null)
-            ,new DatabaseRecord("floor", "かい", null)
-            ,new DatabaseRecord("elevator", "エレベーター", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("drama", "ドラマ", null)
-            ,new DatabaseRecord("friends", "ともだち", null)
-            ,new DatabaseRecord("sports", "スポーツ", null)
-            ,new DatabaseRecord("tenis", "テニス", null)
-            ,new DatabaseRecord("judo", "じゅうどう", null)
-            ,new DatabaseRecord("video", "どうが", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-        ))
-        .setDoing(List.of(
-             new DatabaseRecord("watch",  "みます", "見る")
-            ,new DatabaseRecord("do",  "します", "為る")
-            ,new DatabaseRecord("read",  "よみます", "読む")
-            ,new DatabaseRecord("listen", "ききます", "聞く")
-            ,new DatabaseRecord("eat", "たべます", "食べる")
-            ,new DatabaseRecord("drink", "のみます", "飲む")
-            ,new DatabaseRecord("swim", "およぎます", null)
-            ,new DatabaseRecord("yoga", "ヨガ", null)
-            ,new DatabaseRecord("game", "ゲーム", null)
-            ,new DatabaseRecord("work", "しごと", "仕事")
-            ,new DatabaseRecord("study", "べんきょう", "勉強")
-            ,new DatabaseRecord("party", "パーティー", null)
-            ,new DatabaseRecord("hang out", "あそびます", null)
-            ,new DatabaseRecord("karate", "からて", null)
-            ,new DatabaseRecord("buy", "かいます", "買います")
-            ,new DatabaseRecord("go out", "でかけます", null)
-            ,new DatabaseRecord("talk", "はなします", "話します")
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-            ,new DatabaseRecord("", "", null)
-        ))
-        .setDays(List.of(
-             new DatabaseRecord("saturday", "どようび", "土曜日")
-            ,new DatabaseRecord("weekday", "へいじつ", "平日")
-            ,new DatabaseRecord("yesterday", "きのう", "昨日")
-            ,new DatabaseRecord("day before yesterday", "おととい", null)
-            ,new DatabaseRecord("weekend", "しゅうまつ", null)
-            ,new DatabaseRecord("sunday", "にちようび", "日曜日")
-            ,new DatabaseRecord("", "", "")
-            ,new DatabaseRecord("", "", "")
-            ,new DatabaseRecord("", "", "")
-        ))
-        .setEverythingElse(
-            List.of(
-                new DatabaseRecord("no", "いいえ",null)
-                ,new DatabaseRecord("yes", "はい",null)
-                ,new DatabaseRecord("um", "ええと",null)
-                ,new DatabaseRecord("oh", "あ",null)
-                ,new DatabaseRecord("okay then", "じゃあ",null)
-                ,new DatabaseRecord("", "",null)
-                ,new DatabaseRecord("", "",null)
-            )
-        )
-        ;
+        .setAnimal(animals())
+        .setNumber(numbers())
+        .setFood(foods())
+        .setJob(jobs())
+        .setEmotion(emotions())
+        .setPoliteness(politeness())
+        .setCountry(country())
+        .setPlace(place())
+        .setClothes(clothing())
+        .setColor(color())
+        .setTime(time())
+        .setFamily(family())
+        .setPointers(pointer())
+        .setThingies(thingy())
+        .setDoing(action())
+        .setDays(day())
+        .setEverythingElse(random());
+  }
+
+  private static List<DatabaseRecord> random() {
+    return List.of(
+        new DatabaseRecord("no", "いいえ", null),
+        new DatabaseRecord("yes", "はい", null),
+        new DatabaseRecord("um", "ええと", null),
+        new DatabaseRecord("oh", "あ", null),
+        new DatabaseRecord("okay then", "じゃあ", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> day() {
+    return List.of(
+        new DatabaseRecord("saturday", "どようび", "土曜日"),
+        new DatabaseRecord("weekday", "へいじつ", "平日"),
+        new DatabaseRecord("yesterday", "きのう", "昨日"),
+        new DatabaseRecord("day before yesterday", "おととい", null),
+        new DatabaseRecord("weekend", "しゅうまつ", null),
+        new DatabaseRecord("sunday", "にちようび", "日曜日"),
+        new DatabaseRecord("", "", ""),
+        new DatabaseRecord("", "", ""),
+        new DatabaseRecord("", "", ""));
+  }
+
+  private static List<DatabaseRecord> action() {
+    return List.of(
+        new DatabaseRecord("watch", "みます", "見る"),
+        new DatabaseRecord("do", "します", "為る"),
+        new DatabaseRecord("read", "よみます", "読む"),
+        new DatabaseRecord("listen", "ききます", "聞く"),
+        new DatabaseRecord("eat", "たべます", "食べる"),
+        new DatabaseRecord("drink", "のみます", "飲む"),
+        new DatabaseRecord("swim", "およぎます", null),
+        new DatabaseRecord("yoga", "ヨガ", null),
+        new DatabaseRecord("game", "ゲーム", null),
+        new DatabaseRecord("work", "しごと", "仕事"),
+        new DatabaseRecord("study", "べんきょう", "勉強"),
+        new DatabaseRecord("party", "パーティー", null),
+        new DatabaseRecord("hang out", "あそびます", null),
+        new DatabaseRecord("karate", "からて", null),
+        new DatabaseRecord("buy", "かいます", "買います"),
+        new DatabaseRecord("go out", "でかけます", null),
+        new DatabaseRecord("talk", "はなします", "話します"),
+        new DatabaseRecord("have", "あります", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> thingy() {
+    return List.of(
+        new DatabaseRecord("anime", "アニメ", null),
+        new DatabaseRecord("soccer", "サッカー", null),
+        new DatabaseRecord("basketball", "バスケットボール", null),
+        new DatabaseRecord("book", "ほん", "本"),
+        new DatabaseRecord("tv", "テレビ", null),
+        new DatabaseRecord("movie", "えいが", null),
+        new DatabaseRecord("music", "おんがく", null),
+        new DatabaseRecord("magazine", "ざっし", null),
+        new DatabaseRecord("manga", "まんが", null),
+        new DatabaseRecord("baseball", "やきゅう", null),
+        new DatabaseRecord("passport", "パスポート", null),
+        new DatabaseRecord("smartphone", "スマホ", null),
+        new DatabaseRecord("ticket", "きっぷ", null),
+        new DatabaseRecord("ticket gate", "かいさつ", null),
+        new DatabaseRecord("floor", "かい", null),
+        new DatabaseRecord("first floor", "いっかい", null),
+        new DatabaseRecord("second floor", "にかい", null),
+        new DatabaseRecord("elevator", "エレベーター", null),
+        new DatabaseRecord("underground", "ちか", null),
+        new DatabaseRecord("drama", "ドラマ", null),
+        new DatabaseRecord("friends", "ともだち", null),
+        new DatabaseRecord("sports", "スポーツ", null),
+        new DatabaseRecord("tennis", "テニス", null),
+        new DatabaseRecord("judo", "じゅうどう", null),
+        new DatabaseRecord("video", "どうが", null),
+        new DatabaseRecord("storage locker", "コインロッカ-", null),
+        new DatabaseRecord("vending machine", "じはんき", null),
+        new DatabaseRecord("exit", "でぐち", null),
+        new DatabaseRecord("cafe", "カフェ", null),
+        new DatabaseRecord("stair", "かいだん", null),
+        new DatabaseRecord("phone", "でんわ", null),
+        new DatabaseRecord("outlet", "コンセント", null),
+        new DatabaseRecord("taxi", "タクシ-", null),
+        new DatabaseRecord("transfer", "のりかえ", null),
+        new DatabaseRecord("trash can", "ゴミばこ", null),
+        new DatabaseRecord("platform", "ホ-ム", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> pointer() {
+    return List.of(
+        new DatabaseRecord("this one", "これ", null),
+        new DatabaseRecord("that one", "それ", null),
+        new DatabaseRecord("which one", "どれ", null),
+        new DatabaseRecord("this", "この", null),
+        new DatabaseRecord("that", "その", null),
+        new DatabaseRecord("here", "ここ", null),
+        new DatabaseRecord("there", "そこ", null),
+        new DatabaseRecord("where", "どこ", null),
+        new DatabaseRecord("how", "どう", null),
+        new DatabaseRecord("these ones", "これら", null),
+        new DatabaseRecord("those ones", "それら", null),
+        new DatabaseRecord("that over there", "あの", null),
+        new DatabaseRecord("that one over there", "あれ", null),
+        new DatabaseRecord("over there", "あそこ", null),
+        new DatabaseRecord("close", "ちかい", null),
+        new DatabaseRecord("far", "とおい", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> family() {
+    return List.of(
+        new DatabaseRecord("younger sister", "いもうと", null),
+        new DatabaseRecord("older sister", "あね", null),
+        new DatabaseRecord("younger brother", "おとうと", null),
+        new DatabaseRecord("older brother", "あに", null),
+        new DatabaseRecord("mother", "はは", "母"),
+        new DatabaseRecord("father", "ちち", "父"),
+        new DatabaseRecord("son", "むすこ", null),
+        new DatabaseRecord("daughter", "むすめ", null),
+        new DatabaseRecord("wife", "つま", null),
+        new DatabaseRecord("husband", "おっと", null),
+        new DatabaseRecord("family", "かぞく", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> time() {
+    return List.of(
+        new DatabaseRecord("hour", "じ", null),
+        new DatabaseRecord("half", "はん", "半"),
+        new DatabaseRecord("about", "ごろ", null),
+        new DatabaseRecord("now", "いま", "今"),
+        new DatabaseRecord("years old", "さい", null),
+        new DatabaseRecord("what time", "なんじ", null),
+        new DatabaseRecord("often", "よく", null),
+        new DatabaseRecord("sometimes", "ときどき", null),
+        new DatabaseRecord("every", "まい", null),
+        new DatabaseRecord("every day", "まいにち", null),
+        new DatabaseRecord("morning", "あさ", null),
+        new DatabaseRecord("every night", "まいばん", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> color() {
+    return List.of(
+        new DatabaseRecord("red", "あかい", null),
+        new DatabaseRecord("white", "しろい", null),
+        new DatabaseRecord("purple", "むらさき", "紫"),
+        new DatabaseRecord("color", "いろ", "色"),
+        new DatabaseRecord("blue", "あおい", null),
+        new DatabaseRecord("black", "くろい", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> clothing() {
+    return List.of(
+        new DatabaseRecord("coat", "コート", null),
+        new DatabaseRecord("hat", "ぼうし", null),
+        new DatabaseRecord("umbrella", "かさ", null),
+        new DatabaseRecord("shoe", "くつ", null),
+        new DatabaseRecord("map", "ちず", null),
+        new DatabaseRecord("bag", "かばん", null),
+        new DatabaseRecord("skirt", "スカート", null),
+        new DatabaseRecord("shirt", "シャツ", null),
+        new DatabaseRecord("wallet", "さいふ", null),
+        new DatabaseRecord("clothes", "ふく", null),
+        new DatabaseRecord("dress", "ドレス", null),
+        new DatabaseRecord("necktie", "ネクタイ", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> place() {
+    return List.of(
+        new DatabaseRecord("hotel", "ホテル", null),
+        new DatabaseRecord("bus stop", "バスてい", null),
+        new DatabaseRecord("train station", "えき", null),
+        new DatabaseRecord("convenience store", "コンビニ", null),
+        new DatabaseRecord("department store", "デパート", null),
+        new DatabaseRecord("subway", "ちかてつ", null),
+        new DatabaseRecord("airport", "くうこう", null),
+        new DatabaseRecord("town", "まち", null),
+        new DatabaseRecord("city", "とし", null),
+        new DatabaseRecord("university", "だいがく", null),
+        new DatabaseRecord("store", "みせ", null),
+        new DatabaseRecord("restaurant", "レストラン", null),
+        new DatabaseRecord("restroom", "おてあらい", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> country() {
+    return List.of(
+        new DatabaseRecord("america", "アメリカ", null),
+        new DatabaseRecord("canada", "カナダ", null),
+        new DatabaseRecord("brazil", "ブラジル", null),
+        new DatabaseRecord("britain", "イギリス", null),
+        new DatabaseRecord("japan", "にほん", "日本"),
+        new DatabaseRecord("from", "しゅっしん", null),
+        new DatabaseRecord("live", "すんでいます", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> politeness() {
+    return List.of(
+        new DatabaseRecord("please", "ください", null),
+        new DatabaseRecord("hello", "こんにちは", null),
+        new DatabaseRecord("good evening", "こんばんは", null),
+        new DatabaseRecord("see you tomorrow", "またあした", null),
+        new DatabaseRecord("bye", "じゃね", null),
+        new DatabaseRecord("excuse me", "すみません", null),
+        new DatabaseRecord("good morning", "おはようございます", null),
+        new DatabaseRecord("welcome", "ようこそ", null),
+        new DatabaseRecord("nice to meet you", "first time meeting", "はじめまして", null),
+        new DatabaseRecord(
+            "nice to meet you", "treat me well", List.of("どうぞよろしく", "よろしくおねがいします"), null),
+        new DatabaseRecord("how much", "いくら", null),
+        new DatabaseRecord("thank you", "ありがとうございます", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> emotions() {
+    return List.of(
+        new DatabaseRecord("nice", "a nice person", "やさしい", null),
+        new DatabaseRecord("cool", "かっこいい", null),
+        new DatabaseRecord("famous", "ゆうめい", null),
+        new DatabaseRecord("quiet", "しずか", null),
+        new DatabaseRecord("clean", "きれい", null),
+        new DatabaseRecord("tasty", "おいしい", null),
+        new DatabaseRecord("cheerful", "あかるい", null),
+        new DatabaseRecord("funny", "おもしろい", null),
+        new DatabaseRecord("lively", "にぎやか", null),
+        new DatabaseRecord("big", "おおきい", "大きい"),
+        new DatabaseRecord("small", "ちいさい", "小さい"),
+        new DatabaseRecord("cute", "かわいい", null),
+        new DatabaseRecord("busy", "いそがしい", null),
+        new DatabaseRecord("very", "とても", null),
+        new DatabaseRecord("smart", "あたまがいい", null),
+        new DatabaseRecord("fashionable", "おしゃれ", null),
+        new DatabaseRecord("new", "あたらしい", "新しい"),
+        new DatabaseRecord("wanting", "ほしい", null),
+        new DatabaseRecord("old", "ふるい", "古い"),
+        new DatabaseRecord("hideous", "ダサイ", null),
+        new DatabaseRecord("lovely", "すてき", null),
+        new DatabaseRecord("cheap", "やすい", null),
+        new DatabaseRecord("expensive", "たかい", null),
+        new DatabaseRecord("nice", "a nice thing", "いい", null),
+        new DatabaseRecord("a bit", "すこし", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> jobs() {
+    return List.of(
+        new DatabaseRecord("doctor", "いしゃ", null),
+        new DatabaseRecord("teacher", "せんせい", null),
+        new DatabaseRecord("lawyer", "べんごし", null),
+        new DatabaseRecord("student", "がくせい", null),
+        new DatabaseRecord("person", "ひと", "人"),
+        new DatabaseRecord("nurse", "かんごし", null),
+        new DatabaseRecord("engineer", "エンジニア", null),
+        new DatabaseRecord("office worker", "かいしゃいん", null),
+        new DatabaseRecord("warrior", "ぶし", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> foods() {
+    return List.of(
+        new DatabaseRecord("sushi", "すし", null),
+        new DatabaseRecord("green tea", "おちゃ", null),
+        new DatabaseRecord("rice", "ごはん", null),
+        new DatabaseRecord("water", "みず", "水"),
+        new DatabaseRecord("curry", "カレー", null),
+        new DatabaseRecord("ramen", "ラーメン", null),
+        new DatabaseRecord("pizza", "ピザ", null),
+        new DatabaseRecord("cake", "ケーキ", null),
+        new DatabaseRecord("coffee", "コーヒー", null),
+        new DatabaseRecord("vegetable", "やさい", null),
+        new DatabaseRecord("bread", "パン", null),
+        new DatabaseRecord("sandwich", "サンドイッチ", null),
+        new DatabaseRecord("breakfast", "あさごはん", null),
+        new DatabaseRecord("lunch", "ひるごはん", null),
+        new DatabaseRecord("boxed lunch", "べんとう", null),
+        new DatabaseRecord("dinner", "ばんごはん", null),
+        new DatabaseRecord("udon", "うどん", null),
+        new DatabaseRecord("miso soup", "みそしる", null),
+        new DatabaseRecord("soba", "そば", null),
+        new DatabaseRecord("iced coffee", "アイスコーヒー", null),
+        new DatabaseRecord("black tea", "こうちゃ", null),
+        new DatabaseRecord("ice cream", "アイスクリーム", null),
+        new DatabaseRecord("salad", "サラダ", null),
+        new DatabaseRecord("rice ball", "おにぎり", null),
+        new DatabaseRecord("meal set", "ていしょく", null),
+        new DatabaseRecord("tempura", "てんぷら", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> numbers() {
+    return List.of(
+        new DatabaseRecord("one", "いち", "一"),
+        new DatabaseRecord("two", "に", "二"),
+        new DatabaseRecord("three", "さん", "三"),
+        new DatabaseRecord("four", "よん", "四"),
+        new DatabaseRecord("five", "ご", "五"),
+        new DatabaseRecord("six", "ろく", "六"),
+        new DatabaseRecord("seven", List.of("しち", "なな"), "七"),
+        new DatabaseRecord("eight", "はち", "八"),
+        new DatabaseRecord("nine", "きゅう", "九"),
+        new DatabaseRecord("ten", "じゅう", "十"),
+        new DatabaseRecord("hundred", "ひゃく", "百"),
+        new DatabaseRecord("yen", "えん", null),
+        new DatabaseRecord("thousand", "せん", "千"),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private static List<DatabaseRecord> animals() {
+    return List.of(
+        new DatabaseRecord("dog", "いぬ", "犬"),
+        new DatabaseRecord("cat", "ねこ", "猫"),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
   }
 }

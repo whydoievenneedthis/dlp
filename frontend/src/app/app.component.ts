@@ -46,6 +46,7 @@ export class AppComponent implements AfterViewInit {
     }).subscribe(data => {
       const response = <VerifyResponse>data;
       this.history.unshift({ question: this.question?.question, answer: actualAnswer, correct: response.correct, correctAnswer: response.answer, stat: response.stat });
+      this.history = this.history.splice(0, 10);
       this.getQuestion();
     })
   }

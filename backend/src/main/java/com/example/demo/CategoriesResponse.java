@@ -5,7 +5,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-@Getter@RequiredArgsConstructor
+@Getter
+@RequiredArgsConstructor
 public class CategoriesResponse {
   private final List<String> categories;
 }
