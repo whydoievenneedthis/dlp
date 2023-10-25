@@ -16,16 +16,19 @@ public class Database {
   private List<DatabaseRecord> color;
   private List<DatabaseRecord> family;
   private List<DatabaseRecord> number;
-  private List<DatabaseRecord> time;
+  private List<DatabaseRecord> daytime;
   private List<DatabaseRecord> food;
   private List<DatabaseRecord> politeness;
   private List<DatabaseRecord> country;
   private List<DatabaseRecord> place;
-  private List<DatabaseRecord> clothes;
-  private List<DatabaseRecord> pointers;
-  private List<DatabaseRecord> thingies;
-  private List<DatabaseRecord> doing;
-  private List<DatabaseRecord> days;
+  private List<DatabaseRecord> clothing;
+  private List<DatabaseRecord> pointer;
+  private List<DatabaseRecord> thingy;
+  private List<DatabaseRecord> action;
+  private List<DatabaseRecord> actionable;
+  private List<DatabaseRecord> sport;
+  private List<DatabaseRecord> genre;
+  private List<DatabaseRecord> name;
 
   private List<DatabaseRecord> everythingElse;
 }

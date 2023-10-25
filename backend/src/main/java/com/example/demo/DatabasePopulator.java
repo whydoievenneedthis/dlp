@@ -18,18 +18,35 @@ class DatabasePopulator {
         .setPoliteness(politeness())
         .setCountry(country())
         .setPlace(place())
-        .setClothes(clothing())
+        .setClothing(clothing())
         .setColor(color())
-        .setTime(time())
         .setFamily(family())
-        .setPointers(pointer())
-        .setThingies(thingy())
-        .setDoing(action())
-        .setDays(day())
+        .setPointer(pointer())
+        .setThingy(thingy())
+        .setAction(action())
+        .setActionable(actionable())
+        .setDaytime(daytime())
+        .setSport(sport())
+        .setGenre(genre())
+        .setName(name())
         .setEverythingElse(random());
   }
 
-  private static List<DatabaseRecord> random() {
+  private List<DatabaseRecord> name() {
+    return List.of(
+        new DatabaseRecord("ken", "けん", null),
+        new DatabaseRecord("hana", "はな", null),
+        new DatabaseRecord("naomi", "なおみ", null),
+        new DatabaseRecord("daniel", "", null),
+        new DatabaseRecord("andrew", "アンドリュ", null),
+        new DatabaseRecord("erika", "エリカ", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private List<DatabaseRecord> random() {
     return List.of(
         new DatabaseRecord("no", "いいえ", null),
         new DatabaseRecord("yes", "はい", null),
@@ -48,20 +65,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> day() {
-    return List.of(
-        new DatabaseRecord("saturday", "どようび", "土曜日"),
-        new DatabaseRecord("weekday", "へいじつ", "平日"),
-        new DatabaseRecord("yesterday", "きのう", "昨日"),
-        new DatabaseRecord("day before yesterday", "おととい", null),
-        new DatabaseRecord("weekend", "しゅうまつ", null),
-        new DatabaseRecord("sunday", "にちようび", "日曜日"),
-        new DatabaseRecord("", "", ""),
-        new DatabaseRecord("", "", ""),
-        new DatabaseRecord("", "", ""));
-  }
-
-  private static List<DatabaseRecord> action() {
+  private List<DatabaseRecord> action() {
     return List.of(
         new DatabaseRecord("watch", "みます", "見る"),
         new DatabaseRecord("do", "します", "為る"),
@@ -70,34 +74,98 @@ class DatabasePopulator {
         new DatabaseRecord("eat", "たべます", "食べる"),
         new DatabaseRecord("drink", "のみます", "飲む"),
         new DatabaseRecord("swim", "およぎます", null),
-        new DatabaseRecord("yoga", "ヨガ", null),
-        new DatabaseRecord("game", "ゲーム", null),
-        new DatabaseRecord("work", "しごと", "仕事"),
-        new DatabaseRecord("study", "べんきょう", "勉強"),
-        new DatabaseRecord("party", "パーティー", null),
         new DatabaseRecord("hang out", "あそびます", null),
-        new DatabaseRecord("karate", "からて", null),
         new DatabaseRecord("buy", "かいます", "買います"),
         new DatabaseRecord("go out", "でかけます", null),
         new DatabaseRecord("talk", "はなします", "話します"),
-        new DatabaseRecord("have", "あります", null),
+        new DatabaseRecord("have", "inanimate", "あります", null),
+        new DatabaseRecord("there is", "living thing", "います", null),
+        new DatabaseRecord("get up", "おきます", null),
+        new DatabaseRecord("run", "はしります", null),
+        new DatabaseRecord("named", "いいます", null),
+        new DatabaseRecord("take", "a picture", "とります", null),
+        new DatabaseRecord("make", "つくります", null),
+        new DatabaseRecord("sleep", "ねます", null),
+        new DatabaseRecord("take", "a shower", "あびます", null),
+        new DatabaseRecord("live", "すんでいます", null),
+        new DatabaseRecord("move", "house", "ひっこします", null),
+        new DatabaseRecord("go", "somewhere", "いきます", "行きます"),
+        new DatabaseRecord("take", "time", "かかります", null),
+        new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> thingy() {
+  private List<DatabaseRecord> actionable() {
     return List.of(
-        new DatabaseRecord("anime", "アニメ", null),
+        new DatabaseRecord("game", "ゲーム", null),
+        new DatabaseRecord("work", "しごと", "仕事"),
+        new DatabaseRecord("study", "べんきょう", "勉強"),
+        new DatabaseRecord("party", "パーティー", null),
+        new DatabaseRecord("shower", "シャワ-", null),
+        new DatabaseRecord("like", "すき", "好き"),
+        new DatabaseRecord("picture", "しゃしん", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private List<DatabaseRecord> sport() {
+    return List.of(
+        new DatabaseRecord("yoga", "ヨガ", null),
         new DatabaseRecord("soccer", "サッカー", null),
         new DatabaseRecord("basketball", "バスケットボール", null),
+        new DatabaseRecord("baseball", "やきゅう", null),
+        new DatabaseRecord("sports", "スポーツ", null),
+        new DatabaseRecord("tennis", "テニス", null),
+        new DatabaseRecord("judo", "じゅうどう", null),
+        new DatabaseRecord("hobby", "しゅみ", null),
+        new DatabaseRecord("volleyball", "バレ-ボ-ル", null),
+        new DatabaseRecord("karate", "からて", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private List<DatabaseRecord> genre() {
+    return List.of(
+        new DatabaseRecord("action", "アクション", null),
+        new DatabaseRecord("horror", "ホラ-", null),
+        new DatabaseRecord("drama", "ドラマ", null),
+        new DatabaseRecord("romance", "れんあい", null),
+        new DatabaseRecord("comedy", "コメディ", null),
+        new DatabaseRecord("fantasy", "ファンタジー", null),
+        new DatabaseRecord("mystery", "ミステリ-", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null));
+  }
+
+  private List<DatabaseRecord> thingy() {
+    return List.of(
+        new DatabaseRecord("anime", "アニメ", null),
         new DatabaseRecord("book", "ほん", "本"),
         new DatabaseRecord("tv", "テレビ", null),
         new DatabaseRecord("movie", "えいが", null),
         new DatabaseRecord("music", "おんがく", null),
         new DatabaseRecord("magazine", "ざっし", null),
         new DatabaseRecord("manga", "まんが", null),
-        new DatabaseRecord("baseball", "やきゅう", null),
         new DatabaseRecord("passport", "パスポート", null),
         new DatabaseRecord("smartphone", "スマホ", null),
         new DatabaseRecord("ticket", "きっぷ", null),
@@ -107,11 +175,7 @@ class DatabasePopulator {
         new DatabaseRecord("second floor", "にかい", null),
         new DatabaseRecord("elevator", "エレベーター", null),
         new DatabaseRecord("underground", "ちか", null),
-        new DatabaseRecord("drama", "ドラマ", null),
         new DatabaseRecord("friends", "ともだち", null),
-        new DatabaseRecord("sports", "スポーツ", null),
-        new DatabaseRecord("tennis", "テニス", null),
-        new DatabaseRecord("judo", "じゅうどう", null),
         new DatabaseRecord("video", "どうが", null),
         new DatabaseRecord("storage locker", "コインロッカ-", null),
         new DatabaseRecord("vending machine", "じはんき", null),
@@ -124,6 +188,26 @@ class DatabasePopulator {
         new DatabaseRecord("transfer", "のりかえ", null),
         new DatabaseRecord("trash can", "ゴミばこ", null),
         new DatabaseRecord("platform", "ホ-ム", null),
+        new DatabaseRecord("newspaper", "しんぶん", "新聞"),
+        new DatabaseRecord("radio", "ラジオ", null),
+        new DatabaseRecord("hobby", "しゅみ", null),
+        new DatabaseRecord("travel", "りょこう", null),
+        new DatabaseRecord("email", "メ-ル", null),
+        new DatabaseRecord("apartment", "アパ-ト", null),
+        new DatabaseRecord("kitchen", "キッチン", null),
+        new DatabaseRecord("air conditioner", "アイコン", null),
+        new DatabaseRecord("washing machine", "せんたくき", null),
+        new DatabaseRecord("bookshelf", "ほんだな", null),
+        new DatabaseRecord("window", "まど", null),
+        new DatabaseRecord("bathroom", "といれ", null),
+        new DatabaseRecord("house", "いえ", null),
+        new DatabaseRecord("living room", "リビング", null),
+        new DatabaseRecord("bed", "ベット", null),
+        new DatabaseRecord("vacuum cleaner", "そうじき", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -133,7 +217,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> pointer() {
+  private List<DatabaseRecord> pointer() {
     return List.of(
         new DatabaseRecord("this one", "これ", null),
         new DatabaseRecord("that one", "それ", null),
@@ -151,9 +235,9 @@ class DatabasePopulator {
         new DatabaseRecord("over there", "あそこ", null),
         new DatabaseRecord("close", "ちかい", null),
         new DatabaseRecord("far", "とおい", null),
-        new DatabaseRecord("", "", null),
-        new DatabaseRecord("", "", null),
-        new DatabaseRecord("", "", null),
+        new DatabaseRecord("what kind of", "どんな", null),
+        new DatabaseRecord("this way", "こちら", null),
+        new DatabaseRecord("next", "つぎ", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -162,7 +246,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> family() {
+  private List<DatabaseRecord> family() {
     return List.of(
         new DatabaseRecord("younger sister", "いもうと", null),
         new DatabaseRecord("older sister", "あね", null),
@@ -175,8 +259,8 @@ class DatabasePopulator {
         new DatabaseRecord("wife", "つま", null),
         new DatabaseRecord("husband", "おっと", null),
         new DatabaseRecord("family", "かぞく", null),
-        new DatabaseRecord("", "", null),
-        new DatabaseRecord("", "", null),
+        new DatabaseRecord("girlfriend", "かのじょ", "彼女"),
+        new DatabaseRecord("boyfriend", "かれし", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -185,11 +269,16 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> time() {
+  private List<DatabaseRecord> daytime() {
     return List.of(
+        new DatabaseRecord("saturday", "どようび", "土曜日"),
+        new DatabaseRecord("weekday", "へいじつ", "平日"),
+        new DatabaseRecord("yesterday", "きのう", "昨日"),
+        new DatabaseRecord("day before yesterday", "おととい", null),
+        new DatabaseRecord("weekend", "しゅうまつ", null),
         new DatabaseRecord("hour", "じ", null),
         new DatabaseRecord("half", "はん", "半"),
-        new DatabaseRecord("about", "ごろ", null),
+        new DatabaseRecord("about", "time", "ごろ", null),
         new DatabaseRecord("now", "いま", "今"),
         new DatabaseRecord("years old", "さい", null),
         new DatabaseRecord("what time", "なんじ", null),
@@ -197,9 +286,16 @@ class DatabasePopulator {
         new DatabaseRecord("sometimes", "ときどき", null),
         new DatabaseRecord("every", "まい", null),
         new DatabaseRecord("every day", "まいにち", null),
+        new DatabaseRecord("every morning", "まいあさ", null),
         new DatabaseRecord("morning", "あさ", null),
         new DatabaseRecord("every night", "まいばん", null),
-        new DatabaseRecord("", "", null),
+        new DatabaseRecord("every week", "まいしゅう", null),
+        new DatabaseRecord("next week", "らいしゅう", null),
+        new DatabaseRecord("always", "いつも", null),
+        new DatabaseRecord("tomorrow", "あした", null),
+        new DatabaseRecord("still", "まだ", null),
+        new DatabaseRecord("this week", "こんしゅう", null),
+        new DatabaseRecord("minute", "ぶん", "分"),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -211,7 +307,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> color() {
+  private List<DatabaseRecord> color() {
     return List.of(
         new DatabaseRecord("red", "あかい", null),
         new DatabaseRecord("white", "しろい", null),
@@ -234,7 +330,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> clothing() {
+  private List<DatabaseRecord> clothing() {
     return List.of(
         new DatabaseRecord("coat", "コート", null),
         new DatabaseRecord("hat", "ぼうし", null),
@@ -256,7 +352,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> place() {
+  private List<DatabaseRecord> place() {
     return List.of(
         new DatabaseRecord("hotel", "ホテル", null),
         new DatabaseRecord("bus stop", "バスてい", null),
@@ -271,7 +367,7 @@ class DatabasePopulator {
         new DatabaseRecord("store", "みせ", null),
         new DatabaseRecord("restaurant", "レストラン", null),
         new DatabaseRecord("restroom", "おてあらい", null),
-        new DatabaseRecord("", "", null),
+        new DatabaseRecord("train", "でんしゃ", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -282,7 +378,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> country() {
+  private List<DatabaseRecord> country() {
     return List.of(
         new DatabaseRecord("america", "アメリカ", null),
         new DatabaseRecord("canada", "カナダ", null),
@@ -290,7 +386,11 @@ class DatabasePopulator {
         new DatabaseRecord("britain", "イギリス", null),
         new DatabaseRecord("japan", "にほん", "日本"),
         new DatabaseRecord("from", "しゅっしん", null),
-        new DatabaseRecord("live", "すんでいます", null),
+        new DatabaseRecord("vietnam", "ベトナム", null),
+        new DatabaseRecord("china", "ちゅうごく", null),
+        new DatabaseRecord("korea", "かんこく", null),
+        new DatabaseRecord("", "", null),
+        new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -299,7 +399,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> politeness() {
+  private List<DatabaseRecord> politeness() {
     return List.of(
         new DatabaseRecord("please", "ください", null),
         new DatabaseRecord("hello", "こんにちは", null),
@@ -314,9 +414,9 @@ class DatabasePopulator {
             "nice to meet you", "treat me well", List.of("どうぞよろしく", "よろしくおねがいします"), null),
         new DatabaseRecord("how much", "いくら", null),
         new DatabaseRecord("thank you", "ありがとうございます", null),
-        new DatabaseRecord("", "", null),
-        new DatabaseRecord("", "", null),
-        new DatabaseRecord("", "", null),
+        new DatabaseRecord("really", "ほんとうですか", null),
+        new DatabaseRecord("about how long", "どのぐらい", null),
+        new DatabaseRecord("about", "approximately", "ぐらい", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -326,7 +426,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> emotions() {
+  private List<DatabaseRecord> emotions() {
     return List.of(
         new DatabaseRecord("nice", "a nice person", "やさしい", null),
         new DatabaseRecord("cool", "かっこいい", null),
@@ -334,7 +434,7 @@ class DatabasePopulator {
         new DatabaseRecord("quiet", "しずか", null),
         new DatabaseRecord("clean", "きれい", null),
         new DatabaseRecord("tasty", "おいしい", null),
-        new DatabaseRecord("cheerful", "あかるい", null),
+        new DatabaseRecord("cheerful", "person", "あかるい", null),
         new DatabaseRecord("funny", "おもしろい", null),
         new DatabaseRecord("lively", "にぎやか", null),
         new DatabaseRecord("big", "おおきい", "大きい"),
@@ -353,9 +453,9 @@ class DatabasePopulator {
         new DatabaseRecord("expensive", "たかい", null),
         new DatabaseRecord("nice", "a nice thing", "いい", null),
         new DatabaseRecord("a bit", "すこし", null),
-        new DatabaseRecord("", "", null),
-        new DatabaseRecord("", "", null),
-        new DatabaseRecord("", "", null),
+        new DatabaseRecord("spacious", "ひろい", null),
+        new DatabaseRecord("cramped", "せまい", null),
+        new DatabaseRecord("well lit", "place", "あかるい", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -367,7 +467,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> jobs() {
+  private List<DatabaseRecord> jobs() {
     return List.of(
         new DatabaseRecord("doctor", "いしゃ", null),
         new DatabaseRecord("teacher", "せんせい", null),
@@ -391,7 +491,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> foods() {
+  private List<DatabaseRecord> foods() {
     return List.of(
         new DatabaseRecord("sushi", "すし", null),
         new DatabaseRecord("green tea", "おちゃ", null),
@@ -419,6 +519,7 @@ class DatabasePopulator {
         new DatabaseRecord("rice ball", "おにぎり", null),
         new DatabaseRecord("meal set", "ていしょく", null),
         new DatabaseRecord("tempura", "てんぷら", null),
+        new DatabaseRecord("pasta", "パスタ", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
         new DatabaseRecord("", "", null),
@@ -433,7 +534,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> numbers() {
+  private List<DatabaseRecord> numbers() {
     return List.of(
         new DatabaseRecord("one", "いち", "一"),
         new DatabaseRecord("two", "に", "二"),
@@ -458,7 +559,7 @@ class DatabasePopulator {
         new DatabaseRecord("", "", null));
   }
 
-  private static List<DatabaseRecord> animals() {
+  private List<DatabaseRecord> animals() {
     return List.of(
         new DatabaseRecord("dog", "いぬ", "犬"),
         new DatabaseRecord("cat", "ねこ", "猫"),
