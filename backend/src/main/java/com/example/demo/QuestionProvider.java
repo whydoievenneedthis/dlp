@@ -3,6 +3,7 @@ package com.example.demo;
 import static com.example.demo.StateManager.addToCompleted;
 import static com.example.demo.StateManager.getCompleted;
 
+import com.example.demo.QuestionResponse.Points;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,11 +28,14 @@ class QuestionProvider {
   private final List<DatabaseRecord> records = new ArrayList<>();
   private final Map<Integer, DatabaseRecord> questions = new HashMap<>();
   private final Deque<Integer> last10Excluded = new LinkedList<>();
+  private int sessionTotalPoints;
+  private int sessionRemainingPoints;
 
   @PostConstruct
   void init() {
     reinitRecords();
     getCompleted().forEach(x -> records.remove(questions.get(x)));
+    sessionRemainingPoints = sessionTotalPoints = records.size() * 6;
   }
 
   private void reinitRecords() {
@@ -49,12 +53,15 @@ class QuestionProvider {
                   dr.setCategory(field.getName());
                   records.add(dr);
                   if (questions.containsKey(dr.getId())) {
+                    log.error(
+                        "{} ({}): {}", dr.getEnglish(), dr.getEngExplanation(), dr.getJapanese());
                     throw new IllegalStateException("Duplicate question id!");
                   }
                   questions.put(dr.getId(), dr);
                 }
               });
         });
+    sessionRemainingPoints = sessionTotalPoints = questions.size() * 6;
   }
 
   QuestionResponse getNextQuestion() {
@@ -73,12 +80,13 @@ class QuestionProvider {
     if (last10Excluded.size() > 10) {
       last10Excluded.removeFirst();
     }
+    Points points = new Points(sessionTotalPoints, sessionRemainingPoints);
     if (Math.random() < englishChanceByRecord(record)) {
       String question = record.getEnglish();
-      return new QuestionResponse(record, question, true, recordsRemaining);
+      return new QuestionResponse(record, question, true, recordsRemaining, points);
     }
     String question = record.getJapanese().get(random(record.getJapanese().size()));
-    return new QuestionResponse(record, question, false, recordsRemaining);
+    return new QuestionResponse(record, question, false, recordsRemaining, points);
   }
 
   private DatabaseRecord getRecord(int recordsRemaining, Deque<Integer> excluded) {
@@ -117,7 +125,12 @@ class QuestionProvider {
       answer = record.getEnglish();
     }
 
+    this.sessionRemainingPoints -= statBuilder.fetch(record).getPointValue();
+
     StatBuilder.Stat stat = statBuilder.record(record, correct, request.isJapaneseAnswer());
+
+    this.sessionRemainingPoints += stat.getPointValue();
+
     if (stat.getCorrect() > 5 && stat.getJapaneseCorrect() > 3) {
       log.info("throwing out '{}' from list", record.getEnglish());
       records.remove(record);

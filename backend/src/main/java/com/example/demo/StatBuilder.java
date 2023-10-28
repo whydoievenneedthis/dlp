@@ -11,8 +11,12 @@ import java.util.Map;
 class StatBuilder {
   private final Map<DatabaseRecord, Stat> thisSession = new HashMap<>();
 
+  public Stat fetch(DatabaseRecord record) {
+    return thisSession.computeIfAbsent(record, dr -> new Stat());
+  }
+
   public Stat record(DatabaseRecord record, boolean correct, boolean japaneseAnswer) {
-    Stat stat = thisSession.computeIfAbsent(record, dr -> new Stat());
+    Stat stat = thisSession.get(record);
     if (correct) {
       stat.correct++;
       if (japaneseAnswer) {
@@ -38,5 +42,9 @@ class StatBuilder {
     private int correct = 0;
     private int japaneseCorrect = 0;
     private int incorrect = 0;
+
+    public int getPointValue() {
+      return Math.max(6 - correct, 4 - japaneseCorrect);
+    }
   }
 }

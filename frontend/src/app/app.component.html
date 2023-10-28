@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div>Session questions: {{ question.recordsRemaining }}</div>
+<div>Session questions: {{ question.recordsRemaining }} (points: {{ question.points.total }} / {{ question.points.remaining }}, {{ perc() }}%)</div>
 <div>
   <button (click)="sessionReset()">session reset</button>
   <button (click)="allQuestionsReset()">reschedule all questions</button>
@@ -22,9 +22,12 @@
     <div>
       Question:<br />
       {{ question.question }}
-      <div *ngIf="question.explanation && question.japaneseAnswer">
-        {{ question.explanation }}
-      </div>
+      <span *ngIf="question.engExplanation && question.japaneseAnswer">
+        ({{ question.engExplanation }})
+      </span>
+      <span *ngIf="question.japExplanation && !question.japaneseAnswer">
+        ({{ question.japExplanation }})
+      </span>
     </div>
 
     <div [hidden]="!question.japaneseAnswer && question.question">
