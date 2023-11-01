@@ -29,6 +29,7 @@ public class Database {
   private List<DatabaseRecord> sport;
   private List<DatabaseRecord> genre;
   private List<DatabaseRecord> name;
+  private List<DatabaseRecord> counting;
 
   private List<DatabaseRecord> everythingElse;
 }

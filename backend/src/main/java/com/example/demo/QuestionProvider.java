@@ -81,9 +81,8 @@ class QuestionProvider {
       last10Excluded.removeFirst();
     }
     Points points = new Points(sessionTotalPoints, sessionRemainingPoints);
-    if (Math.random() < englishChanceByRecord(record)) {
-      String question = record.getEnglish();
-      return new QuestionResponse(record, question, true, recordsRemaining, points);
+    if (record.oneWay() || Math.random() < englishChanceByRecord(record)) {
+      return new QuestionResponse(record, record.getEnglish(), true, recordsRemaining, points);
     }
     String question = record.getJapanese().get(random(record.getJapanese().size()));
     return new QuestionResponse(record, question, false, recordsRemaining, points);

@@ -18,12 +18,14 @@ public class DatabaseRecord {
   public DatabaseRecord(String english, List<String> japanese, String kanji) {
     this.english = english;
     this.japanese = japanese.stream().map(x -> x.replace("-", "ー")).toList();
+    this.japExplanation = kanji;
     this.kanji = kanji;
   }
 
   public DatabaseRecord(String english, String japanese, String kanji) {
     this.english = english;
     this.japanese = List.of(japanese.replace("-", "ー"));
+    this.japExplanation = kanji;
     this.kanji = kanji;
   }
 
@@ -31,6 +33,7 @@ public class DatabaseRecord {
     this.english = english.getValue();
     this.engExplanation = english.getExplanation();
     this.japanese = List.of(japanese.replace("-", "ー"));
+    this.japExplanation = kanji;
     this.kanji = kanji;
   }
 
@@ -46,10 +49,15 @@ public class DatabaseRecord {
     this.english = english;
     this.engExplanation = explanation;
     this.japanese = japanese.stream().map(x -> x.replace("-", "ー")).toList();
+    this.japExplanation = kanji;
     this.kanji = kanji;
   }
 
   public int getId() {
     return (english + japanese.toString()).hashCode();
+  }
+
+  public boolean oneWay() {
+    return false;
   }
 }
