@@ -116,7 +116,7 @@ class QuestionProvider {
     int id = request.getId();
     if (request.isJapaneseAnswer()) {
       record = questions.get(id);
-      correct = record.getJapanese().contains(request.getAnswer());
+      correct = record.getJapanese().contains(request.getAnswer().replace(" ", ""));
       answer = record.getJapanese().get(0);
     } else {
       record = questions.get(id);
