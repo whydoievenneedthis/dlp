@@ -117,6 +117,12 @@ export class AppComponent implements AfterViewInit {
       (this.question.points.remaining * 100) / this.question.points.total
     ).toFixed(2);
   }
+
+  switchToVerification() {
+    this.http.get('http://localhost:8080/veri-mode').subscribe(() => {
+      this.getQuestion();
+    });
+  }
 }
 
 interface Entry {

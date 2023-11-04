@@ -12,17 +12,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class Controller {
-  private final QuestionProvider questionProvider;
+  private final PracticeService practiceService;
   private final CategoryService categoryService;
+  private final VerificationService verificationService;
+  private Mode mode = Mode.PRACTICE;
 
   @GetMapping("/get")
   QuestionResponse getQuestion() {
-    return questionProvider.getNextQuestion();
+    if (mode == Mode.PRACTICE) {
+      return practiceService.getNextQuestion();
+    }
+    return verificationService.getNextQuestion();
   }
 
   @PostMapping("/verify")
   VerifyResponse verifyAnswer(@RequestBody VerifyRequest request) {
-    return questionProvider.verify(request);
+    if (mode == Mode.PRACTICE) {
+      return practiceService.verify(request);
+    }
+    VerifyResponse response = verificationService.verify(request);
+    if (verificationService.finished()) {
+      mode = Mode.PRACTICE;
+      practiceService.init();
+    }
+    return response;
   }
 
   @GetMapping("/cats")
@@ -37,11 +50,22 @@ public class Controller {
 
   @GetMapping("/next-session")
   void resetSession() {
-    questionProvider.nextSession();
+    practiceService.nextSession();
   }
 
   @GetMapping("/requeue-questions")
   void requeueQuestions() {
-    questionProvider.requeueQuestions();
+    practiceService.requeueQuestions();
+  }
+
+  @GetMapping("/veri-mode")
+  void switchToVerificationMode() {
+    this.mode = Mode.VERIFICATION;
+    verificationService.init();
+  }
+
+  private enum Mode {
+    PRACTICE,
+    VERIFICATION
   }
 }

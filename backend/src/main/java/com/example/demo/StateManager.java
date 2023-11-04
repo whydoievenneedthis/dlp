@@ -29,5 +29,12 @@ public class StateManager {
     mapper.writeValue(new File("completed.json"), completed);
   }
 
+ @SneakyThrows
+  static void removeFromCompleted(int failedKey) {
+    Set<Integer> completed = new HashSet<>(getCompleted());
+    completed.remove(failedKey);
+    mapper.writeValue(new File("completed.json"), completed);
+  }
+
   private static class IntSet extends HashSet<Integer> {}
 }

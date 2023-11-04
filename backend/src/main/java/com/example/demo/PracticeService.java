@@ -22,7 +22,7 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 @Service
 @RequiredArgsConstructor
-class QuestionProvider {
+class PracticeService {
   private final Database database;
   private final StatBuilder statBuilder;
   private final List<DatabaseRecord> records = new ArrayList<>();
@@ -34,32 +34,22 @@ class QuestionProvider {
   @PostConstruct
   void init() {
     reinitRecords();
-    getCompleted().forEach(x -> records.remove(questions.get(x)));
+    getCompleted().forEach(x -> {
+      records.remove(questions.get(x));
+    });
     sessionRemainingPoints = sessionTotalPoints = records.size() * 6;
   }
 
   private void reinitRecords() {
-    ReflectionUtils.doWithFields(
-        Database.class,
-        field -> {
-          field.setAccessible(true);
-          List<DatabaseRecord> list = (List<DatabaseRecord>) field.get(database);
-          if (list == null) {
-            return;
+    database.iterator()
+        .forEachRemaining(dr -> {
+          if (questions.containsKey(dr.getId())) {
+            log.error(
+                "{} ({}): {}", dr.getEnglish(), dr.getEngExplanation(), dr.getJapanese());
+            throw new IllegalStateException("Duplicate question id!");
           }
-          list.forEach(
-              dr -> {
-                if (StringUtils.hasText(dr.getEnglish())) {
-                  dr.setCategory(field.getName());
-                  records.add(dr);
-                  if (questions.containsKey(dr.getId())) {
-                    log.error(
-                        "{} ({}): {}", dr.getEnglish(), dr.getEngExplanation(), dr.getJapanese());
-                    throw new IllegalStateException("Duplicate question id!");
-                  }
-                  questions.put(dr.getId(), dr);
-                }
-              });
+          records.add(dr);
+          questions.put(dr.getId(), dr);
         });
     sessionRemainingPoints = sessionTotalPoints = questions.size() * 6;
   }
@@ -84,7 +74,7 @@ class QuestionProvider {
     if (record.oneWay() || Math.random() < englishChanceByRecord(record)) {
       return new QuestionResponse(record, record.getEnglish(), true, recordsRemaining, points);
     }
-    String question = record.getJapanese().get(random(record.getJapanese().size()));
+    String question = record.getJapanese();
     return new QuestionResponse(record, question, false, recordsRemaining, points);
   }
 
@@ -117,7 +107,7 @@ class QuestionProvider {
     if (request.isJapaneseAnswer()) {
       record = questions.get(id);
       correct = record.getJapanese().contains(request.getAnswer().replace(" ", ""));
-      answer = record.getJapanese().get(0);
+      answer = record.getJapanese();
     } else {
       record = questions.get(id);
       correct = record.getEnglish().equals(request.getAnswer());

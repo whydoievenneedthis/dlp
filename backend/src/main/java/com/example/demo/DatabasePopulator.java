@@ -570,7 +570,7 @@ class DatabasePopulator {
         new DatabaseRecord("welcome", "ようこそ", null),
         new DatabaseRecord(expl("nice to meet you", "first time meeting"), "はじめまして", null),
         new DatabaseRecord(
-            "nice to meet you", "treat me well", List.of("どうぞよろしく", "よろしくおねがいします"), null),
+            "nice to meet you", "treat me well", "どうぞよろしく"),
         new DatabaseRecord("how much", "いくら", null),
         new DatabaseRecord("thank you", "ありがとうございます", null),
         new DatabaseRecord(expl("really", "is that so?"), "ほんとうですか", null),
@@ -777,7 +777,7 @@ class DatabasePopulator {
         new DatabaseRecord("four", "よん", "四"),
         new DatabaseRecord("five", "ご", "五"),
         new DatabaseRecord("six", "ろく", "六"),
-        new DatabaseRecord("seven", List.of("しち", "なな"), "七"),
+        new DatabaseRecord("seven", "なな", "七"),
         new DatabaseRecord("eight", "はち", "八"),
         new DatabaseRecord("nine", "きゅう", "九"),
         new DatabaseRecord("ten", "じゅう", "十"),

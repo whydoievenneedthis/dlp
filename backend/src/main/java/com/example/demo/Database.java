@@ -3,7 +3,11 @@ package com.example.demo;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.springframework.util.ReflectionUtils;
+import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Getter
@@ -32,4 +36,29 @@ public class Database {
   private List<DatabaseRecord> counting;
 
   private List<DatabaseRecord> everythingElse;
+
+  public Iterator<DatabaseRecord> iterator() {
+    List<DatabaseRecord> overall = new ArrayList<>();
+
+
+    ReflectionUtils.doWithFields(
+        Database.class,
+        field -> {
+          field.setAccessible(true);
+          List<DatabaseRecord> list = (List<DatabaseRecord>) field.get(this);
+          if (list == null) {
+            return;
+          }
+          list.forEach(
+              dr -> {
+                if (StringUtils.hasText(dr.getEnglish())) {
+                  dr.setCategory(field.getName());
+                  overall.add(dr);
+                }
+              });
+        });
+
+
+    return overall.iterator();
+  }
 }
