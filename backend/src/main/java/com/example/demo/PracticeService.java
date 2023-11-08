@@ -106,7 +106,7 @@ class PracticeService {
     int id = request.getId();
     if (request.isJapaneseAnswer()) {
       record = questions.get(id);
-      correct = record.getJapanese().contains(request.getAnswer().replace(" ", ""));
+      correct = record.getJapanese().equals(request.getAnswer().replace(" ", ""));
       answer = record.getJapanese();
     } else {
       record = questions.get(id);
