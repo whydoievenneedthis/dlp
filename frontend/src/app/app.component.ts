@@ -45,7 +45,7 @@ export class AppComponent implements AfterViewInit {
   onEnter() {
     let actualAnswer = <string>this.answerInputJapanese?.nativeElement.value;
     if (this.question.japaneseAnswer) {
-      if (actualAnswer.endsWith('n') || actualAnswer.endsWith('N')) {
+      if (!actualAnswer.match(/^[\u3040-\u30ff]+$/)) {
         return;
       }
     }
