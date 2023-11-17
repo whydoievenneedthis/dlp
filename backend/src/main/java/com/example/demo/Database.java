@@ -34,6 +34,8 @@ public class Database {
   private List<DatabaseRecord> genre;
   private List<DatabaseRecord> name;
   private List<DatabaseRecord> counting;
+  private List<DatabaseRecord> pronounHell;
+  private List<DatabaseRecord> alignment;
 
   private List<DatabaseRecord> everythingElse;
 
