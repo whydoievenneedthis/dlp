@@ -43,14 +43,14 @@ public class Controller {
     return categoryService.getCategories();
   }
 
-  @GetMapping("/cats/{cat}")
-  CategoriesResponse getCategoryContents(@PathVariable String cat) {
-    return categoryService.getCategoryEntries(cat);
-  }
-
   @GetMapping("/next-session")
   void resetSession() {
     practiceService.nextSession();
+  }
+
+  @GetMapping("/next-session/{cat}")
+  void resetSession(@PathVariable String cat) {
+    practiceService.nextSession(cat);
   }
 
   @GetMapping("/requeue-questions")

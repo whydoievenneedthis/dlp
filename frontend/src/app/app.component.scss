@@ -8,13 +8,15 @@
 
 #cats {
   div {
-    width: 100px;
+    width: 200px;
     display: inline-block;
+
     span {
-        cursor: pointer;
-        &:hover {
-            background-color: lightcoral;
-          }
+      cursor: pointer;
+
+      &:hover {
+        background-color: lightcoral;
+      }
     }
   }
 

@@ -33,15 +33,19 @@ class PracticeService {
 
   @PostConstruct
   void init() {
-    reinitRecords();
+    init(null);
+  }
+
+  private void init(String cat) {
+    reinitRecords(cat);
     getCompleted().forEach(x -> {
       records.remove(questions.get(x));
     });
     sessionRemainingPoints = sessionTotalPoints = records.size() * 6;
   }
 
-  private void reinitRecords() {
-    database.iterator()
+  private void reinitRecords(String cat) {
+    database.iterator(cat)
         .forEachRemaining(dr -> {
           if (questions.containsKey(dr.getId())) {
             log.error(
@@ -134,14 +138,21 @@ class PracticeService {
   public void nextSession() {
     records.clear();
     questions.clear();
-    init();
+    init(null);
+    statBuilder.reset();
+  }
+  
+  public void nextSession(String cat) {
+    records.clear();
+    questions.clear();
+    init(cat);
     statBuilder.reset();
   }
 
   public void requeueQuestions() {
     records.clear();
     questions.clear();
-    reinitRecords();
+    reinitRecords(null);
     statBuilder.reset();
   }
 }

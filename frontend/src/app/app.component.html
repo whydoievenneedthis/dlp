@@ -1,6 +1,6 @@
 <div id="cats">
   <div *ngFor="let c of categories">
-    <span (click)="getCategoryEntries(c)">{{ c }}</span>
+    <span (click)="practiceCategory(c)">{{ c.name }} ({{ c.total }} / {{ c.unfinished }})</span>
   </div>
 </div>
 

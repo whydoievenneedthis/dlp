@@ -13,7 +13,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('answerInputEnglish')
   answerInputEnglish?: ElementRef<HTMLInputElement>;
 
-  categories: string[] = [];
+  categories: CategoryDetails[] = [];
   categoryValues: string[] = [];
 
   question: QuestionResponse = {
@@ -45,7 +45,7 @@ export class AppComponent implements AfterViewInit {
   onEnter() {
     let actualAnswer = <string>this.answerInputJapanese?.nativeElement.value;
     if (this.question.japaneseAnswer) {
-      if (!actualAnswer.match(/^[\u3040-\u30ff]+$/)) {
+      if (!actualAnswer.match(/^[\u3040-\u30ff]*$/)) {
         return;
       }
     }
@@ -88,13 +88,6 @@ export class AppComponent implements AfterViewInit {
     });
   }
 
-  getCategoryEntries(category: string) {
-    this.http.get(`http://localhost:8080/cats/${category}`).subscribe((d) => {
-      const r = <CategoriesResponse>d;
-      this.categoryValues = r.categories;
-    });
-  }
-
   dropCatValues() {
     this.categoryValues = [];
   }
@@ -120,6 +113,13 @@ export class AppComponent implements AfterViewInit {
 
   switchToVerification() {
     this.http.get('http://localhost:8080/veri-mode').subscribe(() => {
+      this.getQuestion();
+    });
+  }
+
+  practiceCategory(c: CategoryDetails) {
+    this.question.recordsRemaining = 999;
+    this.http.get(`http://localhost:8080/next-session/${c.name}`).subscribe(() => {
       this.getQuestion();
     });
   }
@@ -159,5 +159,11 @@ interface Stat {
 }
 
 interface CategoriesResponse {
-  categories: string[];
+  categories: CategoryDetails[];
+}
+
+interface CategoryDetails {
+  name: string;
+  total: number;
+  unfinished: number;
 }

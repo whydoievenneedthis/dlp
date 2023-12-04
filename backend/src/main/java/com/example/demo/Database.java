@@ -39,13 +39,15 @@ public class Database {
 
   private List<DatabaseRecord> everythingElse;
 
-  public Iterator<DatabaseRecord> iterator() {
+  public Iterator<DatabaseRecord> iterator(String cat) {
     List<DatabaseRecord> overall = new ArrayList<>();
-
 
     ReflectionUtils.doWithFields(
         Database.class,
         field -> {
+          if (cat != null && !cat.equals(field.getName()))  {
+            return;
+          }
           field.setAccessible(true);
           List<DatabaseRecord> list = (List<DatabaseRecord>) field.get(this);
           if (list == null) {
@@ -53,10 +55,8 @@ public class Database {
           }
           list.forEach(
               dr -> {
-                if (StringUtils.hasText(dr.getEnglish())) {
                   dr.setCategory(field.getName());
                   overall.add(dr);
-                }
               });
         });
 

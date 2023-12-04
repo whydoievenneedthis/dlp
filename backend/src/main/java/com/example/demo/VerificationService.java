@@ -35,7 +35,7 @@ class VerificationService {
 
   public void init() {
     questions.clear();
-    database.iterator().forEachRemaining(dr -> {
+    database.iterator(null).forEachRemaining(dr -> {
       questions.add(new VeriRecord(true, dr));
       questions.add(new VeriRecord(false, dr));
     });
