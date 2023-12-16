@@ -23,18 +23,19 @@
   <div *ngIf="categoryValues.length == 0">
     <div>
       Question:<br />
-      {{ question.question }}
+      <span class="jap" *ngIf="!question.japaneseAnswer">{{ question.question }}</span>
+      <span *ngIf="question.japaneseAnswer">{{ question.question }}</span>
       <span *ngIf="question.engExplanation && question.japaneseAnswer">
         ({{ question.engExplanation }})
       </span>
-      <span *ngIf="question.japExplanation && !question.japaneseAnswer">
+      <span *ngIf="question.japExplanation && !question.japaneseAnswer" class="jap">
         ({{ question.japExplanation }})
       </span>
     </div>
 
     <div [hidden]="!question.japaneseAnswer && question.question">
       Answer:<br />
-      <input
+      <input class="jap"
         #answerInputJapanese
         (keyup.enter)="onEnter()"
         [(ngModel)]="answer"
@@ -50,7 +51,7 @@
       />
     </div>
 
-    <div *ngFor="let n of history">
+    <div *ngFor="let n of history" class="jap">
       {{ n.question }} &ndash; {{ n.answer }}
       <span *ngIf="n.correct" class="good">✔</span>
       <span *ngIf="!n.correct" class="bad">✗</span>
