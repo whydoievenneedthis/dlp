@@ -71,12 +71,27 @@ export class AppComponent implements AfterViewInit {
   }
 
   getQuestion() {
-    if (this.question.recordsRemaining == 0) return;
+    if (this.question.recordsRemaining == 0) {
+      this.http.get('http://localhost:8080/cats').subscribe((data) => {
+       const r = <CategoriesResponse>data;
+       this.categories = r.categories;
+      });
+      return;
+    }
 
     this.http.get('http://localhost:8080/get').subscribe((data) => {
       const response = <QuestionResponse>data;
       this.question = response;
       this.answer = '';
+
+      if (this.question.recordsRemaining == 0) {
+        this.http.get('http://localhost:8080/cats').subscribe((data) => {
+         const r = <CategoriesResponse>data;
+         this.categories = r.categories;
+        });
+        return;
+      }
+
 
       setTimeout(() => {
         if (this.question.japaneseAnswer) {
@@ -166,4 +181,5 @@ interface CategoryDetails {
   name: string;
   total: number;
   unfinished: number;
+  lastFinished: number;
 }

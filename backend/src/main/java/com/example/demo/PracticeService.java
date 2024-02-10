@@ -2,6 +2,7 @@ package com.example.demo;
 
 import static com.example.demo.StateManager.addToCompleted;
 import static com.example.demo.StateManager.getCompleted;
+import static com.example.demo.StateManager.removeFromCompleted;
 
 import com.example.demo.QuestionResponse.Points;
 import jakarta.annotation.PostConstruct;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
@@ -28,20 +30,32 @@ class PracticeService {
   private final List<DatabaseRecord> records = new ArrayList<>();
   private final Map<Integer, DatabaseRecord> questions = new HashMap<>();
   private final Deque<Integer> last10Excluded = new LinkedList<>();
+  private final CategoryService categoryService;
   private int sessionTotalPoints;
   private int sessionRemainingPoints;
+  private String currentCategory;
 
   @PostConstruct
   void init() {
-    init(null);
+    initFull();
+    for (CategoryDetails c : categoryService.getCategories().getCategories()) {
+      if (c.getTotal() != 0) {
+        log.info("{}: {} / {}", c.getName(), c.getTotal(), c.getUnfinished());
+      }
+    }
   }
 
-  private void init(String cat) {
-    reinitRecords(cat);
+  private void initFull() {
+    reinitRecords(null);
     getCompleted().forEach(x -> {
       records.remove(questions.get(x));
     });
-    sessionRemainingPoints = sessionTotalPoints = records.size() * 6;
+    sessionRemainingPoints = sessionTotalPoints = records.size() * 5;
+  }
+
+  private void initCat(String cat) {
+    reinitRecords(cat);
+    records.forEach(r -> removeFromCompleted(r.getId()));
   }
 
   private void reinitRecords(String cat) {
@@ -49,18 +63,19 @@ class PracticeService {
         .forEachRemaining(dr -> {
           if (questions.containsKey(dr.getId())) {
             log.error(
-                "{} ({}): {}", dr.getEnglish(), dr.getEngExplanation(), dr.getJapanese());
+                "{} ({}): {} ({})", dr.getEnglish(), dr.getEngExplanation(), dr.getJapanese(), dr.getId());
             throw new IllegalStateException("Duplicate question id!");
           }
           records.add(dr);
           questions.put(dr.getId(), dr);
         });
-    sessionRemainingPoints = sessionTotalPoints = questions.size() * 6;
+    sessionRemainingPoints = sessionTotalPoints = questions.size() * 5;
   }
 
   QuestionResponse getNextQuestion() {
     int recordsRemaining = records.size();
     if (recordsRemaining == 0) {
+      categoryFinished();
       return new QuestionResponse();
     }
     Deque<Integer> excluded;
@@ -82,6 +97,11 @@ class PracticeService {
     return new QuestionResponse(record, question, false, recordsRemaining, points);
   }
 
+  private void categoryFinished() {
+    StateManager.saveCategory(currentCategory);
+    currentCategory = null;
+  }
+
   private DatabaseRecord getRecord(int recordsRemaining, Deque<Integer> excluded) {
     DatabaseRecord record;
     do {
@@ -92,7 +112,7 @@ class PracticeService {
 
   private double englishChanceByRecord(DatabaseRecord record) {
     StatBuilder.Stat stat = statBuilder.get(record);
-    if (stat == null || stat.getCorrect() < 5) {
+    if (stat == null || stat.getCorrect() < 4) {
       return 0.5;
     }
     return 1 - stat.getJapaneseCorrect() / (double) stat.getCorrect();
@@ -124,7 +144,7 @@ class PracticeService {
 
     this.sessionRemainingPoints += stat.getPointValue();
 
-    if (stat.getCorrect() > 5 && stat.getJapaneseCorrect() > 3) {
+    if (stat.getCorrect() > 4 && stat.getJapaneseCorrect() > 3) {
       log.info("throwing out '{}' from list", record.getEnglish());
       records.remove(record);
       if (stat.getIncorrect() == 0) {
@@ -138,15 +158,16 @@ class PracticeService {
   public void nextSession() {
     records.clear();
     questions.clear();
-    init(null);
+    initFull();
     statBuilder.reset();
   }
-  
+
   public void nextSession(String cat) {
     records.clear();
     questions.clear();
-    init(cat);
+    initCat(cat);
     statBuilder.reset();
+    this.currentCategory = cat;
   }
 
   public void requeueQuestions() {

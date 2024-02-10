@@ -1,7 +1,7 @@
 <div id="cats">
-  <div *ngFor="let c of categories">
-    <span (click)="practiceCategory(c)">{{ c.name }} ({{ c.total }} / {{ c.unfinished }})</span>
-  </div>
+  <ng-container *ngFor="let c of categories">
+    <div class="category-only" *ngIf="c.total > 0" (click)="practiceCategory(c)"><span>[{{c.lastFinished}}] {{ c.name }} ({{ c.total }} / {{ c.unfinished }})</span></div>
+  </ng-container>
 </div>
 
 <div *ngIf="categoryValues.length > 0">
@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div>Session questions: {{ question.recordsRemaining }} (points: {{ question.points.total }} / {{ question.points.remaining }}, {{ perc() }}%)</div>
+<div *ngIf="question !== null && question.id != 0">Session questions: {{ question.recordsRemaining }} (points: {{ question.points.total }} / {{ question.points.remaining }}, {{ perc() }}%)</div>
 <div>
   <button (click)="sessionReset()">session reset</button>
   <button (click)="allQuestionsReset()">reschedule all questions</button>
@@ -19,7 +19,7 @@
   <button (click)="switchToVerification()">switch to verification</button>
 </div>
 
-<div *ngIf="question.recordsRemaining > 0">
+<div class="main" *ngIf="question.recordsRemaining > 0">
   <div *ngIf="categoryValues.length == 0">
     <div>
       Question:<br />
