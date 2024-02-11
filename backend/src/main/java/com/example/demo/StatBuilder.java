@@ -44,7 +44,7 @@ class StatBuilder {
     private int incorrect = 0;
 
     public int getPointValue() {
-      return Math.max(6 - correct, 4 - japaneseCorrect);
+      return Math.max(5 - correct, 3 - japaneseCorrect);
     }
   }
 }

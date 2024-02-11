@@ -112,7 +112,7 @@ class PracticeService {
 
   private double englishChanceByRecord(DatabaseRecord record) {
     StatBuilder.Stat stat = statBuilder.get(record);
-    if (stat == null || stat.getCorrect() < 4) {
+    if (stat == null || stat.getCorrect() < 3) {
       return 0.5;
     }
     return 1 - stat.getJapaneseCorrect() / (double) stat.getCorrect();

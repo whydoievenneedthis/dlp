@@ -1,5 +1,9 @@
 package com.example.demo;
 
+import com.example.demo.DatabaseTematicPopulator.DbPopCount;
+import com.example.demo.DatabaseTematicPopulator.DbPopS1;
+import com.example.demo.DatabaseTematicPopulator.DbPopS2;
+import com.example.demo.DatabaseTematicPopulator.DbPopS3;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
