@@ -25,6 +25,7 @@ import java.util.TreeSet;
 public class StateManager {
   private static final ObjectMapper mapper = new ObjectMapper()
       .registerModule(new JavaTimeModule())
+      .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
       .enable(SerializationFeature.INDENT_OUTPUT);
   private static final File COMPL_FILE = new File("completed.json");
   private static final File CAT_FILE = new File("categories.json");

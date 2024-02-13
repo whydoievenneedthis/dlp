@@ -90,7 +90,8 @@ class PracticeService {
       last10Excluded.removeFirst();
     }
     Points points = new Points(sessionTotalPoints, sessionRemainingPoints);
-    if (record.oneWay() || Math.random() < englishChanceByRecord(record)) {
+    double random = Math.random();
+    if (record.oneWay() || random < englishChanceByRecord(record)) {
       return new QuestionResponse(record, record.getEnglish(), true, recordsRemaining, points);
     }
     String question = record.getJapanese();
@@ -112,10 +113,10 @@ class PracticeService {
 
   private double englishChanceByRecord(DatabaseRecord record) {
     StatBuilder.Stat stat = statBuilder.get(record);
-    if (stat == null || stat.getCorrect() < 3) {
+    if (stat == null || stat.getCorrect() < 4) {
       return 0.5;
     }
-    return 1 - stat.getJapaneseCorrect() / (double) stat.getCorrect();
+    return 0.5 + 0.1 * (stat.getCorrect() - stat.getJapaneseCorrect());
   }
 
   private int random(int maxSize) {
@@ -144,7 +145,7 @@ class PracticeService {
 
     this.sessionRemainingPoints += stat.getPointValue();
 
-    if (stat.getCorrect() > 4 && stat.getJapaneseCorrect() > 3) {
+    if (stat.getCorrect() > 4 && stat.getJapaneseCorrect() > 2) {
       log.info("throwing out '{}' from list", record.getEnglish());
       records.remove(record);
       if (stat.getIncorrect() == 0) {

@@ -38,8 +38,12 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    bind(<HTMLInputElement>this.answerInputJapanese?.nativeElement);
+    this.rebind();
     this.getQuestion();
+  }
+
+  rebind() {
+    bind(<HTMLInputElement>this.answerInputJapanese?.nativeElement);
   }
 
   onEnter() {

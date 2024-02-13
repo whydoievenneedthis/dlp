@@ -359,7 +359,6 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("one", "いち", "一"),
           new DatabaseRecord("two", "に", "二"),
           new DatabaseRecord("three", "さん", "三"),
-          new DatabaseRecord("hour", "じ", "時"),
           new DatabaseRecord("half-", "はん", "半"),
           new DatabaseRecord("excuse me", "すみません"),
           new DatabaseRecord("now", "いま", "今"),
@@ -1161,13 +1160,13 @@ class DatabaseTematicPopulator {
     public static List<DatabaseRecord> u01() {
       return listOf(
           new DatabaseRecord("not sure", "さあ"),
-          new DatabaseRecord("at all", "まったく"),
+          new DatabaseRecord(expl("not at all", "formal"), "まったく", "全く"),
+          new DatabaseRecord(expl("not at all", "informal"), "ぜんぜん", "全然"),
           new DatabaseRecordAdjectivePair("many", "おおい", Kanji.of("多い")),
           new DatabaseRecord("beverage", "のみもの", "飲み物"),
           new DatabaseRecord("alcohol", "おさけ", "お酒"),
           new DatabaseRecord("fruit", "くだもの", "果物"),
           new DatabaseRecord("sugar", "さとう", "砂糖"),
-          new DatabaseRecord("not at all", "ぜんぜん", "全然"),
           new DatabaseRecord("supper", "ゆうはん", "夕飯"),
           new DatabaseRecord("mint", "ミント"),
           new DatabaseRecord("all of them", "ぜんぶ", "全部"),
@@ -1175,8 +1174,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("I'm fine", "けっこう", "結構"),
           new DatabaseRecord("drink", "のみもの", "飲み物"),
           new DatabaseRecordAdjectivePair("a little", "すくない", Kanji.of("少ない")),
-          new DatabaseRecord("very", "たいへん", "大変"),
-          new DatabaseRecord("not at all", "まったく"),
+          new DatabaseRecord("terribly", "たいへん", "大変"),
 
           new DatabaseRecord("which way", "どちら"),
           new DatabaseRecord("in what way", "どうやって"),

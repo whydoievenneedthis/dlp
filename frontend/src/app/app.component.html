@@ -19,8 +19,8 @@
   <button (click)="switchToVerification()">switch to verification</button>
 </div>
 
-<div class="main" *ngIf="question.recordsRemaining > 0">
-  <div *ngIf="categoryValues.length == 0">
+<div class="main" [hidden]="question.recordsRemaining == 0">
+  <div [hidden]="categoryValues.length > 0">
     <div>
       Question:<br />
       <span class="jap" *ngIf="!question.japaneseAnswer">{{ question.question }}</span>
