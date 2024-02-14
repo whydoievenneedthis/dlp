@@ -477,7 +477,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("dress", "ドレス"),
           new DatabaseRecord("necktie", "ネクタイ"),
           new DatabaseRecord("wallet", "さいふ", "財布"),
-          new DatabaseRecord("a little bit", "ちょっと"),
+          new DatabaseRecord("wait a moment", "ちょっとまって"),
           new DatabaseRecord("how much", "いくら"),
           new DatabaseRecord("hundred", "ひゃく", "百"),
           new DatabaseRecord("thousand", "せん", "千"),
@@ -499,7 +499,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("ice cream", "アイスクリーム"),
           new DatabaseRecord("black tea", "こうちゃ", "紅茶"),
           new DatabaseRecord("rice ball", "おにぎり"),
-          new DatabaseRecord("a bit", "すこし", "少し")
+          new DatabaseRecord(expl("a bit", "+ verb"), "すこし", "少し")
       );
     }
   }
@@ -1173,7 +1173,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("food", "たべもの", "食べ物"),
           new DatabaseRecord("I'm fine", "けっこう", "結構"),
           new DatabaseRecord("drink", "のみもの", "飲み物"),
-          new DatabaseRecordAdjectivePair("a little", "すくない", Kanji.of("少ない")),
+          new DatabaseRecordAdjectivePair("a bit", "of time", "すくない", "", "じかん", "少ない"),
           new DatabaseRecord("terribly", "たいへん", "大変"),
 
           new DatabaseRecord("which way", "どちら"),
