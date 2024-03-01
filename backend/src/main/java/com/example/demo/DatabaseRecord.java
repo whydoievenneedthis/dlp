@@ -52,6 +52,14 @@ public class DatabaseRecord {
     this.kanji = kanji;
   }
 
+  public DatabaseRecord(Explanation english, Explanation japanese, String kanji) {
+    this.english = english.getValue();
+    this.engExplanation = english.getExplanation();
+    this.japanese = japanese.getValue().replace("-", "ー");
+    this.japExplanation = japanese.getExplanation().replace("-", "ー");
+    this.kanji = kanji;
+  }
+
   public DatabaseRecord(String english, Explanation japanese) {
     this.english = english;
     this.engExplanation = null;

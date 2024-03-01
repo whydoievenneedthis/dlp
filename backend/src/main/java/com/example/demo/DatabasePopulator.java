@@ -8,7 +8,6 @@ import java.util.List;
 
 class DatabasePopulator {
 
-
 //  private List<DatabaseRecord> daytime() {
 //        new DatabaseRecord("weekend", "しゅうまつ", "週末"),
 
@@ -54,10 +53,6 @@ class DatabasePopulator {
 //        new DatabaseRecord("week after next", "さらいしゅう", "再来週"),
 //  }
 
-
-
-
-
   static List<DatabaseRecord> listOf(Object... objects) {
     List<DatabaseRecord> recs = new ArrayList<>();
 
@@ -95,7 +90,7 @@ class DatabasePopulator {
     if ("".equals(r.getEnglishMain()) || "".equals(r.getJapaneseMain())) {
       throw new IllegalStateException("Found missing english or japanese: " + r.getEnglishMain() + " / " + r.getJapaneseMain());
     }
-    recs.add(new DatabaseRecord(expl(r.getEnglishMain(), r.getEnglishSubject()), r.getJapaneseMain(), r.getKanji()));
+    recs.add(new DatabaseRecord(expl(r.getEnglishMain(), r.getEnglishSubject()), expl(r.getJapaneseMain(), r.getJapaneseSubject()), r.getKanji()));
     recs.add(new DatabaseRecAdj(r.getEnglishMain() + " " + r.getEnglishSubject(), r.getJapaneseMain() + r.getJapaneseConnector() + r.getJapaneseSubject()));
 
     return recs;

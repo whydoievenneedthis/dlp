@@ -292,7 +292,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("student", "がくせい", "学生"),
           new DatabaseRecord("lawyer", "べんごし"),
           new DatabaseRecord(expl("person", "informal"), "ひと", "人"),
-          new DatabaseRecordAdjectivePair("nice", "person", "やさしい", "ひと"),
+          new DatabaseRecordAdjectivePair("nice", "person", "やさしい", "", "ひと", "易しい"),
           new DatabaseRecordAdjectivePair("cool", "かっこいい")
       );
     }
@@ -492,14 +492,14 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("udon", "うどん"),
           new DatabaseRecord("meal set", "ていしょく"),
           new DatabaseRecord("miso soup", "みそしる"),
-          new DatabaseRecord("soba", "そば"),
+          new DatabaseRecord("soba", "そば", "蕎"),
           new DatabaseRecord("iced coffee", "アイスコーヒー"),
           new DatabaseRecord("salad", "サラダ"),
           new DatabaseRecord("tempura", "てんぷら"),
           new DatabaseRecord("ice cream", "アイスクリーム"),
           new DatabaseRecord("black tea", "こうちゃ", "紅茶"),
           new DatabaseRecord("rice ball", "おにぎり"),
-          new DatabaseRecord(expl("a bit", "+ verb"), "すこし", "少し")
+          new DatabaseRecord(expl("a bit", "+ verb, informal"), "すこし", "少し")
       );
     }
   }
@@ -603,7 +603,7 @@ class DatabaseTematicPopulator {
       return listOf(
           new DatabaseRecord(expl("to move", "house"), "ひっこします"),
           new DatabaseRecord("apartment", "アパ-ト"),
-          new DatabaseRecordAdjectivePair("spacious", "ひろい", "広い"),
+          new DatabaseRecordAdjectivePair("spacious", "ひろい", Kanji.of("広い")),
           new DatabaseRecord(expl("kitchen", "modern"), "キッチン"),
           new DatabaseRecord("air conditioner", "エアコン"),
           new DatabaseRecord("still", "まだ"),
@@ -626,13 +626,13 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("desk", "つくえ", "机"),
           new DatabaseRecord("microwave", "でんしレンジ"),
           new DatabaseRecord("futon", "ふとん", "布団"),
-          new DatabaseRecordAdjectivePair("cramped", "せまい", "狭い"),
+          new DatabaseRecordAdjectivePair("cramped", "せまい", Kanji.of("狭い")),
           new DatabaseRecordAdjectivePair("well lit", "kitchen", "あかるい", "キッチン"),
           new DatabaseRecord("fridge", "れいぞうこ", "冷蔵庫"),
           new DatabaseRecord("chair", "いす", "椅子"),
           new DatabaseRecord("perhaps", "たぶん"),
           new DatabaseRecord("living room", "リビング"),
-          new DatabaseRecord("shelf", "だな", "棚"),
+          new DatabaseRecord("shelf", "たな", "棚"),
           new DatabaseRecord("bed", "ベッド"),
           new DatabaseRecord(expl("when", "what time"), "いつ"),
           new DatabaseRecordAdjectivePair("fast", "はやい", Kanji.of("速い")),
@@ -670,7 +670,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("building", "たてもの", "建物"),
           new DatabaseRecord("temple", "おてら"),
           new DatabaseRecord("dessert", "デザ-ト"),
-          new DatabaseRecord("snack", "おかし"),
+          new DatabaseRecord("snack", "おかし", "お菓子"),
           new DatabaseRecord("souvenir", "おみやげ", "お土産"),
           new DatabaseRecord("shop", "や"),
           new DatabaseRecord("place", "ところ"),
@@ -727,7 +727,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("cloud", "くも", "雲"),
           new DatabaseRecord("cloudy", "くもり", "曇り"),
           new DatabaseRecord("cloudy day", "くもりのひ"),
-          new DatabaseRecordAdjectivePair("cold", "さむい", "寒い"),
+          new DatabaseRecordAdjectivePair("cold", "さむい", Kanji.of("寒い")),
           new DatabaseRecord("korean", "かんこくご", "韓国語"),
           new DatabaseRecord("taiwan", "たいわん"),
           new DatabaseRecord("seoul", "ソウル"),
@@ -743,7 +743,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("after", "あと"),
           new DatabaseRecord("chore", "かじ"),
           new DatabaseRecord("to help", "てつだいます"),
-          new DatabaseRecord("homework", "しゅくだい"),
+          new DatabaseRecord("homework", "しゅくだい", "宿題"),
           new DatabaseRecord("rest day", "やすみのひ", "休みの日"),
           new DatabaseRecord("gardening", "ガ-デニング"),
           new DatabaseRecord("next month", "らいげつ", "来月"),
@@ -822,9 +822,9 @@ class DatabaseTematicPopulator {
       return listOf(
           new DatabaseRecord("soy sauce", "しょうゆ", "醬油"),
           new DatabaseRecord("fish", "さかな", "魚"),
-          new DatabaseRecord("class", "じゅぎょう"),
+          new DatabaseRecord("class", "じゅぎょう", "授業"),
           new DatabaseRecordAdjectivePair("interesting", "class", "おもしろい", "じゅぎょう"),
-          new DatabaseRecord(expl("to end", "finishes"), "おわります"),
+          new DatabaseRecord(expl("to end", "finishes"), "おわります", "終わります"),
           new DatabaseRecord("to ask", expl("ききます", "しつもん"), "聞きます"),
           new DatabaseRecord("tofu", "とうふ"),
           new DatabaseRecord("egg", "たまご"),
@@ -881,7 +881,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("face", "かお"),
           new DatabaseRecord("flavor", "あじ"),
           new DatabaseRecord("camera", "カメラ"),
-          new DatabaseRecord("dictionary", "じしょ"),
+          new DatabaseRecord("dictionary", "じしょ", "辞書"),
           new DatabaseRecord("size", "サイズ"),
           new DatabaseRecord("show", "ショ-"),
           new DatabaseRecord("go-kart", "ゴ-カ-ト"),
@@ -914,7 +914,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("non-fiction", "ノンフィクション"),
           new DatabaseRecord("anime music", "アニソン"),
           new DatabaseRecord(expl("really", "don't really read"), "あまり"),
-          new DatabaseRecordAdjectivePair("difficult", "むずかしい"),
+          new DatabaseRecordAdjectivePair("difficult", "むずかしい", Kanji.of("難しい")),
           new DatabaseRecordAdjectivePair("boring", "つまらない"),
           new DatabaseRecord("story", "はなし", "話"),
           new DatabaseRecord("gps", "ナビ"),
@@ -958,9 +958,9 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("instrument", "がっき"),
           new DatabaseRecord("hiragana", "ひらがな"),
           new DatabaseRecord("tonight", "こんや"),
-          new DatabaseRecord("kanji", "かんじ"),
+          new DatabaseRecord("kanji", "かんじ", "漢字"),
           new DatabaseRecord(expl("game", "match"), "しあい"),
-          new DatabaseRecord("to begin", "はじまります"),
+          new DatabaseRecord("to begin", "はじまります", "始まります"),
           new DatabaseRecord("lesson", "レッスン"),
           new DatabaseRecord("practice", "れんしゅう", "練習"),
           new DatabaseRecord("post", "きじ"),
@@ -1079,11 +1079,11 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("immediately", "すぐ"),
           new DatabaseRecord(expl("to open", "window"), "あけます", "開けます"),
           new DatabaseRecord("mirror", "かがみ", "鏡"),
-          new DatabaseRecordAdjectivePair("dirty", "きたない", "汚い"),
+          new DatabaseRecordAdjectivePair("dirty", "きたない", Kanji.of("汚い")),
           new DatabaseRecord("electricity", "でんき", "電気"),
           new DatabaseRecord(expl("to close", "window"), "しめます", "閉めます"),
           new DatabaseRecord("from then on", "それから"),
-          new DatabaseRecord("to stand　up", "たちます", "立ちます"),
+          new DatabaseRecord("to stand up", "たちます", "立ちます"),
 
           new DatabaseRecord("", "")
       );
@@ -1163,7 +1163,6 @@ class DatabaseTematicPopulator {
           new DatabaseRecord(expl("not at all", "formal"), "まったく", "全く"),
           new DatabaseRecord(expl("not at all", "informal"), "ぜんぜん", "全然"),
           new DatabaseRecordAdjectivePair("many", "おおい", Kanji.of("多い")),
-          new DatabaseRecord("beverage", "のみもの", "飲み物"),
           new DatabaseRecord("alcohol", "おさけ", "お酒"),
           new DatabaseRecord("fruit", "くだもの", "果物"),
           new DatabaseRecord("sugar", "さとう", "砂糖"),
@@ -1180,7 +1179,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("in what way", "どうやって"),
           new DatabaseRecord("bank", "ぎんこう", "銀行"),
           new DatabaseRecord("that way", "そちら"),
-          new DatabaseRecord("over that way", "あちら"),
+          new DatabaseRecord("that way over there", "あちら"),
           new DatabaseRecord("path", "みち", "道"),
           new DatabaseRecord("street", "とおり", "通り"),
           new DatabaseRecord("to leave", "でます", "出ます"),
@@ -1195,7 +1194,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("east", "ひがし", "東"),
           new DatabaseRecord("west", "にし", "西"),
           new DatabaseRecord("to get off", "おります", "降ります"),
-          new DatabaseRecord("proximity", "そば"),
+          new DatabaseRecord("proximity", "そば", "側"),
           new DatabaseRecord("to pass by", "とおります", "通ります"),
 
           new DatabaseRecord("", "")
@@ -1348,8 +1347,28 @@ class DatabaseTematicPopulator {
     }
     public static List<DatabaseRecord> u07() {
       return listOf(
-
-          new DatabaseRecord("", "")
+          new DatabaseRecord("already", "もう"),
+          new DatabaseRecord("textbook", "きょうかしょ", "教科書"),
+          new DatabaseRecord("like this", "こう"),
+          new DatabaseRecord("must not", "いけません"),
+          new DatabaseRecord("meaning", "いみ", "意味"),
+          new DatabaseRecord("to memorize", "おぼえます", "覚えます"),
+          new DatabaseRecord("word", "ことば", "言葉"),
+          new DatabaseRecord("to consult", "ひきます", "引きます"),
+          new DatabaseRecord("to need", "いります", "要ります"),
+          new DatabaseRecord("shopping bag", "レジぶくろ", "レジ袋"),
+          new DatabaseRecord(expl("a bit", "+ verb, formal"), "しょうしょう", "少々"),
+          new DatabaseRecord("to heat up", "あたためます", "温めます"),
+          new DatabaseRecord("fired chicken", "からあげ", "唐揚げ"),
+          new DatabaseRecord("french fries", "フライドポテト"),
+          new DatabaseRecord("receipt", "レシート"),
+          new DatabaseRecord("takeout", "もちかえり", "持ち帰り"),
+          new DatabaseRecord("in the store", "てんない", "店内"),
+          new DatabaseRecordAdjectivePair("good", "よろしい"),
+          new DatabaseRecord(expl("to eat", "formal"), "めしあがります", "召し上がります"),
+          new DatabaseRecord("", "", ""),
+          new DatabaseRecord("", "", ""),
+          new DatabaseRecord("", "", "")
       );
     }
     public static List<DatabaseRecord> u08() {

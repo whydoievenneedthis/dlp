@@ -1,0 +1,2 @@
+cd frontend
+s.bat
