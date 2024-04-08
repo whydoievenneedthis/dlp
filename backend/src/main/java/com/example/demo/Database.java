@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.DatabaseTematicPopulator.DbPopCount;
+import com.example.demo.DatabaseTematicPopulator.DbPopHiraKata;
 import com.example.demo.DatabaseTematicPopulator.DbPopS1;
 import com.example.demo.DatabaseTematicPopulator.DbPopS2;
 import com.example.demo.DatabaseTematicPopulator.DbPopS3;
@@ -19,6 +20,9 @@ import java.util.List;
 @Accessors(chain = true)
 @Component
 public class Database {
+  private List<DatabaseRecord> hiras = DbPopHiraKata.hira();
+  private List<DatabaseRecord> katas = DbPopHiraKata.kata();
+
   private List<DatabaseRecord> countTime = DbPopCount.time();
   private List<DatabaseRecord> countMinute = DbPopCount.minute();
   private List<DatabaseRecord> countHour = DbPopCount.hour();
@@ -28,6 +32,7 @@ public class Database {
   private List<DatabaseRecord> countAny = DbPopCount.anything();
   private List<DatabaseRecord> countAnyFormed = DbPopCount.anythingFormed();
   private List<DatabaseRecord> countPerson = DbPopCount.person();
+  private List<DatabaseRecord> countPolitePerson = DbPopCount.politePerson();
   private List<DatabaseRecord> countFloor = DbPopCount.floor();
   private List<DatabaseRecord> countAge = DbPopCount.age();
   private List<DatabaseRecord> countMachine = DbPopCount.machineFurnitureCake();
@@ -68,6 +73,7 @@ public class Database {
   private List<DatabaseRecord> sec2un18 = DbPopS2.u18();
   private List<DatabaseRecord> sec2un19 = DbPopS2.u19();
   private List<DatabaseRecord> sec2un20 = DbPopS2.u20();
+  private List<DatabaseRecord> sec2unΔ = DbPopS2.udelta();
 
   private List<DatabaseRecord> sec3un01 = DbPopS3.u01();
   private List<DatabaseRecord> sec3un02 = DbPopS3.u02();
