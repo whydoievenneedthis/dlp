@@ -43,7 +43,7 @@ public class Database {
 //  private List<DatabaseRecord> countSmallAnimal = DbPopCount.smallAnimal();
 
   private List<DatabaseRecord> sec1un01 = DbPopS1.u01();
-//  private List<DatabaseRecord> sec1un02 = DbPopS1.u02();
+  private List<DatabaseRecord> sec1un02 = DbPopS1.u02();
 //  private List<DatabaseRecord> sec1un03 = DbPopS1.u03();
 //  private List<DatabaseRecord> sec1un04 = DbPopS1.u04();
 //  private List<DatabaseRecord> sec1un05 = DbPopS1.u05();

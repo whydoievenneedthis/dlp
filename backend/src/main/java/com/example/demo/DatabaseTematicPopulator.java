@@ -441,14 +441,17 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("and", "と"),
           new DatabaseRecord("rice", "ごはん"),
           new DatabaseRecord("water", "みず", "水")
-//
-//          new DatabaseRecord("doctor", "いしゃ"),
-//          new DatabaseRecord("teacher", "せんせい"),
-//          new DatabaseRecord("student", "がくせい", "学生"),
-//          new DatabaseRecord("lawyer", "べんごし"),
-//          new DatabaseRecord(expl("person", "informal"), "ひと", "人"),
-//          new DatabaseRecordAdjectivePair("nice", "person", "やさしい", "", "ひと", "易しい"),
-//          new DatabaseRecordAdjectivePair("cool", "かっこいい")
+      );
+    }
+    static List<DatabaseRecord> u02() {
+      return listOf(
+          new DatabaseRecord("doctor", "いしゃ"),
+          new DatabaseRecord("teacher", "せんせい"),
+          new DatabaseRecord("student", "がくせい", "学生"),
+          new DatabaseRecord("lawyer", "べんごし"),
+          new DatabaseRecord(expl("person", "informal"), "ひと", "人"),
+          new DatabaseRecordAdjectivePair("nice", "person", "やさしい", "", "ひと", "易しい"),
+          new DatabaseRecordAdjectivePair("cool", "かっこいい")
       );
     }
 //    static List<DatabaseRecord> u02() {
