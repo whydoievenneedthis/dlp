@@ -5,6 +5,7 @@ import static com.example.demo.DatabasePopulator.listOf;
 
 import com.example.demo.DatabasePopulator.Kanji;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // counters: https://www.tofugu.com/japanese/japanese-counters-list/
@@ -434,6 +435,7 @@ class DatabaseTematicPopulator {
 
   static class DbPopS1 {
     static List<DatabaseRecord> u01() {
+      List<DatabaseRecord> list = new ArrayList<>();
       return listOf(
           new DatabaseRecord("sushi", "すし", "寿司"),
           new DatabaseRecord("please", "ください"),
@@ -443,6 +445,7 @@ class DatabaseTematicPopulator {
           new DatabaseRecord("water", "みず", "水")
       );
     }
+
     static List<DatabaseRecord> u02() {
       return listOf(
           new DatabaseRecord("doctor", "いしゃ"),
@@ -454,36 +457,54 @@ class DatabaseTematicPopulator {
           new DatabaseRecordAdjectivePair("cool", "かっこいい")
       );
     }
+
+    static List<DatabaseRecord> u03() {
+      return listOf(
+          new DatabaseRecord("hello", "こんにちは"),
+          new DatabaseRecord("ken", "けん"),
+          new DatabaseRecord("naomi", "なおみ"),
+          new DatabaseRecord("hana", "はな"),
+          new DatabaseRecord(expl("nice to meet you", "treat me well"), "どうぞよろしく"),
+          new DatabaseRecord("good evening", "こんばんは"),
+          new DatabaseRecord("bye", "じゃあね"),
+          new DatabaseRecord("see you tomorrow", "またあした")
+      );
+    }
+
+    static List<DatabaseRecord> u04() {
+      return listOf(
+          new DatabaseRecord("this one", "これ"),
+          new DatabaseRecord("that one", "それ"),
+          new DatabaseRecord("curry", "カレー"),
+          new DatabaseRecord("ramen", "ラーメン"),
+          new DatabaseRecord("pizza", "ピザ"),
+          new DatabaseRecord("cake", "ケーキ"),
+          new DatabaseRecordAdjectivePair("tasty", "おいしい"),
+          new DatabaseRecord("yes", "はい"),
+          new DatabaseRecord("no", "いいえ")
+      );
+    }
+
+    static List<DatabaseRecord> u05() {
+      return listOf(
+          new DatabaseRecord("america", "アメリカ"),
+          new DatabaseRecord("canada", "カナダ"),
+          new DatabaseRecord("brazil", "ブラジル"),
+          new DatabaseRecord("britain", "イギリス"),
+          new DatabaseRecord("japan", "にほん", "日本"),
+          new DatabaseRecordAdjectivePair("big", "おおきい", Kanji.of("大きい")),
+          new DatabaseRecordAdjectivePair("small", "ちいさい", Kanji.of("小さい"))
+      );
+    }
+
 //    static List<DatabaseRecord> u02() {
 //      return listOf(
-//          new DatabaseRecord("hello", "こんにちは"),
-//          new DatabaseRecord(expl("nice to meet you", "treat me well"), "どうぞよろしく"),
-//          new DatabaseRecord("good evening", "こんばんは"),
-//          new DatabaseRecord("see you tomorrow", "またあした"),
-//          new DatabaseRecord("bye", "じゃあね"),
-//
 //          new DatabaseRecord("this", "この"),
 //          new DatabaseRecord("that", "その"),
-//          new DatabaseRecord("this one", "これ"),
-//          new DatabaseRecord("that one", "それ"),
-//          new DatabaseRecord("curry", "カレー"),
-//          new DatabaseRecord("ramen", "ラーメン"),
-//          new DatabaseRecord("pizza", "ピザ"),
-//          new DatabaseRecord("cake", "ケーキ"),
-//          new DatabaseRecordAdjectivePair("tasty", "おいしい"),
-//          new DatabaseRecord("yes", "はい"),
-//          new DatabaseRecord("no", "いいえ")
 //      );
 //    }
 //    static List<DatabaseRecord> u03() {
 //      return listOf(
-//          new DatabaseRecord("america", "アメリカ"),
-//          new DatabaseRecord("canada", "カナダ"),
-//          new DatabaseRecord("brazil", "ブラジル"),
-//          new DatabaseRecord("britain", "イギリス"),
-//          new DatabaseRecord("japan", "にほん", "日本"),
-//          new DatabaseRecordAdjectivePair("big", "おおきい", Kanji.of("大きい")),
-//          new DatabaseRecordAdjectivePair("small", "ちいさい", Kanji.of("小さい")),
 //
 //          new DatabaseRecord("hotel", "ホテル"),
 //          new DatabaseRecord("department store", "デパート"),
