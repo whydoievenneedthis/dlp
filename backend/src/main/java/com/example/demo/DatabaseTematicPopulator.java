@@ -484,7 +484,7 @@ class DatabaseTematicPopulator {
       word().english("ramen").japanese("ラーメン");
       word().english("pizza").japanese("ピザ");
       word().english("cake").japanese("ケーキ");
-      adj(I).english("tasty").japanese("おいしい");
+      adj(I).english("tasty").japanese("おいしい").subject("ramen", "ラーメン");
       word().english("yes").japanese("はい");
       word().english("no").japanese("いいえ");
       return dump();
@@ -502,24 +502,25 @@ class DatabaseTematicPopulator {
       return dump();
     }
 
+    static List<DatabaseRecord> u06() {
+      reset();
+      word().english("hotel").japanese("ホテル");
+      word().english("department store").japanese("デパート");
+      word().english("convenience store").japanese("コンビニ");
+      word().english("bus stop").japanese("バスてい");
+      word().english("train station").japanese("えき").kanji("駅");
+      word().english("university").japanese("だいがく");
+      word().english("here").japanese("ここ");
+      word().english("there").japanese("そこ");
+      word().english("where").japanese("どこ");
+
+      return dump();
+    }
+
 //    static List<DatabaseRecord> u02() {
 //      return listOf(
 //          word().english("this").japanese("この");
 //          word().english("that").japanese("その");
-//      );
-//    }
-//    static List<DatabaseRecord> u03() {
-//      return listOf(
-//
-//          word().english("hotel").japanese("ホテル");
-//          word().english("department store").japanese("デパート");
-//          word().english("convenience store").japanese("コンビニ");
-//          word().english("bus stop").japanese("バスてい");
-//          word().english("train station").japanese("えき").kanji("駅");
-//          word().english("university").japanese("だいがく");
-//          word().english("here").japanese("ここ");
-//          word().english("there").japanese("そこ");
-//          word().english("where").japanese("どこ");
 //      );
 //    }
 //    static List<DatabaseRecord> u04() {
