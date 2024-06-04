@@ -1,9 +1,15 @@
 package com.example.demo;
 
-import static com.example.demo.DatabasePopulator.expl;
-import static com.example.demo.DatabasePopulator.listOf;
+import static com.example.demo.recbuilder.AdjectiveDatabaseRecordBuilder.AdjectiveType.I;
+import static com.example.demo.recbuilder.AdjectiveDatabaseRecordBuilder.AdjectiveType.NA;
+import static com.example.demo.recbuilder.AdjectiveDatabaseRecordBuilder.AdjectiveType.NO;
 
-import com.example.demo.DatabasePopulator.Kanji;
+import com.example.demo.recbuilder.AdjectiveDatabaseRecordBuilder;
+import com.example.demo.recbuilder.AdjectiveDatabaseRecordBuilder.AdjectiveType;
+import com.example.demo.recbuilder.CountryDatabaseRecordBuilder;
+import com.example.demo.recbuilder.DatabaseRecordBuilder;
+import com.example.demo.recbuilder.NameDatabaseRecordBuilder;
+import com.example.demo.recbuilder.WordDatabaseRecordBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -335,198 +341,197 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecord("opposite", "ぎゃく", null),
 //          new DatabaseRecord("guest room", "きゃくしつ", null),
 //
-//          new DatabaseRecord("no make-up", "すっぴん"),
-//          new DatabaseRecord("result", "けっか"),
-//          new DatabaseRecord("stamp", "きって"),
-//          new DatabaseRecord("tearoom", "きっさ"),
-//          new DatabaseRecord("diary", "にっき"),
-//          new DatabaseRecord("contradiction", "むじゅん"),
-//          new DatabaseRecord("standard", "きじゅん"),
-//          new DatabaseRecord("order", "じゅんばん"),
-//          new DatabaseRecord("pure", "じゅんすい"),
-//          new DatabaseRecord("required", "ひっす"),
-//          new DatabaseRecord("absence", "けっせき"),
-//          new DatabaseRecord("actually", "じっさいに"),
-//          new DatabaseRecord("finally", "やっと"),
-//          new DatabaseRecord("earlier", "さっき"),
-//          new DatabaseRecord("phrase", "いっく"),
-//          new DatabaseRecord("simple", "しっそ"),
-//          new DatabaseRecord("cheek", "ほっぺ"),
-//          new DatabaseRecord("fishing boat", "ぎょせん"),
-//          new DatabaseRecord("witch", "まじょ"),
-//          new DatabaseRecord("goldfish", "きんぎょ"),
-//          new DatabaseRecord("dehumidifier", "じょしつき"),
-//          new DatabaseRecord("only", "たった"),
-//          new DatabaseRecord("growth", "はったつ"),
-//          new DatabaseRecord("resolve", "けっしん"),
-//          new DatabaseRecord("step", "いっぽ"),
-//          new DatabaseRecord("shock", "あっけ"),
-//          new DatabaseRecord("daily routine", "にっか"),
-//          new DatabaseRecord("excerpt", "ばっすい"),
-//          new DatabaseRecord("leaf", "はっぱ"),
-//          new DatabaseRecord("stick to", "くっつく"),
-//          new DatabaseRecord("tail", "しっぽ"),
-//          new DatabaseRecord("wetland", "しっち"),
-//          new DatabaseRecord("practical", "じっせんてき"),
-//          new DatabaseRecord("coffee shop", "きっせてん"),
-//          new DatabaseRecord("applause", "かっさい"),
-//          new DatabaseRecord("definitely", "ぜったい"),
-//          new DatabaseRecord("penalty", "ばっそく"),
-//          new DatabaseRecord("surprised", "びっくり"),
-//          new DatabaseRecord("robust", "がっちり"),
-//          new DatabaseRecord("failure", "しっぱい"),
-//          new DatabaseRecord("departure", "しゅっぱつ"),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
+//          word().english("no make-up").japanese("すっぴん");
+//          word().english("result").japanese("けっか");
+//          word().english("stamp").japanese("きって");
+//          word().english("tearoom").japanese("きっさ");
+//          word().english("diary").japanese("にっき");
+//          word().english("contradiction").japanese("むじゅん");
+//          word().english("standard").japanese("きじゅん");
+//          word().english("order").japanese("じゅんばん");
+//          word().english("pure").japanese("じゅんすい");
+//          word().english("required").japanese("ひっす");
+//          word().english("absence").japanese("けっせき");
+//          word().english("actually").japanese("じっさいに");
+//          word().english("finally").japanese("やっと");
+//          word().english("earlier").japanese("さっき");
+//          word().english("phrase").japanese("いっく");
+//          word().english("simple").japanese("しっそ");
+//          word().english("cheek").japanese("ほっぺ");
+//          word().english("fishing boat").japanese("ぎょせん");
+//          word().english("witch").japanese("まじょ");
+//          word().english("goldfish").japanese("きんぎょ");
+//          word().english("dehumidifier").japanese("じょしつき");
+//          word().english("only").japanese("たった");
+//          word().english("growth").japanese("はったつ");
+//          word().english("resolve").japanese("けっしん");
+//          word().english("step").japanese("いっぽ");
+//          word().english("shock").japanese("あっけ");
+//          word().english("daily routine").japanese("にっか");
+//          word().english("excerpt").japanese("ばっすい");
+//          word().english("leaf").japanese("はっぱ");
+//          word().english("stick to").japanese("くっつく");
+//          word().english("tail").japanese("しっぽ");
+//          word().english("wetland").japanese("しっち");
+//          word().english("practical").japanese("じっせんてき");
+//          word().english("coffee shop").japanese("きっせてん");
+//          word().english("applause").japanese("かっさい");
+//          word().english("definitely").japanese("ぜったい");
+//          word().english("penalty").japanese("ばっそく");
+//          word().english("surprised").japanese("びっくり");
+//          word().english("robust").japanese("がっちり");
+//          word().english("failure").japanese("しっぱい");
+//          word().english("departure").japanese("しゅっぱつ");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    static List<DatabaseRecord> kata() {
 //      return listOf(
-//          new DatabaseRecord("impetus", "キッカケ"),
-//          new DatabaseRecord("trumpet", "ラッパ"),
-//          new DatabaseRecord("stealthily", "コッソリ"),
-//          new DatabaseRecord("grasshopper", "バッタ"),
-//          new DatabaseRecord("sea otter", "ラッコ"),
-//          new DatabaseRecord("seal", "アザラシ"),
-//          new DatabaseRecord("mexico", "メキシコ"),
-//          new DatabaseRecord("whispering", "ヒソヒソ"),
-//          new DatabaseRecord("frog", "カエル"),
-//          new DatabaseRecord("jellyfish", "クラゲ"),
-//          new DatabaseRecord("green onion", "ネギ"),
-//          new DatabaseRecord("flea", "ノミ"),
-//          new DatabaseRecord("newt", "イモリ"),
-//          new DatabaseRecord("duck", "カモ"),
-//          new DatabaseRecord("scorpion", "サソリ"),
-//          new DatabaseRecord("garlic", "ニンニク"),
-//          new DatabaseRecord("connection", "コネ"),
-//          new DatabaseRecord("alligator", "ワニ"),
-//          new DatabaseRecord("crab", "カニ"),
-//          new DatabaseRecord("bee", "ハチ"),
-//          new DatabaseRecord("twin", "ツイン"),
-//          new DatabaseRecord("signature", "サイン"),
-//          new DatabaseRecord("falcon", "タカ"),
-//          new DatabaseRecord("pear", "ナシ"),
-//          new DatabaseRecord("spider", "クモ"),
-//          new DatabaseRecord("hawaii", "ハワイ"),
-//          new DatabaseRecord("cutlet", "カツ"),
-//          new DatabaseRecord("latte", "ラテ"),
-//          new DatabaseRecord("squirrel", "リス"),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
+//          word().english("impetus").japanese("キッカケ");
+//          word().english("trumpet").japanese("ラッパ");
+//          word().english("stealthily").japanese("コッソリ");
+//          word().english("grasshopper").japanese("バッタ");
+//          word().english("sea otter").japanese("ラッコ");
+//          word().english("seal").japanese("アザラシ");
+//          word().english("mexico").japanese("メキシコ");
+//          word().english("whispering").japanese("ヒソヒソ");
+//          word().english("frog").japanese("カエル");
+//          word().english("jellyfish").japanese("クラゲ");
+//          word().english("green onion").japanese("ネギ");
+//          word().english("flea").japanese("ノミ");
+//          word().english("newt").japanese("イモリ");
+//          word().english("duck").japanese("カモ");
+//          word().english("scorpion").japanese("サソリ");
+//          word().english("garlic").japanese("ニンニク");
+//          word().english("connection").japanese("コネ");
+//          word().english("alligator").japanese("ワニ");
+//          word().english("crab").japanese("カニ");
+//          word().english("bee").japanese("ハチ");
+//          word().english("twin").japanese("ツイン");
+//          word().english("signature").japanese("サイン");
+//          word().english("falcon").japanese("タカ");
+//          word().english("pear").japanese("ナシ");
+//          word().english("spider").japanese("クモ");
+//          word().english("hawaii").japanese("ハワイ");
+//          word().english("cutlet").japanese("カツ");
+//          word().english("latte").japanese("ラテ");
+//          word().english("squirrel").japanese("リス");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
   }
 
   static class DbPopS1 {
     static List<DatabaseRecord> u01() {
-      List<DatabaseRecord> list = new ArrayList<>();
-      return listOf(
-          new DatabaseRecord("sushi", "すし", "寿司"),
-          new DatabaseRecord("please", "ください"),
-          new DatabaseRecord("green tea", "おちゃ"),
-          new DatabaseRecord("and", "と"),
-          new DatabaseRecord("rice", "ごはん"),
-          new DatabaseRecord("water", "みず", "水")
-      );
+      reset();
+      word().english("sushi").japanese("すし").kanji("寿司");
+      word().english("please").japanese("ください");
+      word().english("green tea").japanese("おちゃ");
+      word().english("and").japanese("と");
+      word().english("rice").japanese("ごはん");
+      word().english("water").japanese("みず").kanji("水");
+      return dump();
     }
 
     static List<DatabaseRecord> u02() {
-      return listOf(
-          new DatabaseRecord("doctor", "いしゃ"),
-          new DatabaseRecord("teacher", "せんせい"),
-          new DatabaseRecord("student", "がくせい", "学生"),
-          new DatabaseRecord("lawyer", "べんごし"),
-          new DatabaseRecord(expl("person", "informal"), "ひと", "人"),
-          new DatabaseRecordAdjectivePair("nice", "person", "やさしい", "", "ひと", "易しい"),
-          new DatabaseRecordAdjectivePair("cool", "かっこいい")
-      );
+      reset();
+      word().english("doctor").japanese("いしゃ");
+      word().english("teacher").japanese("せんせい");
+      word().english("student").japanese("がくせい").kanji("学生");
+      word().english("lawyer").japanese("べんごし");
+      word().english("person").eExpl("informal").japanese("ひと").kanji("人");
+      adj(I).english("nice").japanese("やさしい").kanji("易しい");
+      adj(I).english("cool").japanese("かっこいい").kanji("易しい");
+      return dump();
     }
 
     static List<DatabaseRecord> u03() {
-      return listOf(
-          new DatabaseRecord("hello", "こんにちは"),
-          new DatabaseRecord("ken", "けん"),
-          new DatabaseRecord("naomi", "なおみ"),
-          new DatabaseRecord("hana", "はな"),
-          new DatabaseRecord(expl("nice to meet you", "treat me well"), "どうぞよろしく"),
-          new DatabaseRecord("good evening", "こんばんは"),
-          new DatabaseRecord("bye", "じゃあね"),
-          new DatabaseRecord("see you tomorrow", "またあした")
-      );
+      reset();
+      word().english("hello").japanese("こんにちは");
+      name().english("ken").japanese("けん");
+      name().english("naomi").japanese("なおみ");
+      name().english("hana").japanese("はな");
+      word().english("nice to meet you").eExpl("treat me well").japanese("どうぞよろしく");
+      word().english("good evening").japanese("こんばんは");
+      word().english("bye").japanese("じゃあね");
+      word().english("see you tomorrow").japanese("またあした");
+      return dump();
     }
 
     static List<DatabaseRecord> u04() {
-      return listOf(
-          new DatabaseRecord("this one", "これ"),
-          new DatabaseRecord("that one", "それ"),
-          new DatabaseRecord("curry", "カレー"),
-          new DatabaseRecord("ramen", "ラーメン"),
-          new DatabaseRecord("pizza", "ピザ"),
-          new DatabaseRecord("cake", "ケーキ"),
-          new DatabaseRecordAdjectivePair("tasty", "おいしい"),
-          new DatabaseRecord("yes", "はい"),
-          new DatabaseRecord("no", "いいえ")
-      );
+      reset();
+      word().english("this one").japanese("これ");
+      word().english("that one").japanese("それ");
+      word().english("curry").japanese("カレー");
+      word().english("ramen").japanese("ラーメン");
+      word().english("pizza").japanese("ピザ");
+      word().english("cake").japanese("ケーキ");
+      adj(I).english("tasty").japanese("おいしい");
+      word().english("yes").japanese("はい");
+      word().english("no").japanese("いいえ");
+      return dump();
     }
 
     static List<DatabaseRecord> u05() {
-      return listOf(
-          new DatabaseRecord("america", "アメリカ"),
-          new DatabaseRecord("canada", "カナダ"),
-          new DatabaseRecord("brazil", "ブラジル"),
-          new DatabaseRecord("britain", "イギリス"),
-          new DatabaseRecord("japan", "にほん", "日本"),
-          new DatabaseRecordAdjectivePair("big", "おおきい", Kanji.of("大きい")),
-          new DatabaseRecordAdjectivePair("small", "ちいさい", Kanji.of("小さい"))
-      );
+      reset();
+      country().english("america").person("american").japanese("アメリカ");
+      country().english("canada").person("canadian").japanese("カナダ");
+      country().english("brazil").person("brazilian").japanese("ブラジル");
+      country().english("britain").person("british").japanese("イギリス");
+      country().english("japan").person("japanese").japanese("にほん").kanji("日本");
+      adj(I).english("big").japanese("おおきい").kanji("大きい");
+      adj(I).english("small").japanese("ちいさい").kanji("小さい");
+      return dump();
     }
 
 //    static List<DatabaseRecord> u02() {
 //      return listOf(
-//          new DatabaseRecord("this", "この"),
-//          new DatabaseRecord("that", "その"),
+//          word().english("this").japanese("この");
+//          word().english("that").japanese("その");
 //      );
 //    }
 //    static List<DatabaseRecord> u03() {
 //      return listOf(
 //
-//          new DatabaseRecord("hotel", "ホテル"),
-//          new DatabaseRecord("department store", "デパート"),
-//          new DatabaseRecord("convenience store", "コンビニ"),
-//          new DatabaseRecord("bus stop", "バスてい"),
-//          new DatabaseRecord("train station", "えき", "駅"),
-//          new DatabaseRecord("university", "だいがく"),
-//          new DatabaseRecord("here", "ここ"),
-//          new DatabaseRecord("there", "そこ"),
-//          new DatabaseRecord("where", "どこ")
+//          word().english("hotel").japanese("ホテル");
+//          word().english("department store").japanese("デパート");
+//          word().english("convenience store").japanese("コンビニ");
+//          word().english("bus stop").japanese("バスてい");
+//          word().english("train station").japanese("えき").kanji("駅");
+//          word().english("university").japanese("だいがく");
+//          word().english("here").japanese("ここ");
+//          word().english("there").japanese("そこ");
+//          word().english("where").japanese("どこ");
 //      );
 //    }
 //    static List<DatabaseRecord> u04() {
 //      return listOf(
-//          new DatabaseRecord("hat", "ぼうし", "帽子"),
-//          new DatabaseRecord("umbrella", "かさ", "傘"),
-//          new DatabaseRecord("shoe", "くつ", "靴"),
-//          new DatabaseRecord("coat", "コート"),
+//          word().english("hat").japanese("ぼうし").kanji("帽子");
+//          word().english("umbrella").japanese("かさ").kanji("傘");
+//          word().english("shoe").japanese("くつ").kanji("靴");
+//          word().english("coat").japanese("コート");
 //          new DatabaseRecordAdjectivePair("red", "あかい", Kanji.of("赤い")),
 //          new DatabaseRecordAdjectivePair("white", "しろい", Kanji.of("白い")),
-//          new DatabaseRecord("these ones", "これら"),
-//          new DatabaseRecord("those ones", "それら"),
+//          word().english("these ones").japanese("これら");
+//          word().english("those ones").japanese("それら");
 //
 //          new DatabaseRecordAdjectivePair("cheerful", "あかるい", Kanji.of("明るい")),
 //          new DatabaseRecordAdjectivePair("funny", "おもしろい"),
@@ -535,57 +540,57 @@ class DatabaseTematicPopulator {
 //    }
 //    static List<DatabaseRecord> u05() {
 //      return listOf(
-//          new DatabaseRecord("one", "いち", "一"),
-//          new DatabaseRecord("two", "に", "二"),
-//          new DatabaseRecord("three", "さん", "三"),
-//          new DatabaseRecord("half-", "はん", "半"),
-//          new DatabaseRecord("excuse me", "すみません"),
-//          new DatabaseRecord("now", "いま", "今"),
+//          word().english("one").japanese("いち").kanji("一");
+//          word().english("two").japanese("に").kanji("二");
+//          word().english("three").japanese("さん").kanji("三");
+//          word().english("half-").japanese("はん").kanji("半");
+//          word().english("excuse me").japanese("すみません");
+//          word().english("now").japanese("いま").kanji("今");
 //          new DatabaseRecord(expl("about", "time"), "ごろ"),
 //
-//          new DatabaseRecord("airport", "くうこう", "空港"),
-//          new DatabaseRecord("subway", "ちかてつ", "地下鉄"),
-//          new DatabaseRecord("passport", "パスポート"),
-//          new DatabaseRecord("smartphone", "スマホ"),
+//          word().english("airport").japanese("くうこう").kanji("空港");
+//          word().english("subway").japanese("ちかてつ").kanji("地下鉄");
+//          word().english("passport").japanese("パスポート");
+//          word().english("smartphone").japanese("スマホ");
 //          new DatabaseRecord(expl("ticket", "train"), "きっぷ"),
-//          new DatabaseRecord("bag", "かばん", "鞄"),
-//          new DatabaseRecord("map", "ちず", "地図")
+//          word().english("bag").japanese("かばん").kanji("鞄");
+//          word().english("map").japanese("ちず").kanji("地図");
 //      );
 //    }
 //    static List<DatabaseRecord> u06() {
 //      return listOf(
 //          new DatabaseRecord(expl("I", "female"), "わたし", "私"),
-//          new DatabaseRecord("good morning", "おはようございます"),
+//          word().english("good morning").japanese("おはようございます");
 //          new DatabaseRecord(expl("welcome", "be welcomed"), "ようこそ"),
 //          new DatabaseRecord(expl("welcome", "to this shop"), "いらっしゃいませ"),
 //          new DatabaseRecord(expl("from", "place"), "しゅっしん"),
-//          new DatabaseRecord("city", "とし", "都市"),
-//          new DatabaseRecord("town", "まち"),
-//          new DatabaseRecord("very", "とても"),
+//          word().english("city").japanese("とし").kanji("都市");
+//          word().english("town").japanese("まち");
+//          word().english("very").japanese("とても");
 //          new DatabaseRecordAdjectivePair("lively", "にぎやか", "な", Kanji.of("賑やか")),
 //          new DatabaseRecordAdjectivePair("quiet", "しずか", "な", Kanji.of("静か")),
 //          new DatabaseRecordAdjectivePair("clean", "city", "きれい", "な", "とし"),
-//          new DatabaseRecord("to live", "すみます", "住みます"),
+//          word().english("to live").japanese("すみます").kanji("住みます");
 //
 //          new DatabaseRecord(expl("family", "informal"), "かぞく"),
 //          new DatabaseRecord(expl("mother", "own"), "はは", "母"),
 //          new DatabaseRecord(expl("father", "own"), "ちち", "父"),
-//          new DatabaseRecord("younger brother", "おとうと", "弟"),
-//          new DatabaseRecord("younger sister", "いもうと", "妹"),
-//          new DatabaseRecord("older brother", "あに", "兄"),
+//          word().english("younger brother").japanese("おとうと").kanji("弟");
+//          word().english("younger sister").japanese("いもうと").kanji("妹");
+//          word().english("older brother").japanese("あに").kanji("兄");
 //          new DatabaseRecord(expl("older sister", "own"), "あね", "姉"),
-//          new DatabaseRecord("son", "むすこ"),
-//          new DatabaseRecord("daughter", "むすめ"),
+//          word().english("son").japanese("むすこ");
+//          word().english("daughter").japanese("むすめ");
 //          new DatabaseRecord(expl("husband", "informal"), "おっと", "夫"),
 //          new DatabaseRecord(expl("wife", "informal"), "つま", "妻"),
-//          new DatabaseRecord("office worker", "かいしゃいん"),
-//          new DatabaseRecord("engineer", "エンジニア"),
-//          new DatabaseRecord("nurse", "かんごし"),
-//          new DatabaseRecord("four", "よん", "四"),
-//          new DatabaseRecord("five", "ご", "五"),
-//          new DatabaseRecord("six", "ろく", "六"),
-//          new DatabaseRecord("seven", "なな", "七"),
-//          new DatabaseRecord("years old", "さい", "歳"),
+//          word().english("office worker").japanese("かいしゃいん");
+//          word().english("engineer").japanese("エンジニア");
+//          word().english("nurse").japanese("かんごし");
+//          word().english("four").japanese("よん").kanji("四");
+//          word().english("five").japanese("ご").kanji("五");
+//          word().english("six").japanese("ろく").kanji("六");
+//          word().english("seven").japanese("なな").kanji("七");
+//          word().english("years old").japanese("さい").kanji("歳");
 //          new DatabaseRecordAdjectivePair("noisy", "うるさい"),
 //          new DatabaseRecordAdjectivePair("famous", "ゆうめい", "な", Kanji.of("有名")),
 //          new DatabaseRecordAdjectivePair("busy", "いそがしい", Kanji.of("忙しい")),
@@ -594,52 +599,52 @@ class DatabaseTematicPopulator {
 //    }
 //    static List<DatabaseRecord> u07() {
 //      return listOf(
-//          new DatabaseRecord("often", "よく"),
-//          new DatabaseRecord("sometimes", "ときどき", "時々"),
-//          new DatabaseRecord("news", "ニュース"),
-//          new DatabaseRecord("anime", "アニメ"),
-//          new DatabaseRecord("book", "ほん", "本"),
-//          new DatabaseRecord("magazine", "ざっし"),
-//          new DatabaseRecord("movie", "えいが", "映画"),
-//          new DatabaseRecord("music", "おんがく", "音楽"),
-//          new DatabaseRecord("manga", "まんが"),
-//          new DatabaseRecord("tv", "テレビ"),
-//          new DatabaseRecord("jazz", "ジャズ"),
-//          new DatabaseRecord("pop", "ポップス"),
-//          new DatabaseRecord("rock", "ロック"),
-//          new DatabaseRecord("baseball", "やきゅう"),
-//          new DatabaseRecord("soccer", "サッカー"),
-//          new DatabaseRecord("basketball", "バスケットボール"),
-//          new DatabaseRecord("volleyball", "バレ-ボ-ル"),
-//          new DatabaseRecord("to watch", "みます", "見ます"),
-//          new DatabaseRecord("to do", "します"),
-//          new DatabaseRecord("to read", "よみます", "読みます"),
+//          word().english("often").japanese("よく");
+//          word().english("sometimes").japanese("ときどき").kanji("時々");
+//          word().english("news").japanese("ニュース");
+//          word().english("anime").japanese("アニメ");
+//          word().english("book").japanese("ほん").kanji("本");
+//          word().english("magazine").japanese("ざっし");
+//          word().english("movie").japanese("えいが").kanji("映画");
+//          word().english("music").japanese("おんがく").kanji("音楽");
+//          word().english("manga").japanese("まんが");
+//          word().english("tv").japanese("テレビ");
+//          word().english("jazz").japanese("ジャズ");
+//          word().english("pop").japanese("ポップス");
+//          word().english("rock").japanese("ロック");
+//          word().english("baseball").japanese("やきゅう");
+//          word().english("soccer").japanese("サッカー");
+//          word().english("basketball").japanese("バスケットボール");
+//          word().english("volleyball").japanese("バレ-ボ-ル");
+//          word().english("to watch").japanese("みます").kanji("見ます");
+//          word().english("to do").japanese("します");
+//          word().english("to read").japanese("よみます").kanji("読みます");
 //          new DatabaseRecord("to listen", expl("ききます", "おんがく"), "聞きます"),
 //
-//          new DatabaseRecord("to eat", "たべます", "食べる"),
-//          new DatabaseRecord("to drink", "のみます", "飲む"),
-//          new DatabaseRecord("vegetable", "やさい", "野菜"),
-//          new DatabaseRecord("boxed lunch", "べんとう", "弁当"),
-//          new DatabaseRecord("sandwich", "サンドイッチ"),
-//          new DatabaseRecord("bread", "パン"),
-//          new DatabaseRecord("coffee", "コーヒー"),
-//          new DatabaseRecord("juice", "ジュース"),
-//          new DatabaseRecord("which one", "どれ"),
-//          new DatabaseRecord("every", "まい", "舞"),
-//          new DatabaseRecord("morning", "あさ", "朝"),
-//          new DatabaseRecord("every morning", "まいあさ", "毎朝"),
-//          new DatabaseRecord("every day", "まいにち", "毎日"),
-//          new DatabaseRecord("breakfast", "あさごはん", "朝ご飯"),
-//          new DatabaseRecord("lunch", "ひるごはん", "昼ご飯"),
-//          new DatabaseRecord("dinner", "ばんごはん", "晩ご飯"),
-//          new DatabaseRecord("eight", "はち", "八"),
-//          new DatabaseRecord("nine", "きゅう", "九"),
-//          new DatabaseRecord("ten", "じゅう", "十")
+//          word().english("to eat").japanese("たべます").kanji("食べる");
+//          word().english("to drink").japanese("のみます").kanji("飲む");
+//          word().english("vegetable").japanese("やさい").kanji("野菜");
+//          word().english("boxed lunch").japanese("べんとう").kanji("弁当");
+//          word().english("sandwich").japanese("サンドイッチ");
+//          word().english("bread").japanese("パン");
+//          word().english("coffee").japanese("コーヒー");
+//          word().english("juice").japanese("ジュース");
+//          word().english("which one").japanese("どれ");
+//          word().english("every").japanese("まい").kanji("舞");
+//          word().english("morning").japanese("あさ").kanji("朝");
+//          word().english("every morning").japanese("まいあさ").kanji("毎朝");
+//          word().english("every day").japanese("まいにち").kanji("毎日");
+//          word().english("breakfast").japanese("あさごはん").kanji("朝ご飯");
+//          word().english("lunch").japanese("ひるごはん").kanji("昼ご飯");
+//          word().english("dinner").japanese("ばんごはん").kanji("晩ご飯");
+//          word().english("eight").japanese("はち").kanji("八");
+//          word().english("nine").japanese("きゅう").kanji("九");
+//          word().english("ten").japanese("じゅう").kanji("十");
 //      );
 //    }
 //    static List<DatabaseRecord> u08() {
 //      return listOf(
-//          new DatabaseRecord("that over there", "あの"),
+//          word().english("that over there").japanese("あの");
 //          new DatabaseRecordAdjectivePair("wanting", "ほしい", Kanji.of("欲しい")),
 //          new DatabaseRecordAdjectivePair("new", "あたらしい", Kanji.of("新しい")),
 //          new DatabaseRecordAdjectivePair("old", "ふるい", Kanji.of("古い")),
@@ -648,36 +653,36 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecordAdjectivePair("purple", "むらさきいろ", "の", Kanji.of("紫色")),
 //          new DatabaseRecordAdjectivePair("blue", "あおい", Kanji.of("青い")),
 //          new DatabaseRecordAdjectivePair("black", "くろい", Kanji.of("黒い")),
-//          new DatabaseRecord("color", "いろ", "色"),
-//          new DatabaseRecord("clothes", "ふく", "服"),
-//          new DatabaseRecord("skirt", "スカート"),
-//          new DatabaseRecord("jacket", "ジャケット"),
-//          new DatabaseRecord("shirt", "シャツ"),
-//          new DatabaseRecord("dress", "ドレス"),
-//          new DatabaseRecord("necktie", "ネクタイ"),
-//          new DatabaseRecord("wallet", "さいふ", "財布"),
-//          new DatabaseRecord("wait a moment", "ちょっとまって"),
-//          new DatabaseRecord("how much", "いくら"),
-//          new DatabaseRecord("hundred", "ひゃく", "百"),
-//          new DatabaseRecord("thousand", "せん", "千"),
-//          new DatabaseRecord("yen", "えん", "円"),
-//          new DatabaseRecord("thank you", "ありがとうございます"),
-//          new DatabaseRecord("store", "みせ", "店"),
+//          word().english("color").japanese("いろ").kanji("色");
+//          word().english("clothes").japanese("ふく").kanji("服");
+//          word().english("skirt").japanese("スカート");
+//          word().english("jacket").japanese("ジャケット");
+//          word().english("shirt").japanese("シャツ");
+//          word().english("dress").japanese("ドレス");
+//          word().english("necktie").japanese("ネクタイ");
+//          word().english("wallet").japanese("さいふ").kanji("財布");
+//          word().english("wait a moment").japanese("ちょっとまって");
+//          word().english("how much").japanese("いくら");
+//          word().english("hundred").japanese("ひゃく").kanji("百");
+//          word().english("thousand").japanese("せん").kanji("千");
+//          word().english("yen").japanese("えん").kanji("円");
+//          word().english("thank you").japanese("ありがとうございます");
+//          word().english("store").japanese("みせ").kanji("店");
 //          new DatabaseRecord("restaurant", "レストラン", null),
 //
 //          new DatabaseRecordAdjectivePair("expensive", "shoe", "たかい", "", "くつ", "高い"),
 //          new DatabaseRecordAdjectivePair("cheap", "やすい"),
-//          new DatabaseRecord("how", "どう"),
-//          new DatabaseRecord("udon", "うどん"),
-//          new DatabaseRecord("meal set", "ていしょく"),
-//          new DatabaseRecord("miso soup", "みそしる"),
-//          new DatabaseRecord("soba", "そば", "蕎"),
-//          new DatabaseRecord("iced coffee", "アイスコーヒー"),
-//          new DatabaseRecord("salad", "サラダ"),
-//          new DatabaseRecord("tempura", "てんぷら"),
-//          new DatabaseRecord("ice cream", "アイスクリーム"),
-//          new DatabaseRecord("black tea", "こうちゃ", "紅茶"),
-//          new DatabaseRecord("rice ball", "おにぎり"),
+//          word().english("how").japanese("どう");
+//          word().english("udon").japanese("うどん");
+//          word().english("meal set").japanese("ていしょく");
+//          word().english("miso soup").japanese("みそしる");
+//          word().english("soba").japanese("そば").kanji("蕎");
+//          word().english("iced coffee").japanese("アイスコーヒー");
+//          word().english("salad").japanese("サラダ");
+//          word().english("tempura").japanese("てんぷら");
+//          word().english("ice cream").japanese("アイスクリーム");
+//          word().english("black tea").japanese("こうちゃ").kanji("紅茶");
+//          word().english("rice ball").japanese("おにぎり");
 //          new DatabaseRecord(expl("a bit", "+ verb, informal"), "すこし", "少し")
 //      );
 //    }
@@ -686,697 +691,697 @@ class DatabaseTematicPopulator {
 //  static class DbPopS2 {
 //    public static List<DatabaseRecord> u01() {
 //      return listOf(
-//          new DatabaseRecord("to swim", "およぎます", "泳ぎます"),
-//          new DatabaseRecord("yoga", "ヨガ"),
+//          word().english("to swim").japanese("およぎます").kanji("泳ぎます");
+//          word().english("yoga").japanese("ヨガ");
 //          new DatabaseRecord(expl("game", "videogame"), "ゲーム"),
-//          new DatabaseRecord("study", "べんきょう", "勉強"),
-//          new DatabaseRecord("job", "しごと", "仕事"),
-//          new DatabaseRecord("party", "パーティー"),
-//          new DatabaseRecord("judo", "じゅうどう"),
-//          new DatabaseRecord("karate", "からて"),
-//          new DatabaseRecord("tennis", "テニス"),
-//          new DatabaseRecord("sports", "スポーツ"),
-//          new DatabaseRecord("saturday", "どようび", "土曜日"),
-//          new DatabaseRecord("sunday", "にちようび", "日曜日"),
-//          new DatabaseRecord("weekday", "へいじつ", "平日"),
-//          new DatabaseRecord("weekend", "しゅうまつ", "週末"),
-//          new DatabaseRecord("day before yesterday", "おととい", "一昨日"),
-//          new DatabaseRecord("yesterday", "きのう", "昨日"),
-//          new DatabaseRecord("every night", "まいばん", "毎晩"),
-//          new DatabaseRecord("friend", "ともだち", "友達"),
-//          new DatabaseRecord("to talk", "はなします", "話します"),
-//          new DatabaseRecord("to buy", "かいます", "買います"),
-//          new DatabaseRecord("to go out", "でかけます", "出かけます"),
-//          new DatabaseRecord("to hang out", "あそびます", "遊びます"),
-//          new DatabaseRecord("drama", "ドラマ"),
-//          new DatabaseRecord("video", "どうが"),
+//          word().english("study").japanese("べんきょう").kanji("勉強");
+//          word().english("job").japanese("しごと").kanji("仕事");
+//          word().english("party").japanese("パーティー");
+//          word().english("judo").japanese("じゅうどう");
+//          word().english("karate").japanese("からて");
+//          word().english("tennis").japanese("テニス");
+//          word().english("sports").japanese("スポーツ");
+//          word().english("saturday").japanese("どようび").kanji("土曜日");
+//          word().english("sunday").japanese("にちようび").kanji("日曜日");
+//          word().english("weekday").japanese("へいじつ").kanji("平日");
+//          word().english("weekend").japanese("しゅうまつ").kanji("週末");
+//          word().english("day before yesterday").japanese("おととい").kanji("一昨日");
+//          word().english("yesterday").japanese("きのう").kanji("昨日");
+//          word().english("every night").japanese("まいばん").kanji("毎晩");
+//          word().english("friend").japanese("ともだち").kanji("友達");
+//          word().english("to talk").japanese("はなします").kanji("話します");
+//          word().english("to buy").japanese("かいます").kanji("買います");
+//          word().english("to go out").japanese("でかけます").kanji("出かけます");
+//          word().english("to hang out").japanese("あそびます").kanji("遊びます");
+//          word().english("drama").japanese("ドラマ");
+//          word().english("video").japanese("どうが");
 //
-//          new DatabaseRecord("um", "ええと"),
-//          new DatabaseRecord("oh", "あ"),
-//          new DatabaseRecord("okay then", "じゃあ"),
-//          new DatabaseRecord("cafe", "カフェ"),
-//          new DatabaseRecord("ticket gate", "かいさつ"),
-//          new DatabaseRecord("elevator", "エレベーター"),
-//          new DatabaseRecord("phone", "でんわ", "電話"),
-//          new DatabaseRecord("platform", "ホ-ム"),
-//          new DatabaseRecord("outlet", "コンセント"),
-//          new DatabaseRecord("trash can", "ゴミばこ"),
-//          new DatabaseRecord("restroom", "おてあらい"),
-//          new DatabaseRecord("exit", "でぐち"),
-//          new DatabaseRecord("transfer", "のりかえ"),
-//          new DatabaseRecord("taxi", "タクシ-"),
-//          new DatabaseRecord("stair", "かいだん"),
-//          new DatabaseRecord("storage locker", "コインロッカ-"),
-//          new DatabaseRecord("vending machine", "じはんき"),
-//          new DatabaseRecord("underground", "ちか"),
-//          new DatabaseRecord("over there", "あそこ"),
+//          word().english("um").japanese("ええと");
+//          word().english("oh").japanese("あ");
+//          word().english("okay then").japanese("じゃあ");
+//          word().english("cafe").japanese("カフェ");
+//          word().english("ticket gate").japanese("かいさつ");
+//          word().english("elevator").japanese("エレベーター");
+//          word().english("phone").japanese("でんわ").kanji("電話");
+//          word().english("platform").japanese("ホ-ム");
+//          word().english("outlet").japanese("コンセント");
+//          word().english("trash can").japanese("ゴミばこ");
+//          word().english("restroom").japanese("おてあらい");
+//          word().english("exit").japanese("でぐち");
+//          word().english("transfer").japanese("のりかえ");
+//          word().english("taxi").japanese("タクシ-");
+//          word().english("stair").japanese("かいだん");
+//          word().english("storage locker").japanese("コインロッカ-");
+//          word().english("vending machine").japanese("じはんき");
+//          word().english("underground").japanese("ちか");
+//          word().english("over there").japanese("あそこ");
 //          new DatabaseRecord(expl("to have", "inanimate"), "あります"),
 //          new DatabaseRecordAdjectivePair("close", "ちかい", Kanji.of("近い")),
 //          new DatabaseRecordAdjectivePair("far", "とおい", Kanji.of("遠い")),
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u02() {
 //      return listOf(
-//          new DatabaseRecord("next week", "らいしゅう", "来週"),
-//          new DatabaseRecord("every week", "まいしゅう", "毎週"),
-//          new DatabaseRecord("always", "いつも"),
+//          word().english("next week").japanese("らいしゅう").kanji("来週");
+//          word().english("every week").japanese("まいしゅう").kanji("毎週");
+//          word().english("always").japanese("いつも");
 //          new DatabaseRecord(expl("to take", "a picture"), "とります", "撮ります"),
-//          new DatabaseRecord("photo", "しゃしん", "写真"),
-//          new DatabaseRecord("trip", "りょこう", "旅行"),
-//          new DatabaseRecord("newspaper", "しんぶん", "新聞"),
-//          new DatabaseRecord("radio", "ラジオ"),
-//          new DatabaseRecord("email", "メ-ル"),
-//          new DatabaseRecord("pasta", "パスタ"),
-//          new DatabaseRecord("to get up", "おきます", "起きます"),
-//          new DatabaseRecord("to run", "はしります", "走ります"),
-//          new DatabaseRecord("to sleep", "ねます", "寝ます"),
-//          new DatabaseRecord("tomorrow", "あした", "明日"),
-//          new DatabaseRecord("to make", "つくります", "作ります"),
+//          word().english("photo").japanese("しゃしん").kanji("写真");
+//          word().english("trip").japanese("りょこう").kanji("旅行");
+//          word().english("newspaper").japanese("しんぶん").kanji("新聞");
+//          word().english("radio").japanese("ラジオ");
+//          word().english("email").japanese("メ-ル");
+//          word().english("pasta").japanese("パスタ");
+//          word().english("to get up").japanese("おきます").kanji("起きます");
+//          word().english("to run").japanese("はしります").kanji("走ります");
+//          word().english("to sleep").japanese("ねます").kanji("寝ます");
+//          word().english("tomorrow").japanese("あした").kanji("明日");
+//          word().english("to make").japanese("つくります").kanji("作ります");
 //          new DatabaseRecord(expl("to take", "a shower"), "あびます", "浴びます"),
-//          new DatabaseRecord("shower", "シャワ-"),
+//          word().english("shower").japanese("シャワ-");
 //          new DatabaseRecord(expl("nice to meet you", "first time meeting"), "はじめまして"),
-//          new DatabaseRecord("to be named", "いいます", "言います"),
-//          new DatabaseRecord("girlfriend", "かのじょ", "彼女"),
-//          new DatabaseRecord("boyfriend", "かれし"),
-//          new DatabaseRecord("this way", "こちら"),
-//          new DatabaseRecord("hobby", "しゅみ"),
-//          new DatabaseRecord("horror", "ホラ-"),
-//          new DatabaseRecord("fantasy", "ファンタジー"),
-//          new DatabaseRecord("action", "アクション"),
-//          new DatabaseRecord("mystery", "ミステリ-"),
-//          new DatabaseRecord("comedy", "コメディ"),
-//          new DatabaseRecord("romance", "れんあい"),
+//          word().english("to be named").japanese("いいます").kanji("言います");
+//          word().english("girlfriend").japanese("かのじょ").kanji("彼女");
+//          word().english("boyfriend").japanese("かれし");
+//          word().english("this way").japanese("こちら");
+//          word().english("hobby").japanese("しゅみ");
+//          word().english("horror").japanese("ホラ-");
+//          word().english("fantasy").japanese("ファンタジー");
+//          word().english("action").japanese("アクション");
+//          word().english("mystery").japanese("ミステリ-");
+//          word().english("comedy").japanese("コメディ");
+//          word().english("romance").japanese("れんあい");
 //          new DatabaseRecordAdjectivePair("liked", "すき", "な"),
-//          new DatabaseRecord("vietnam", "ベトナム"),
-//          new DatabaseRecord("china", "ちゅうごく"),
-//          new DatabaseRecord("korea", "かんこく", "韓国"),
-//          new DatabaseRecord("to be able", "できます"),
-//          new DatabaseRecord("what kind of", "どんな"),
+//          word().english("vietnam").japanese("ベトナム");
+//          word().english("china").japanese("ちゅうごく");
+//          word().english("korea").japanese("かんこく").kanji("韓国");
+//          word().english("to be able").japanese("できます");
+//          word().english("what kind of").japanese("どんな");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u03() {
 //      return listOf(
 //          new DatabaseRecord(expl("to move", "house"), "ひっこします"),
-//          new DatabaseRecord("apartment", "アパ-ト"),
+//          word().english("apartment").japanese("アパ-ト");
 //          new DatabaseRecordAdjectivePair("spacious", "ひろい", Kanji.of("広い")),
 //          new DatabaseRecord(expl("kitchen", "modern"), "キッチン"),
-//          new DatabaseRecord("air conditioner", "エアコン"),
-//          new DatabaseRecord("still", "まだ"),
-//          new DatabaseRecord("washing machine", "せんたくき", "洗濯機"),
-//          new DatabaseRecord("vacuum cleaner", "そうじき", "掃除機"),
-//          new DatabaseRecord("bookshelf", "ほんだな", "本棚"),
-//          new DatabaseRecord("this week", "こんしゅう", "今週"),
-//          new DatabaseRecord("window", "まど", "窓"),
-//          new DatabaseRecord("bathroom", "トイレ"),
-//          new DatabaseRecord("cat", "ねこ", "猫"),
-//          new DatabaseRecord("dog", "いぬ", "犬"),
+//          word().english("air conditioner").japanese("エアコン");
+//          word().english("still").japanese("まだ");
+//          word().english("washing machine").japanese("せんたくき").kanji("洗濯機");
+//          word().english("vacuum cleaner").japanese("そうじき").kanji("掃除機");
+//          word().english("bookshelf").japanese("ほんだな").kanji("本棚");
+//          word().english("this week").japanese("こんしゅう").kanji("今週");
+//          word().english("window").japanese("まど").kanji("窓");
+//          word().english("bathroom").japanese("トイレ");
+//          word().english("cat").japanese("ねこ").kanji("猫");
+//          word().english("dog").japanese("いぬ").kanji("犬");
 //          new DatabaseRecord(expl("to have", "living thing"), "います"),
-//          new DatabaseRecord("train", "でんしゃ", "電車"),
+//          word().english("train").japanese("でんしゃ").kanji("電車");
 //          new DatabaseRecord(expl("to go", "away"), "いきます", "行きます"),
-//          new DatabaseRecord("next", "つぎ", "次"),
-//          new DatabaseRecord("about how long", "どのぐらい"),
+//          word().english("next").japanese("つぎ").kanji("次");
+//          word().english("about how long").japanese("どのぐらい");
 //          new DatabaseRecord(expl("to take", "time"), "かかります"),
 //          new DatabaseRecord(expl("about", "approximately"), "ぐらい"),
-//          new DatabaseRecord("house", "いえ", "家"),
-//          new DatabaseRecord("desk", "つくえ", "机"),
-//          new DatabaseRecord("microwave", "でんしレンジ"),
-//          new DatabaseRecord("futon", "ふとん", "布団"),
+//          word().english("house").japanese("いえ").kanji("家");
+//          word().english("desk").japanese("つくえ").kanji("机");
+//          word().english("microwave").japanese("でんしレンジ");
+//          word().english("futon").japanese("ふとん").kanji("布団");
 //          new DatabaseRecordAdjectivePair("cramped", "せまい", Kanji.of("狭い")),
 //          new DatabaseRecordAdjectivePair("well lit", "kitchen", "あかるい", "キッチン"),
-//          new DatabaseRecord("fridge", "れいぞうこ", "冷蔵庫"),
-//          new DatabaseRecord("chair", "いす", "椅子"),
-//          new DatabaseRecord("perhaps", "たぶん"),
-//          new DatabaseRecord("living room", "リビング"),
-//          new DatabaseRecord("shelf", "たな", "棚"),
-//          new DatabaseRecord("bed", "ベッド"),
+//          word().english("fridge").japanese("れいぞうこ").kanji("冷蔵庫");
+//          word().english("chair").japanese("いす").kanji("椅子");
+//          word().english("perhaps").japanese("たぶん");
+//          word().english("living room").japanese("リビング");
+//          word().english("shelf").japanese("たな").kanji("棚");
+//          word().english("bed").japanese("ベッド");
 //          new DatabaseRecord(expl("when", "what time"), "いつ"),
 //          new DatabaseRecordAdjectivePair("fast", "はやい", Kanji.of("速い")),
-//          new DatabaseRecord("to come", "きます", "来ます"),
+//          word().english("to come").japanese("きます").kanji("来ます");
 //          new DatabaseRecordAdjectivePair("long", "ながい", Kanji.of("長い")),
-//          new DatabaseRecord("bus", "バス"),
-//          new DatabaseRecord("final stop", "しゅうてん"),
-//          new DatabaseRecord("soon", "もうすぐ"),
-//          new DatabaseRecord("park", "こうえん", "公園"),
-//          new DatabaseRecord("coach", "コ-チ"),
-//          new DatabaseRecord("english", "えいご"),
+//          word().english("bus").japanese("バス");
+//          word().english("final stop").japanese("しゅうてん");
+//          word().english("soon").japanese("もうすぐ");
+//          word().english("park").japanese("こうえん").kanji("公園");
+//          word().english("coach").japanese("コ-チ");
+//          word().english("english").japanese("えいご");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u04() {
 //      return listOf(
-//          new DatabaseRecord("truth", "ほんとう", "本当"),
-//          new DatabaseRecord("shrine", "じんじゃ"),
-//          new DatabaseRecord("postcard", "ポストカ-ド"),
+//          word().english("truth").japanese("ほんとう").kanji("本当");
+//          word().english("shrine").japanese("じんじゃ");
+//          word().english("postcard").japanese("ポストカ-ド");
 //          new DatabaseRecordAdjectivePair("lovely", "すてき", "な"),
-//          new DatabaseRecord("that one over there", "あれ"),
-//          new DatabaseRecord("all right", "だいじょうぶ"),
-//          new DatabaseRecord("condition", "ぐあい"),
+//          word().english("that one over there").japanese("あれ");
+//          word().english("all right").japanese("だいじょうぶ");
+//          word().english("condition").japanese("ぐあい");
 //          new DatabaseRecordAdjectivePair("bad", "わるい", Kanji.of("悪い")),
-//          new DatabaseRecord("ambulance", "きゅうきゅうしゃ"),
+//          word().english("ambulance").japanese("きゅうきゅうしゃ");
 //          new DatabaseRecord(expl("to need", "I need help please"), "おねがいします"),
-//          new DatabaseRecord("phone number", "でんわばんごう"),
-//          new DatabaseRecord("number", "ばんごう"),
-//          new DatabaseRecord("allergy", "アレルギ-"),
+//          word().english("phone number").japanese("でんわばんごう");
+//          word().english("number").japanese("ばんごう");
+//          word().english("allergy").japanese("アレルギ-");
 //          new DatabaseRecordAdjectivePair("tall", "mountain", "たかい", "", "やま", "高い"),
-//          new DatabaseRecord("mountain", "やま", "山"),
+//          word().english("mountain").japanese("やま").kanji("山");
 //          new DatabaseRecordAdjectivePair("pretty", "flower", "きれい", "な", "はな"),
-//          new DatabaseRecord("flower", "はな", "花"),
-//          new DatabaseRecord("building", "たてもの", "建物"),
-//          new DatabaseRecord("temple", "おてら"),
-//          new DatabaseRecord("dessert", "デザ-ト"),
-//          new DatabaseRecord("snack", "おかし", "お菓子"),
-//          new DatabaseRecord("souvenir", "おみやげ", "お土産"),
-//          new DatabaseRecord("shop", "や"),
-//          new DatabaseRecord("place", "ところ"),
+//          word().english("flower").japanese("はな").kanji("花");
+//          word().english("building").japanese("たてもの").kanji("建物");
+//          word().english("temple").japanese("おてら");
+//          word().english("dessert").japanese("デザ-ト");
+//          word().english("snack").japanese("おかし").kanji("お菓子");
+//          word().english("souvenir").japanese("おみやげ").kanji("お土産");
+//          word().english("shop").japanese("や");
+//          word().english("place").japanese("ところ");
 //          new DatabaseRecordAdjectivePair("dangerous", "あぶない", "な"),
-//          new DatabaseRecord("today", "きょう", "今日"),
+//          word().english("today").japanese("きょう").kanji("今日");
 //          new DatabaseRecord(expl("parents", "formal"), "ごりょうしん"),
 //          new DatabaseRecord(expl("parents", "informal"), "りょうしん", "両親"),
-//          new DatabaseRecord("hospital", "びょういん", "病院"),
-//          new DatabaseRecord("police", "けいさつ"),
-//          new DatabaseRecord("to rest", "やすみます", "休みます"),
+//          word().english("hospital").japanese("びょういん").kanji("病院");
+//          word().english("police").japanese("けいさつ");
+//          word().english("to rest").japanese("やすみます").kanji("休みます");
 //          new DatabaseRecord(expl("family", "formal"), "ごかぞく"),
-//          new DatabaseRecord("medicine", "くすり"),
-//          new DatabaseRecord("make sure", "ちゃんと"),
-//          new DatabaseRecord("to sit", "すわります", "座ります"),
+//          word().english("medicine").japanese("くすり");
+//          word().english("make sure").japanese("ちゃんと");
+//          word().english("to sit").japanese("すわります").kanji("座ります");
 //          new DatabaseRecordAdjectivePair("hard", "たいへん", "な"),
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u05() {
 //      return listOf(
-//          new DatabaseRecord("weather", "てんき", "天気"),
-//          new DatabaseRecord("rain", "あめ", "雨"),
-//          new DatabaseRecord("sunny", "はれ", "晴れ"),
-//          new DatabaseRecord("sunny day", "はれのひ"),
+//          word().english("weather").japanese("てんき").kanji("天気");
+//          word().english("rain").japanese("あめ").kanji("雨");
+//          word().english("sunny").japanese("はれ").kanji("晴れ");
+//          word().english("sunny day").japanese("はれのひ");
 //          new DatabaseRecordAdjectivePair("nice", "weather", "いい", "てんき"),
-//          new DatabaseRecord("snow", "ゆき", "雪"),
-//          new DatabaseRecord("snowy day", "ゆきのひ", "雪の日"),
+//          word().english("snow").japanese("ゆき").kanji("雪");
+//          word().english("snowy day").japanese("ゆきのひ").kanji("雪の日");
 //          new DatabaseRecordAdjectivePair("warm", "あたたかい"),
-//          new DatabaseRecord("every year", "まいとし", "毎年"),
-//          new DatabaseRecord("every month", "まいつき", "毎月"),
+//          word().english("every year").japanese("まいとし").kanji("毎年");
+//          word().english("every month").japanese("まいつき").kanji("毎月");
 //          new DatabaseRecord("siblings", expl("きょうだい", "兄弟姉妹"), "兄弟"),
-//          new DatabaseRecord("chinese", "ちゅうごくご", "中国語"),
-//          new DatabaseRecord("australia", "オーストラリア"),
-//          new DatabaseRecord("japanese", "にほんご", "日本語"),
+//          word().english("chinese").japanese("ちゅうごくご").kanji("中国語");
+//          word().english("australia").japanese("オーストラリア");
+//          word().english("japanese").japanese("にほんご").kanji("日本語");
 //          new DatabaseRecord(expl("mother", "other's"), "おかあ", "お母"),
 //          new DatabaseRecord(expl("father", "other's"), "おとう", "お父"),
 //          new DatabaseRecordAdjectivePair("good health", "げんき", "な"),
-//          new DatabaseRecord("welcome back", "おかえりなさい"),
-//          new DatabaseRecord("he", "かれ", "彼"),
+//          word().english("welcome back").japanese("おかえりなさい");
+//          word().english("he").japanese("かれ").kanji("彼");
 //          new DatabaseRecord(expl("older sister", "other's"), "おねえ"),
 //          new DatabaseRecord(expl("older brother", "other's"), "おにい", "お兄"),
-//          new DatabaseRecord("pool", "プ-ル"),
-//          new DatabaseRecord("firework", "はなび"),
-//          new DatabaseRecord("concert", "コンサ-ト"),
-//          new DatabaseRecord("break", "やすみ", "休み"),
-//          new DatabaseRecord("autumn", "あき", "秋"),
+//          word().english("pool").japanese("プ-ル");
+//          word().english("firework").japanese("はなび");
+//          word().english("concert").japanese("コンサ-ト");
+//          word().english("break").japanese("やすみ").kanji("休み");
+//          word().english("autumn").japanese("あき").kanji("秋");
 //          new DatabaseRecordAdjectivePair("hot", "あつい", Kanji.of("熱い")),
-//          new DatabaseRecord("spring", "はる", "春"),
-//          new DatabaseRecord("winter", "ふゆ", "冬"),
-//          new DatabaseRecord("cocoa", "ココア"),
-//          new DatabaseRecord("day", "ひ", "日"),
-//          new DatabaseRecord("summer", "なつ", "夏"),
-//          new DatabaseRecord("cloud", "くも", "雲"),
-//          new DatabaseRecord("cloudy", "くもり", "曇り"),
-//          new DatabaseRecord("cloudy day", "くもりのひ"),
+//          word().english("spring").japanese("はる").kanji("春");
+//          word().english("winter").japanese("ふゆ").kanji("冬");
+//          word().english("cocoa").japanese("ココア");
+//          word().english("day").japanese("ひ").kanji("日");
+//          word().english("summer").japanese("なつ").kanji("夏");
+//          word().english("cloud").japanese("くも").kanji("雲");
+//          word().english("cloudy").japanese("くもり").kanji("曇り");
+//          word().english("cloudy day").japanese("くもりのひ");
 //          new DatabaseRecordAdjectivePair("cold", "さむい", Kanji.of("寒い")),
-//          new DatabaseRecord("korean", "かんこくご", "韓国語"),
-//          new DatabaseRecord("taiwan", "たいわん"),
-//          new DatabaseRecord("seoul", "ソウル"),
+//          word().english("korean").japanese("かんこくご").kanji("韓国語");
+//          word().english("taiwan").japanese("たいわん");
+//          word().english("seoul").japanese("ソウル");
 //          new DatabaseRecord(expl("child", "own"), "こども", "子供"),
 //          new DatabaseRecord(expl("child", "other's"), "おこ", "子"),
-//          new DatabaseRecord("malaysia", "マレ-シア"),
+//          word().english("malaysia").japanese("マレ-シア");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u06() {
 //      return listOf(
-//          new DatabaseRecord("after", "あと"),
-//          new DatabaseRecord("chore", "かじ"),
-//          new DatabaseRecord("to help", "てつだいます"),
-//          new DatabaseRecord("homework", "しゅくだい", "宿題"),
-//          new DatabaseRecord("rest day", "やすみのひ", "休みの日"),
-//          new DatabaseRecord("gardening", "ガ-デニング"),
-//          new DatabaseRecord("next month", "らいげつ", "来月"),
-//          new DatabaseRecord("france", "フランス"),
-//          new DatabaseRecord("foreign language", "ごが"),
-//          new DatabaseRecord("zoo", "どうぶつえん", "動物園"),
-//          new DatabaseRecord("stretch", "ストレッチ"),
+//          word().english("after").japanese("あと");
+//          word().english("chore").japanese("かじ");
+//          word().english("to help").japanese("てつだいます");
+//          word().english("homework").japanese("しゅくだい").kanji("宿題");
+//          word().english("rest day").japanese("やすみのひ").kanji("休みの日");
+//          word().english("gardening").japanese("ガ-デニング");
+//          word().english("next month").japanese("らいげつ").kanji("来月");
+//          word().english("france").japanese("フランス");
+//          word().english("foreign language").japanese("ごが");
+//          word().english("zoo").japanese("どうぶつえん").kanji("動物園");
+//          word().english("stretch").japanese("ストレッチ");
 //          new DatabaseRecord(expl("bath", "formal"), "おふろ"),
 //          new DatabaseRecord(expl("bath", "informal"), "ふろ", "風呂"),
 //          new DatabaseRecord(expl("who", "informal"), "だれ", "誰"),
 //          new DatabaseRecordAdjectivePair("fun", "たのしい"),
-//          new DatabaseRecord("and then", "そして"),
-//          new DatabaseRecord("to return", "かえります", "帰ります"),
-//          new DatabaseRecord("home", "うち"),
+//          word().english("and then").japanese("そして");
+//          word().english("to return").japanese("かえります").kanji("帰ります");
+//          word().english("home").japanese("うち");
 //          new DatabaseRecord(expl("to take", "a bath"), "はいります", "入ります"),
-//          new DatabaseRecord("laundry", "せんたく", "洗濯"),
+//          word().english("laundry").japanese("せんたく").kanji("洗濯");
 //          new DatabaseRecordAdjectivePair("various", "いろいろ", "な", Kanji.of("色々")),
-//          new DatabaseRecord("cleaning", "そうじ", "掃除"),
-//          new DatabaseRecord("cooking", "りょうり", "料理"),
-//          new DatabaseRecord("suitcase", "スーツケース"),
+//          word().english("cleaning").japanese("そうじ").kanji("掃除");
+//          word().english("cooking").japanese("りょうり").kanji("料理");
+//          word().english("suitcase").japanese("スーツケース");
 //          new DatabaseRecord(expl("ticket", "sports games"), "チケット"),
-//          new DatabaseRecord("airplane", "ひこうき", "飛行機"),
-//          new DatabaseRecord("plaza", "ひろば"),
-//          new DatabaseRecord("lion", "ライオン"),
-//          new DatabaseRecord("meat", "にく", "肉"),
-//          new DatabaseRecord("art museum", "びじゅつかん"),
-//          new DatabaseRecord("to meet", "あいます", "会います"),
-//          new DatabaseRecord("painting", "え", "絵"),
-//          new DatabaseRecord("like", "すき", "好き"),
+//          word().english("airplane").japanese("ひこうき").kanji("飛行機");
+//          word().english("plaza").japanese("ひろば");
+//          word().english("lion").japanese("ライオン");
+//          word().english("meat").japanese("にく").kanji("肉");
+//          word().english("art museum").japanese("びじゅつかん");
+//          word().english("to meet").japanese("あいます").kanji("会います");
+//          word().english("painting").japanese("え").kanji("絵");
+//          word().english("like").japanese("すき").kanji("好き");
 //          new DatabaseRecord(expl("night", "not the rice one"), "よる", "夜"),
 //          new DatabaseRecord(expl("night", "the rice one"), "ばん", "夜"),
-//          new DatabaseRecord("week", "しゅう", "週"),
-//          new DatabaseRecord("month", "つき", "月"),
-//          new DatabaseRecord("year", "とし", "年"),
-//          new DatabaseRecord("hot spring", "おんせん"),
-//          new DatabaseRecord("school", "がっこう", "学校"),
+//          word().english("week").japanese("しゅう").kanji("週");
+//          word().english("month").japanese("つき").kanji("月");
+//          word().english("year").japanese("とし").kanji("年");
+//          word().english("hot spring").japanese("おんせん");
+//          word().english("school").japanese("がっこう").kanji("学校");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u07() {
 //      return listOf(
-//          new DatabaseRecord("friday", "きんようび", "金曜日"),
-//          new DatabaseRecord("castle", "しろ"),
-//          new DatabaseRecord("bullet train", "しんかんせん"),
-//          new DatabaseRecord("look forward to", "たのしみ"),
-//          new DatabaseRecord("monday", "げつようび", "月曜日"),
-//          new DatabaseRecord("tuesday", "かようび", "火曜日"),
+//          word().english("friday").japanese("きんようび").kanji("金曜日");
+//          word().english("castle").japanese("しろ");
+//          word().english("bullet train").japanese("しんかんせん");
+//          word().english("look forward to").japanese("たのしみ");
+//          word().english("monday").japanese("げつようび").kanji("月曜日");
+//          word().english("tuesday").japanese("かようび").kanji("火曜日");
 //          new DatabaseRecord(expl("love", "like a lot"), "だいすき", "大好き"),
-//          new DatabaseRecord("matcha", "まっちゃ"),
-//          new DatabaseRecord("cheesecake", "チ-ズケ-キ"),
-//          new DatabaseRecord("donut", "ド-ナツ"),
-//          new DatabaseRecord("chocolate", "チョコレ-ト"),
-//          new DatabaseRecord("pie", "パイ"),
+//          word().english("matcha").japanese("まっちゃ");
+//          word().english("cheesecake").japanese("チ-ズケ-キ");
+//          word().english("donut").japanese("ド-ナツ");
+//          word().english("chocolate").japanese("チョコレ-ト");
+//          word().english("pie").japanese("パイ");
 //          new DatabaseRecord("which", expl("どの", "物")),
-//          new DatabaseRecord("garden", "にわ", "庭"),
+//          word().english("garden").japanese("にわ").kanji("庭");
 //          new DatabaseRecordAdjectivePair("short", "みじかい"),
-//          new DatabaseRecord("sightseeing", "かんこう"),
+//          word().english("sightseeing").japanese("かんこう");
 //          new DatabaseRecord(expl("to ride", "train"), "のります"),
-//          new DatabaseRecord("to wait", "まちます", "待ちます"),
-//          new DatabaseRecord("miso pork cutlet", "みそかつ"),
+//          word().english("to wait").japanese("まちます").kanji("待ちます");
+//          word().english("miso pork cutlet").japanese("みそかつ");
 //          new DatabaseRecordAdjectivePair("convenient", "べんり", "な"),
-//          new DatabaseRecord("lobby", "ロビ-"),
-//          new DatabaseRecord("strawberry", "いちご"),
-//          new DatabaseRecord("cookie", "クッキ-"),
+//          word().english("lobby").japanese("ロビ-");
+//          word().english("strawberry").japanese("いちご");
+//          word().english("cookie").japanese("クッキ-");
 //          new DatabaseRecordAdjectivePair("green", "みどりいろ", "の", Kanji.of("緑色")),
-//          new DatabaseRecord("cupcake", "カップケ-キ"),
+//          word().english("cupcake").japanese("カップケ-キ");
 //          new DatabaseRecordAdjectivePair("sweet", "あまい", Kanji.of("甘い")),
-//          new DatabaseRecord("stuff", "もの"),
-//          new DatabaseRecord("seat", "せき"),
+//          word().english("stuff").japanese("もの");
+//          word().english("seat").japanese("せき");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u08() {
 //      return listOf(
-//          new DatabaseRecord("soy sauce", "しょうゆ", "醬油"),
-//          new DatabaseRecord("fish", "さかな", "魚"),
-//          new DatabaseRecord("class", "じゅぎょう", "授業"),
+//          word().english("soy sauce").japanese("しょうゆ").kanji("醬油");
+//          word().english("fish").japanese("さかな").kanji("魚");
+//          word().english("class").japanese("じゅぎょう").kanji("授業");
 //          new DatabaseRecordAdjectivePair("interesting", "class", "おもしろい", "じゅぎょう"),
 //          new DatabaseRecord(expl("to end", "finishes"), "おわります", "終わります"),
 //          new DatabaseRecord("to ask", expl("ききます", "しつもん"), "聞きます"),
-//          new DatabaseRecord("tofu", "とうふ"),
-//          new DatabaseRecord("egg", "たまご"),
-//          new DatabaseRecord("pork cutlet", "とんかつ"),
-//          new DatabaseRecord("thursday", "もくようび", "木曜日"),
-//          new DatabaseRecord("cola", "コ-ラ"),
-//          new DatabaseRecord("beef bowl", "ぎゅうどん"),
-//          new DatabaseRecord("pork", "ぶたにく"),
-//          new DatabaseRecord("pig", "ぶた"),
-//          new DatabaseRecord("beer", "ビ-ル"),
-//          new DatabaseRecord("salt", "しお", "塩"),
-//          new DatabaseRecord("more", "もっと"),
-//          new DatabaseRecord("to use", "つかいます", "使います"),
-//          new DatabaseRecord("raw", "なま"),
-//          new DatabaseRecord("supermarket", "ス-パ-"),
-//          new DatabaseRecord("this night", "こんばん", "今晩"),
-//          new DatabaseRecord("together", "いっしょ", "一緒"),
-//          new DatabaseRecord("but", "でも"),
-//          new DatabaseRecord("sauce", "ソ-ス"),
-//          new DatabaseRecord("available", "ひま"),
+//          word().english("tofu").japanese("とうふ");
+//          word().english("egg").japanese("たまご");
+//          word().english("pork cutlet").japanese("とんかつ");
+//          word().english("thursday").japanese("もくようび").kanji("木曜日");
+//          word().english("cola").japanese("コ-ラ");
+//          word().english("beef bowl").japanese("ぎゅうどん");
+//          word().english("pork").japanese("ぶたにく");
+//          word().english("pig").japanese("ぶた");
+//          word().english("beer").japanese("ビ-ル");
+//          word().english("salt").japanese("しお").kanji("塩");
+//          word().english("more").japanese("もっと");
+//          word().english("to use").japanese("つかいます").kanji("使います");
+//          word().english("raw").japanese("なま");
+//          word().english("supermarket").japanese("ス-パ-");
+//          word().english("this night").japanese("こんばん").kanji("今晩");
+//          word().english("together").japanese("いっしょ").kanji("一緒");
+//          word().english("but").japanese("でも");
+//          word().english("sauce").japanese("ソ-ス");
+//          word().english("available").japanese("ひま");
 //          new DatabaseRecordAdjectivePair("salty", "しょっぱい"),
-//          new DatabaseRecord("table", "テ-ブル"),
-//          new DatabaseRecord("what day", "なんようび", "何曜日"),
-//          new DatabaseRecord("wednesday", "すいようび", "水曜日"),
-//          new DatabaseRecord("test", "テスト"),
-//          new DatabaseRecord("lot of", "たくさん"),
-//          new DatabaseRecord("question", "しつもん"),
-//          new DatabaseRecord("early", "はやく"),
-//          new DatabaseRecord("classroom", "きょうしつ"),
-//          new DatabaseRecord("deadline", "しめきり"),
-//          new DatabaseRecord("project", "プロジェクト"),
-//          new DatabaseRecord("spain", "スペイン"),
-//          new DatabaseRecord("spanish", "スペインご"),
+//          word().english("table").japanese("テ-ブル");
+//          word().english("what day").japanese("なんようび").kanji("何曜日");
+//          word().english("wednesday").japanese("すいようび").kanji("水曜日");
+//          word().english("test").japanese("テスト");
+//          word().english("lot of").japanese("たくさん");
+//          word().english("question").japanese("しつもん");
+//          word().english("early").japanese("はやく");
+//          word().english("classroom").japanese("きょうしつ");
+//          word().english("deadline").japanese("しめきり");
+//          word().english("project").japanese("プロジェクト");
+//          word().english("spain").japanese("スペイン");
+//          word().english("spanish").japanese("スペインご");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u09() {
 //      return listOf(
 //          new DatabaseRecord(expl("to wear", "lower body"), "はきます"),
-//          new DatabaseRecord("to wash", "あらいます", "洗います"),
-//          new DatabaseRecord("exercise", "うんどう"),
-//          new DatabaseRecord("driving", "うんてん"),
-//          new DatabaseRecord("translation", "ほんやく"),
-//          new DatabaseRecord("pro", "プロ"),
-//          new DatabaseRecord("gym", "ジム"),
-//          new DatabaseRecord("player", "せんしゅ"),
-//          new DatabaseRecord("team", "チ-ム"),
-//          new DatabaseRecord("entrance", "いりぐち"),
-//          new DatabaseRecord("event", "イベント"),
-//          new DatabaseRecord("entrance fee", "にゅうじょうりょう"),
-//          new DatabaseRecord("roller coaster", "ジェットコースター"),
-//          new DatabaseRecord("mascot", "キャラクタ-"),
-//          new DatabaseRecord("face", "かお"),
-//          new DatabaseRecord("flavor", "あじ"),
-//          new DatabaseRecord("camera", "カメラ"),
-//          new DatabaseRecord("dictionary", "じしょ", "辞書"),
-//          new DatabaseRecord("size", "サイズ"),
-//          new DatabaseRecord("show", "ショ-"),
-//          new DatabaseRecord("go-kart", "ゴ-カ-ト"),
-//          new DatabaseRecord("attraction", "アトラクション"),
-//          new DatabaseRecord("theme park", "ゆうえんち"),
-//          new DatabaseRecord("museum", "はくぶつかん"),
-//          new DatabaseRecord("a.m.", "ごぜん", "午前"),
-//          new DatabaseRecord("p.m.", "ごご", "午後"),
+//          word().english("to wash").japanese("あらいます").kanji("洗います");
+//          word().english("exercise").japanese("うんどう");
+//          word().english("driving").japanese("うんてん");
+//          word().english("translation").japanese("ほんやく");
+//          word().english("pro").japanese("プロ");
+//          word().english("gym").japanese("ジム");
+//          word().english("player").japanese("せんしゅ");
+//          word().english("team").japanese("チ-ム");
+//          word().english("entrance").japanese("いりぐち");
+//          word().english("event").japanese("イベント");
+//          word().english("entrance fee").japanese("にゅうじょうりょう");
+//          word().english("roller coaster").japanese("ジェットコースター");
+//          word().english("mascot").japanese("キャラクタ-");
+//          word().english("face").japanese("かお");
+//          word().english("flavor").japanese("あじ");
+//          word().english("camera").japanese("カメラ");
+//          word().english("dictionary").japanese("じしょ").kanji("辞書");
+//          word().english("size").japanese("サイズ");
+//          word().english("show").japanese("ショ-");
+//          word().english("go-kart").japanese("ゴ-カ-ト");
+//          word().english("attraction").japanese("アトラクション");
+//          word().english("theme park").japanese("ゆうえんち");
+//          word().english("museum").japanese("はくぶつかん");
+//          word().english("a.m.").japanese("ごぜん").kanji("午前");
+//          word().english("p.m.").japanese("ごご").kanji("午後");
 //          new DatabaseRecordAdjectivePair("orange", "オレンジいろ", "の"),
 //          new DatabaseRecordAdjectivePair("pink", "ピンクいろ", "の"),
 //          new DatabaseRecordAdjectivePair("yellow", "きいろい", Kanji.of("黄色い")),
-//          new DatabaseRecord("library", "としょかん"),
-//          new DatabaseRecord("company", "かいしゃ", "会社"),
+//          word().english("library").japanese("としょかん");
+//          word().english("company").japanese("かいしゃ").kanji("会社");
 //          new DatabaseRecordAdjectivePair("scary", "こわい"),
-//          new DatabaseRecord("photographer", "しゃしんか"),
-//          new DatabaseRecord("driver", "うんてんしゅ"),
-//          new DatabaseRecord("translator", "ほんやくか"),
-//          new DatabaseRecord("manager", "マネージャー"),
-//          new DatabaseRecord("coworker", "どうりょう"),
-//          new DatabaseRecord("mint chocolate chip", "チョコミント"),
-//          new DatabaseRecord("vanilla", "バニラ"),
+//          word().english("photographer").japanese("しゃしんか");
+//          word().english("driver").japanese("うんてんしゅ");
+//          word().english("translator").japanese("ほんやくか");
+//          word().english("manager").japanese("マネージャー");
+//          word().english("coworker").japanese("どうりょう");
+//          word().english("mint chocolate chip").japanese("チョコミント");
+//          word().english("vanilla").japanese("バニラ");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u10() {
 //      return listOf(
-//          new DatabaseRecord("documentary", "ドキュメンタリ-"),
-//          new DatabaseRecord("fiction", "フィクション"),
-//          new DatabaseRecord("non-fiction", "ノンフィクション"),
-//          new DatabaseRecord("anime music", "アニソン"),
+//          word().english("documentary").japanese("ドキュメンタリ-");
+//          word().english("fiction").japanese("フィクション");
+//          word().english("non-fiction").japanese("ノンフィクション");
+//          word().english("anime music").japanese("アニソン");
 //          new DatabaseRecord(expl("really", "don't really read"), "あまり"),
 //          new DatabaseRecordAdjectivePair("difficult", "むずかしい", Kanji.of("難しい")),
 //          new DatabaseRecordAdjectivePair("boring", "つまらない"),
-//          new DatabaseRecord("story", "はなし", "話"),
-//          new DatabaseRecord("gps", "ナビ"),
+//          word().english("story").japanese("はなし").kanji("話");
+//          word().english("gps").japanese("ナビ");
 //
-//          new DatabaseRecord("section", "コ-ナ-"),
-//          new DatabaseRecord("sale", "セ-ル"),
+//          word().english("section").japanese("コ-ナ-");
+//          word().english("sale").japanese("セ-ル");
 //
-//          new DatabaseRecord("poster", "ポスタ-"),
-//          new DatabaseRecord("card game", "カ-ドゲ-ム"),
-//          new DatabaseRecord("puzzle", "パズル"),
-//          new DatabaseRecord("band", "バンド"),
-//          new DatabaseRecord("album", "アルバム"),
+//          word().english("poster").japanese("ポスタ-");
+//          word().english("card game").japanese("カ-ドゲ-ム");
+//          word().english("puzzle").japanese("パズル");
+//          word().english("band").japanese("バンド");
+//          word().english("album").japanese("アルバム");
 //
-//          new DatabaseRecord("actor", "はいゆう"),
+//          word().english("actor").japanese("はいゆう");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u11() {
 //      return listOf(
-//          new DatabaseRecord("french　fries", "フライドポテト"),
-//          new DatabaseRecord("front desk", "うけつけ"),
-//          new DatabaseRecord("printer", "プリンター"),
-//          new DatabaseRecord("fried rice", "チャ-ハン"),
-//          new DatabaseRecord("until", "まで"),
+//          word().english("french　fries").japanese("フライドポテト");
+//          word().english("front desk").japanese("うけつけ");
+//          word().english("printer").japanese("プリンター");
+//          word().english("fried rice").japanese("チャ-ハン");
+//          word().english("until").japanese("まで");
 //          new DatabaseRecord(expl("from", "time"), "から"),
-//          new DatabaseRecord("meeting", "ミーティング"),
-//          new DatabaseRecord("client", "クライアント"),
+//          word().english("meeting").japanese("ミーティング");
+//          word().english("client").japanese("クライアント");
 //          new DatabaseRecord(expl("training", "job-related"), "トレーニング"),
-//          new DatabaseRecord("presentation", "プレゼン"),
-//          new DatabaseRecord("computer", "パソコン"),
-//          new DatabaseRecord("cafeteria", "しょくどう", "食堂"),
-//          new DatabaseRecord("last", "さいご"),
-//          new DatabaseRecord("karaoke", "カラオケ"),
-//          new DatabaseRecord("to sing", "うたいます", "歌います"),
-//          new DatabaseRecord("lunch break", "ひるやすみ", "ひる休み"),
-//          new DatabaseRecord("bar", "バ-"),
+//          word().english("presentation").japanese("プレゼン");
+//          word().english("computer").japanese("パソコン");
+//          word().english("cafeteria").japanese("しょくどう").kanji("食堂");
+//          word().english("last").japanese("さいご");
+//          word().english("karaoke").japanese("カラオケ");
+//          word().english("to sing").japanese("うたいます").kanji("歌います");
+//          word().english("lunch break").japanese("ひるやすみ").kanji("ひる休み");
+//          word().english("bar").japanese("バ-");
 //
-//          new DatabaseRecord("badminton", "バドミントン"),
-//          new DatabaseRecord("piano", "ピアノ"),
-//          new DatabaseRecord("instrument", "がっき"),
-//          new DatabaseRecord("hiragana", "ひらがな"),
-//          new DatabaseRecord("tonight", "こんや"),
-//          new DatabaseRecord("kanji", "かんじ", "漢字"),
+//          word().english("badminton").japanese("バドミントン");
+//          word().english("piano").japanese("ピアノ");
+//          word().english("instrument").japanese("がっき");
+//          word().english("hiragana").japanese("ひらがな");
+//          word().english("tonight").japanese("こんや");
+//          word().english("kanji").japanese("かんじ").kanji("漢字");
 //          new DatabaseRecord(expl("game", "match"), "しあい"),
-//          new DatabaseRecord("to begin", "はじまります", "始まります"),
-//          new DatabaseRecord("lesson", "レッスン"),
-//          new DatabaseRecord("practice", "れんしゅう", "練習"),
-//          new DatabaseRecord("post", "きじ"),
-//          new DatabaseRecord("fashion", "ファッション"),
-//          new DatabaseRecord("blog", "ブログ"),
-//          new DatabaseRecord("to dance", "おどります"),
-//          new DatabaseRecord("to write", "かきます", "書きます"),
-//          new DatabaseRecord("guitar", "ギター"),
+//          word().english("to begin").japanese("はじまります").kanji("始まります");
+//          word().english("lesson").japanese("レッスン");
+//          word().english("practice").japanese("れんしゅう").kanji("練習");
+//          word().english("post").japanese("きじ");
+//          word().english("fashion").japanese("ファッション");
+//          word().english("blog").japanese("ブログ");
+//          word().english("to dance").japanese("おどります");
+//          word().english("to write").japanese("かきます").kanji("書きます");
+//          word().english("guitar").japanese("ギター");
 //          new DatabaseRecord(expl("to play", "an instrument"), "ひきます", "弾きます"),
-//          new DatabaseRecord("performance", "パフォーマンス"),
+//          word().english("performance").japanese("パフォーマンス");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u12() {
 //      return listOf(
-//          new DatabaseRecord("shopping", "かいもの", "買い物"),
-//          new DatabaseRecord("name", "なまえ", "名前"),
-//          new DatabaseRecord("let's eat", "いただきます"),
-//          new DatabaseRecord("thank you for the meal", "ごちそうさまでした"),
-//          new DatabaseRecord("milk", "ぎゅうにゅう", "牛乳"),
-//          new DatabaseRecord("apple", "りんご"),
-//          new DatabaseRecord("well then", "では"),
-//          new DatabaseRecord("exactly", "ちょうど"),
+//          word().english("shopping").japanese("かいもの").kanji("買い物");
+//          word().english("name").japanese("なまえ").kanji("名前");
+//          word().english("let's eat").japanese("いただきます");
+//          word().english("thank you for the meal").japanese("ごちそうさまでした");
+//          word().english("milk").japanese("ぎゅうにゅう").kanji("牛乳");
+//          word().english("apple").japanese("りんご");
+//          word().english("well then").japanese("では");
+//          word().english("exactly").japanese("ちょうど");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u13() {
 //      return listOf(
-//          new DatabaseRecord("which school year", "なんねんせい", "何年生"),
+//          word().english("which school year").japanese("なんねんせい").kanji("何年生");
 //          new DatabaseRecord(expl("kitchen", "older"), "だいどころ", "台所"),
-//          new DatabaseRecord("bedroom", "しんしつ", "寝室"),
-//          new DatabaseRecord("sofa", "ソファー"),
-//          new DatabaseRecord("room", "へや", "部屋"),
-//          new DatabaseRecord("midnight", "れいじ", "零時"),
-//          new DatabaseRecord("puppy", "こいぬ", "子犬"),
-//          new DatabaseRecord("kitten", "こねこ", "子猫"),
-//          new DatabaseRecord("bird", "とり", "鳥"),
-//          new DatabaseRecord("pet", "ペット"),
+//          word().english("bedroom").japanese("しんしつ").kanji("寝室");
+//          word().english("sofa").japanese("ソファー");
+//          word().english("room").japanese("へや").kanji("部屋");
+//          word().english("midnight").japanese("れいじ").kanji("零時");
+//          word().english("puppy").japanese("こいぬ").kanji("子犬");
+//          word().english("kitten").japanese("こねこ").kanji("子猫");
+//          word().english("bird").japanese("とり").kanji("鳥");
+//          word().english("pet").japanese("ペット");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u14() {
 //      return listOf(
-//          new DatabaseRecord("foreigner", "がいこくじん", "外国人"),
-//          new DatabaseRecord("to be called", "もうします", "申します"),
-//          new DatabaseRecord("high school", "こうこう", "高校"),
-//          new DatabaseRecord("middle school", "ちゅうがく", "中学"),
-//          new DatabaseRecord("elementary school", "しょうがく", "小学"),
-//          new DatabaseRecord("studying abroad", "りゅうがく", "留学"),
-//          new DatabaseRecord("foreign exchange student", "りゅうがくせい", "留学生"),
-//          new DatabaseRecord("difference", "ちがい", "違い"),
-//          new DatabaseRecord("that is not the case", "ちがいます", "違います"),
-//          new DatabaseRecord("that's right", "そうです"),
-//          new DatabaseRecord("zero", "ゼロ", "〇"),
-//          new DatabaseRecord("mood", "ちょうし", "調子"),
-//          new DatabaseRecord("how are you", "ちょうしはいかがですか", "調子はいかがですか"),
+//          word().english("foreigner").japanese("がいこくじん").kanji("外国人");
+//          word().english("to be called").japanese("もうします").kanji("申します");
+//          word().english("high school").japanese("こうこう").kanji("高校");
+//          word().english("middle school").japanese("ちゅうがく").kanji("中学");
+//          word().english("elementary school").japanese("しょうがく").kanji("小学");
+//          word().english("studying abroad").japanese("りゅうがく").kanji("留学");
+//          word().english("foreign exchange student").japanese("りゅうがくせい").kanji("留学生");
+//          word().english("difference").japanese("ちがい").kanji("違い");
+//          word().english("that is not the case").japanese("ちがいます").kanji("違います");
+//          word().english("that's right").japanese("そうです");
+//          word().english("zero").japanese("ゼロ").kanji("〇");
+//          word().english("mood").japanese("ちょうし").kanji("調子");
+//          word().english("how are you").japanese("ちょうしはいかがですか").kanji("調子はいかがですか");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u15() {
 //      return listOf(
 //          new DatabaseRecord("brothers", expl("きょうだい", "兄弟"), "兄弟"),
-//          new DatabaseRecord("sisters", "しまい", "姉妹"),
-//          new DatabaseRecord("steak", "ステーキ"),
-//          new DatabaseRecord("menu", "メニュー"),
-//          new DatabaseRecord("ten thousand", "まん", "万"),
+//          word().english("sisters").japanese("しまい").kanji("姉妹");
+//          word().english("steak").japanese("ステーキ");
+//          word().english("menu").japanese("メニュー");
+//          word().english("ten thousand").japanese("まん").kanji("万");
 //          new DatabaseRecordAdjectivePair("disliked", "きらい", "な", Kanji.of("嫌い")),
 //          new DatabaseRecordAdjectivePair("bad tasting", "tea", "まずい", "おちゃ"),
 //          new DatabaseRecordAdjectivePair("spicy", "からい"),
 //          new DatabaseRecord("she", expl("かのじょ", "pronoun")),
 //          new DatabaseRecord(expl("I", "male"), "ぼく", "僕"),
-//          new DatabaseRecord("you", "あなた"),
-//          new DatabaseRecord("they", "かれら", "彼ら"),
-//          new DatabaseRecord("noon", "ひる", "昼"),
-//          new DatabaseRecord("day after tomorrow", "あさって", "明後日"),
+//          word().english("you").japanese("あなた");
+//          word().english("they").japanese("かれら").kanji("彼ら");
+//          word().english("noon").japanese("ひる").kanji("昼");
+//          word().english("day after tomorrow").japanese("あさって").kanji("明後日");
 //          new DatabaseRecordAdjectivePair("freezing", "つめたい", Kanji.of("冷たい")),
-//          new DatabaseRecord("ballet", "バレイ"),
+//          word().english("ballet").japanese("バレイ");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u16() {
 //      return listOf(
-//          new DatabaseRecord("to work", "はたらきます", "働きます"),
+//          word().english("to work").japanese("はたらきます").kanji("働きます");
 //
-//          new DatabaseRecord("upper left", "ひだりうえ", "左上"),
-//          new DatabaseRecord("lower left", "ひだりした", "左下"),
-//          new DatabaseRecord("upper right", "みぎうえ", "右上"),
-//          new DatabaseRecord("lower right", "みぎした", "右下"),
+//          word().english("upper left").japanese("ひだりうえ").kanji("左上");
+//          word().english("lower left").japanese("ひだりした").kanji("左下");
+//          word().english("upper right").japanese("みぎうえ").kanji("右上");
+//          word().english("lower right").japanese("みぎした").kanji("右下");
 //
-//          new DatabaseRecord("left", "ひだり", "左"),
-//          new DatabaseRecord("right", "みぎ", "右"),
-//          new DatabaseRecord("above", "うえ", "上"),
-//          new DatabaseRecord("below", "した", "下"),
-//          new DatabaseRecord("before", "まえ", "前"),
-//          new DatabaseRecord("behind", "うしろ", "後ろ"),
-//          new DatabaseRecord("beside", "よこ", "横"),
-//          new DatabaseRecord("between", "あいだ", "間"),
-//          new DatabaseRecord("next door", "となり", "隣"),
-//          new DatabaseRecord("inside", "なか", "中"),
-//          new DatabaseRecord("outside", "そと", "外"),
+//          word().english("left").japanese("ひだり").kanji("左");
+//          word().english("right").japanese("みぎ").kanji("右");
+//          word().english("above").japanese("うえ").kanji("上");
+//          word().english("below").japanese("した").kanji("下");
+//          word().english("before").japanese("まえ").kanji("前");
+//          word().english("behind").japanese("うしろ").kanji("後ろ");
+//          word().english("beside").japanese("よこ").kanji("横");
+//          word().english("between").japanese("あいだ").kanji("間");
+//          word().english("next door").japanese("となり").kanji("隣");
+//          word().english("inside").japanese("なか").kanji("中");
+//          word().english("outside").japanese("そと").kanji("外");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u17() {
 //      return listOf(
-//          new DatabaseRecord("housework", "いえのそうじ", "家の掃除"),
-//          new DatabaseRecord("corner", "かたすみ", "片隅"),
+//          word().english("housework").japanese("いえのそうじ").kanji("家の掃除");
+//          word().english("corner").japanese("かたすみ").kanji("片隅");
 //          new DatabaseRecordAdjectivePair("low", "chair", "ひくい", "", "いす", "低い"),
-//          new DatabaseRecord("to turn on", "つけます"),
-//          new DatabaseRecord("immediately", "すぐ"),
+//          word().english("to turn on").japanese("つけます");
+//          word().english("immediately").japanese("すぐ");
 //          new DatabaseRecord(expl("to be opened", "window"), "あけます", "開けます"),
-//          new DatabaseRecord("mirror", "かがみ", "鏡"),
+//          word().english("mirror").japanese("かがみ").kanji("鏡");
 //          new DatabaseRecordAdjectivePair("dirty", "きたない", Kanji.of("汚い")),
-//          new DatabaseRecord("electricity", "でんき", "電気"),
+//          word().english("electricity").japanese("でんき").kanji("電気");
 //          new DatabaseRecord(expl("to close", "window"), "しめます", "閉めます"),
-//          new DatabaseRecord("from then on", "それから"),
-//          new DatabaseRecord("to stand up", "たちます", "立ちます"),
+//          word().english("from then on").japanese("それから");
+//          word().english("to stand up").japanese("たちます").kanji("立ちます");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u18() {
 //      return listOf(
-//          new DatabaseRecord("song", "うた", "歌"),
-//          new DatabaseRecord("to learn", "ならいます", "習います"),
-//          new DatabaseRecord("stroll", "さんぽ", "散歩"),
-//          new DatabaseRecord("letter", "てがみ", "手紙"),
+//          word().english("song").japanese("うた").kanji("歌");
+//          word().english("to learn").japanese("ならいます").kanji("習います");
+//          word().english("stroll").japanese("さんぽ").kanji("散歩");
+//          word().english("letter").japanese("てがみ").kanji("手紙");
 //          new DatabaseRecord(expl("wife", "formal"), "おくさん", "奥さん"),
 //          new DatabaseRecord(expl("husband", "formal"), "ごしゅじん", "ご主人"),
-//          new DatabaseRecord("parent", "おや", "親"),
-//          new DatabaseRecord("relative", "しんせき", "親戚"),
-//          new DatabaseRecord("cousin", "いとこ"),
-//          new DatabaseRecord("uncle", "おじ"),
-//          new DatabaseRecord("aunt", "おば"),
-//          new DatabaseRecord("grandfather", "そふ", "祖父"),
-//          new DatabaseRecord("grandmother", "そぼ", "祖母"),
-//          new DatabaseRecord("grandchild", "まご", "孫"),
-//          new DatabaseRecord("granddaughter", "まごむすめ", "孫娘"),
-//          new DatabaseRecord("grandson", "まごむすこ", "孫息子"),
-//          new DatabaseRecord("to resemble", "にます", "似ます"),
-//          new DatabaseRecord("to draw", "かきます", "描きます"),
-//          new DatabaseRecord("being home", "ざいたく", "在宅"),
+//          word().english("parent").japanese("おや").kanji("親");
+//          word().english("relative").japanese("しんせき").kanji("親戚");
+//          word().english("cousin").japanese("いとこ");
+//          word().english("uncle").japanese("おじ");
+//          word().english("aunt").japanese("おば");
+//          word().english("grandfather").japanese("そふ").kanji("祖父");
+//          word().english("grandmother").japanese("そぼ").kanji("祖母");
+//          word().english("grandchild").japanese("まご").kanji("孫");
+//          word().english("granddaughter").japanese("まごむすめ").kanji("孫娘");
+//          word().english("grandson").japanese("まごむすこ").kanji("孫息子");
+//          word().english("to resemble").japanese("にます").kanji("似ます");
+//          word().english("to draw").japanese("かきます").kanji("描きます");
+//          word().english("being home").japanese("ざいたく").kanji("在宅");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u19() {
 //      return listOf(
-//          new DatabaseRecord("sweater", "セーター"),
+//          word().english("sweater").japanese("セーター");
 //          new DatabaseRecord(expl("to wear", "head"), "かぶります", "被ります"),
-//          new DatabaseRecord("car", "くるま", "車"),
-//          new DatabaseRecord("bicycle", "じてんしゃ", "自転車"),
-//          new DatabaseRecord("to walk", "あるきます", "歩きます"),
+//          word().english("car").japanese("くるま").kanji("車");
+//          word().english("bicycle").japanese("じてんしゃ").kanji("自転車");
+//          word().english("to walk").japanese("あるきます").kanji("歩きます");
 //          new DatabaseRecordAdjectivePair("slow", "おそい", Kanji.of("遅い")),
 //          new DatabaseRecordAdjectivePair("brown", "ちゃいろ", "の", Kanji.of("茶色")),
 //          new DatabaseRecord(expl("to wear", "upper body"), "きます", "着ます"),
-//          new DatabaseRecord("to take off", "ぬぎます", "脱ぎます"),
-//          new DatabaseRecord("pants", "ズボン"),
-//          new DatabaseRecord("underwear", "パンツ"),
+//          word().english("to take off").japanese("ぬぎます").kanji("脱ぎます");
+//          word().english("pants").japanese("ズボン");
+//          word().english("underwear").japanese("パンツ");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u20() {
 //      return listOf(
-//          new DatabaseRecord("movie theater", "えいがかん", "映画館"),
-//          new DatabaseRecord("this morning", "けさ", "今朝"),
-//          new DatabaseRecord("to fall", "ふります", "降ります"),
+//          word().english("movie theater").japanese("えいがかん").kanji("映画館");
+//          word().english("this morning").japanese("けさ").kanji("今朝");
+//          word().english("to fall").japanese("ふります").kanji("降ります");
 //          new DatabaseRecordAdjectivePair("strong", "つよい", Kanji.of("強い")),
 //          new DatabaseRecordAdjectivePair("weak", "よわい", Kanji.of("弱い")),
-//          new DatabaseRecord("wind", "かぜ", "風"),
-//          new DatabaseRecord("this month", "こんげつ", "今月"),
-//          new DatabaseRecord("week after next", "さらいしゅう", "再来週"),
-//          new DatabaseRecord("to teach", "おしえます", "教えます"),
+//          word().english("wind").japanese("かぜ").kanji("風");
+//          word().english("this month").japanese("こんげつ").kanji("今月");
+//          word().english("week after next").japanese("さらいしゅう").kanji("再来週");
+//          word().english("to teach").japanese("おしえます").kanji("教えます");
 //          new DatabaseRecord(expl("to make a call", "with a phone"), "かけます"),
-//          new DatabaseRecord("last month", "せんげつ", "先月"),
-//          new DatabaseRecord("last night", "ゆうべ", "夕べ"),
-//          new DatabaseRecord("to blow", "ふきます", "吹きます"),
-//          new DatabaseRecord("evening", "ゆうがた", "夕方"),
-//          new DatabaseRecord("daytime", "ひるま", "昼間"),
+//          word().english("last month").japanese("せんげつ").kanji("先月");
+//          word().english("last night").japanese("ゆうべ").kanji("夕べ");
+//          word().english("to blow").japanese("ふきます").kanji("吹きます");
+//          word().english("evening").japanese("ゆうがた").kanji("夕方");
+//          word().english("daytime").japanese("ひるま").kanji("昼間");
 //          new DatabaseRecordAdjectivePair("dark", "weather", "くらい", "", "てんき", "暗い"),
 //          new DatabaseRecordAdjectivePair("bright", "weather", "あかるい", "", "てんき", "明るい"),
-//          new DatabaseRecord("sky", "そら", "空"),
+//          word().english("sky").japanese("そら").kanji("空");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> udelta() {
 //      return listOf(
-//          new DatabaseRecord("free of charge", "むりょう"),
-//          new DatabaseRecord("to look for", "さがします"),
-//          new DatabaseRecord("password", "パスワード"),
-//          new DatabaseRecord("spa", "スパ"),
-//          new DatabaseRecord("ice", "こおり"),
-//          new DatabaseRecord("to stay", "とまります"),
-//          new DatabaseRecord("towel", "タオル"),
-//          new DatabaseRecord("internet", "ネット"),
-//          new DatabaseRecord("toast", "トースト"),
-//          new DatabaseRecord("check-out", "チェックアウト"),
-//          new DatabaseRecord("coffee maker", "コーヒーメーカー"),
-//          new DatabaseRecord("room service", "ルームサービス"),
-//          new DatabaseRecord("key", "かぎ"),
-//          new DatabaseRecord("pancake", "パンケーキ"),
-//          new DatabaseRecord("check-in", "チェックイン"),
-//          new DatabaseRecord("credit card", "クレジットカード"),
-//          new DatabaseRecord("change money", "おつり"),
-//          new DatabaseRecord("chinese food", "ちゅうかくりょうり"),
-//          new DatabaseRecord("to become open", "あきます"),
-//          new DatabaseRecord("napkin", "ナプキン"),
-//          new DatabaseRecord("chinatown", "ちゅうかがい"),
-//          new DatabaseRecord("to pay", "はらいます"),
-//          new DatabaseRecord("mapo tofu", "マーポーとうふ"),
-//          new DatabaseRecord("bubble tea", "タピオカティー"),
-//          new DatabaseRecord("oolong tea", "ウーロンちゃ"),
-//          new DatabaseRecord("barbecue", "バーベキュー"),
-//          new DatabaseRecord("scenery", "けしき"),
-//          new DatabaseRecord("fried dumpling", "ぎょうざ"),
-//          new DatabaseRecord("to fry", "やきます"),
-//          new DatabaseRecord("backpack", "バックパック"),
-//          new DatabaseRecord("to enjoy", "たのしみます"),
-//          new DatabaseRecord("pepper", "こしょう"),
-//          new DatabaseRecord("beef", "ぎゅうにく"),
-//          new DatabaseRecord("shrimp", "えび"),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
-//          new DatabaseRecord("", ""),
+//          word().english("free of charge").japanese("むりょう");
+//          word().english("to look for").japanese("さがします");
+//          word().english("password").japanese("パスワード");
+//          word().english("spa").japanese("スパ");
+//          word().english("ice").japanese("こおり");
+//          word().english("to stay").japanese("とまります");
+//          word().english("towel").japanese("タオル");
+//          word().english("internet").japanese("ネット");
+//          word().english("toast").japanese("トースト");
+//          word().english("check-out").japanese("チェックアウト");
+//          word().english("coffee maker").japanese("コーヒーメーカー");
+//          word().english("room service").japanese("ルームサービス");
+//          word().english("key").japanese("かぎ");
+//          word().english("pancake").japanese("パンケーキ");
+//          word().english("check-in").japanese("チェックイン");
+//          word().english("credit card").japanese("クレジットカード");
+//          word().english("change money").japanese("おつり");
+//          word().english("chinese food").japanese("ちゅうかくりょうり");
+//          word().english("to become open").japanese("あきます");
+//          word().english("napkin").japanese("ナプキン");
+//          word().english("chinatown").japanese("ちゅうかがい");
+//          word().english("to pay").japanese("はらいます");
+//          word().english("mapo tofu").japanese("マーポーとうふ");
+//          word().english("bubble tea").japanese("タピオカティー");
+//          word().english("oolong tea").japanese("ウーロンちゃ");
+//          word().english("barbecue").japanese("バーベキュー");
+//          word().english("scenery").japanese("けしき");
+//          word().english("fried dumpling").japanese("ぎょうざ");
+//          word().english("to fry").japanese("やきます");
+//          word().english("backpack").japanese("バックパック");
+//          word().english("to enjoy").japanese("たのしみます");
+//          word().english("pepper").japanese("こしょう");
+//          word().english("beef").japanese("ぎゅうにく");
+//          word().english("shrimp").japanese("えび");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
+//          word().english("").japanese("");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //
@@ -1385,415 +1390,461 @@ class DatabaseTematicPopulator {
 //  static class DbPopS3 {
 //    public static List<DatabaseRecord> u01() {
 //      return listOf(
-//          new DatabaseRecord("not sure", "さあ"),
+//          word().english("not sure").japanese("さあ");
 //          new DatabaseRecord(expl("not at all", "formal"), "まったく", "全く"),
 //          new DatabaseRecord(expl("not at all", "informal"), "ぜんぜん", "全然"),
 //          new DatabaseRecordAdjectivePair("many", "おおい", Kanji.of("多い")),
-//          new DatabaseRecord("alcohol", "おさけ", "お酒"),
-//          new DatabaseRecord("fruit", "くだもの", "果物"),
-//          new DatabaseRecord("sugar", "さとう", "砂糖"),
-//          new DatabaseRecord("supper", "ゆうはん", "夕飯"),
-//          new DatabaseRecord("mint", "ミント"),
-//          new DatabaseRecord("all of them", "ぜんぶ", "全部"),
-//          new DatabaseRecord("food", "たべもの", "食べ物"),
-//          new DatabaseRecord("I'm fine", "けっこう", "結構"),
-//          new DatabaseRecord("drink", "のみもの", "飲み物"),
+//          word().english("alcohol").japanese("おさけ").kanji("お酒");
+//          word().english("fruit").japanese("くだもの").kanji("果物");
+//          word().english("sugar").japanese("さとう").kanji("砂糖");
+//          word().english("supper").japanese("ゆうはん").kanji("夕飯");
+//          word().english("mint").japanese("ミント");
+//          word().english("all of them").japanese("ぜんぶ").kanji("全部");
+//          word().english("food").japanese("たべもの").kanji("食べ物");
+//          word().english("I'm fine").japanese("けっこう").kanji("結構");
+//          word().english("drink").japanese("のみもの").kanji("飲み物");
 //          new DatabaseRecordAdjectivePair("a bit", "of time", "すくない", "", "じかん", "少ない"),
-//          new DatabaseRecord("terribly", "たいへん", "大変"),
+//          word().english("terribly").japanese("たいへん").kanji("大変");
 //
-//          new DatabaseRecord("which way", "どちら"),
-//          new DatabaseRecord("in what way", "どうやって"),
-//          new DatabaseRecord("bank", "ぎんこう", "銀行"),
-//          new DatabaseRecord("that way", "そちら"),
-//          new DatabaseRecord("that way over there", "あちら"),
-//          new DatabaseRecord("path", "みち", "道"),
-//          new DatabaseRecord("street", "とおり", "通り"),
-//          new DatabaseRecord("to leave", "でます", "出ます"),
-//          new DatabaseRecord("to enter", "はいります", "入ります"),
-//          new DatabaseRecord("across", "むこう", "向こう"),
-//          new DatabaseRecord("north", "きた", "北"),
-//          new DatabaseRecord("north-east", "ほくとう", "北東"),
-//          new DatabaseRecord("north-west", "ほくせい", "北西"),
-//          new DatabaseRecord("south", "みなみ", "南"),
-//          new DatabaseRecord("south-east", "なんとう", "南東"),
-//          new DatabaseRecord("south-west", "なんせい", "南西"),
-//          new DatabaseRecord("east", "ひがし", "東"),
-//          new DatabaseRecord("west", "にし", "西"),
-//          new DatabaseRecord("to get off", "おります", "降ります"),
-//          new DatabaseRecord("proximity", "そば", "側"),
-//          new DatabaseRecord("to pass by", "とおります", "通ります"),
+//          word().english("which way").japanese("どちら");
+//          word().english("in what way").japanese("どうやって");
+//          word().english("bank").japanese("ぎんこう").kanji("銀行");
+//          word().english("that way").japanese("そちら");
+//          word().english("that way over there").japanese("あちら");
+//          word().english("path").japanese("みち").kanji("道");
+//          word().english("street").japanese("とおり").kanji("通り");
+//          word().english("to leave").japanese("でます").kanji("出ます");
+//          word().english("to enter").japanese("はいります").kanji("入ります");
+//          word().english("across").japanese("むこう").kanji("向こう");
+//          word().english("north").japanese("きた").kanji("北");
+//          word().english("north-east").japanese("ほくとう").kanji("北東");
+//          word().english("north-west").japanese("ほくせい").kanji("北西");
+//          word().english("south").japanese("みなみ").kanji("南");
+//          word().english("south-east").japanese("なんとう").kanji("南東");
+//          word().english("south-west").japanese("なんせい").kanji("南西");
+//          word().english("east").japanese("ひがし").kanji("東");
+//          word().english("west").japanese("にし").kanji("西");
+//          word().english("to get off").japanese("おります").kanji("降ります");
+//          word().english("proximity").japanese("そば").kanji("側");
+//          word().english("to pass by").japanese("とおります").kanji("通ります");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u02() {
 //      return listOf(
-//          new DatabaseRecord("this year", "ことし", "今年"),
-//          new DatabaseRecord("next year", "らいねん", "来年"),
-//          new DatabaseRecord("last year", "きょねん", "去年"),
-//          new DatabaseRecord("year after next", "さらいねん", "再来年"),
-//          new DatabaseRecord("year before last", "おととし", "一昨年"),
-//          new DatabaseRecord("congratulations", "おめでとう"),
-//          new DatabaseRecord("birthday", "たんじょうび", "誕生日"),
-//          new DatabaseRecord("birth", "たんじょう", "誕生"),
-//          new DatabaseRecord("plate", "さら", "皿"),
-//          new DatabaseRecord("cup", "カップ"),
-//          new DatabaseRecord("chopstick", "はし", "箸"),
-//          new DatabaseRecord("to be hungry", "おなかがすきました", "お腹がすきました"),
-//          new DatabaseRecord("to become empty", "すきます", "空きます"),
-//          new DatabaseRecord("stomach", "おなか", "お腹"),
-//          new DatabaseRecord("knife", "ナイフ"),
-//          new DatabaseRecord("spoon", "スプーン"),
-//          new DatabaseRecord("bowl", "ボウル"),
-//          new DatabaseRecord("fork", "フォーク"),
-//          new DatabaseRecord("rice bowl", "ちゃわん", "茶碗"),
-//          new DatabaseRecord("half", "はんぶん", "半分"),
-//          new DatabaseRecord("glass", "グラス"),
-//          new DatabaseRecord("favourite food", "こうぶつ", "好物"),
-//          new DatabaseRecord("wine", "ワイン"),
-//          new DatabaseRecord("lemon", "レモン"),
-//          new DatabaseRecord("grape", "ぶどう"),
-//          new DatabaseRecord("soup", "スープ"),
+//          word().english("this year").japanese("ことし").kanji("今年");
+//          word().english("next year").japanese("らいねん").kanji("来年");
+//          word().english("last year").japanese("きょねん").kanji("去年");
+//          word().english("year after next").japanese("さらいねん").kanji("再来年");
+//          word().english("year before last").japanese("おととし").kanji("一昨年");
+//          word().english("congratulations").japanese("おめでとう");
+//          word().english("birthday").japanese("たんじょうび").kanji("誕生日");
+//          word().english("birth").japanese("たんじょう").kanji("誕生");
+//          word().english("plate").japanese("さら").kanji("皿");
+//          word().english("cup").japanese("カップ");
+//          word().english("chopstick").japanese("はし").kanji("箸");
+//          word().english("to be hungry").japanese("おなかがすきました").kanji("お腹がすきました");
+//          word().english("to become empty").japanese("すきます").kanji("空きます");
+//          word().english("stomach").japanese("おなか").kanji("お腹");
+//          word().english("knife").japanese("ナイフ");
+//          word().english("spoon").japanese("スプーン");
+//          word().english("bowl").japanese("ボウル");
+//          word().english("fork").japanese("フォーク");
+//          word().english("rice bowl").japanese("ちゃわん").kanji("茶碗");
+//          word().english("half").japanese("はんぶん").kanji("半分");
+//          word().english("glass").japanese("グラス");
+//          word().english("favourite food").japanese("こうぶつ").kanji("好物");
+//          word().english("wine").japanese("ワイン");
+//          word().english("lemon").japanese("レモン");
+//          word().english("grape").japanese("ぶどう");
+//          word().english("soup").japanese("スープ");
 //          new DatabaseRecordAdjectivePair("sour", "すっぱい"),
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u03() {
 //      return listOf(
-//          new DatabaseRecord("money", "おかね", "お金"),
-//          new DatabaseRecord("clock", "とけい", "時計"),
-//          new DatabaseRecord("watch", "うでどけい", "腕時計"),
-//          new DatabaseRecord("luggage", "にもつ", "荷物"),
-//          new DatabaseRecord("to receive", "もらいます"),
-//          new DatabaseRecord("other", "ほか"),
-//          new DatabaseRecord("different", "ちがう", "違う"),
-//          new DatabaseRecord("same", "おなじ", "同じ"),
-//          new DatabaseRecord("this kind of", "こんな"),
+//          word().english("money").japanese("おかね").kanji("お金");
+//          word().english("clock").japanese("とけい").kanji("時計");
+//          word().english("watch").japanese("うでどけい").kanji("腕時計");
+//          word().english("luggage").japanese("にもつ").kanji("荷物");
+//          word().english("to receive").japanese("もらいます");
+//          word().english("other").japanese("ほか");
+//          word().english("different").japanese("ちがう").kanji("違う");
+//          word().english("same").japanese("おなじ").kanji("同じ");
+//          word().english("this kind of").japanese("こんな");
 //          new DatabaseRecordAdjectivePair("heavy", "おもい", Kanji.of("重い")),
 //          new DatabaseRecordAdjectivePair("light", "かるい", Kanji.of("軽い")),
 //          new DatabaseRecordAdjectivePair("sturdy", "じょうぶ", Kanji.of("丈夫")),
-//          new DatabaseRecord("to put in", "いれます", "入れます"),
-//          new DatabaseRecord("to take out", "だします", "出します"),
-//          new DatabaseRecord("to give", "あげます"),
-//          new DatabaseRecord("for someone", "にとって"),
-//          new DatabaseRecord("bakery", "パンや", "パン屋"),
-//          new DatabaseRecord("cashier", "かいけい", "会計"),
-//          new DatabaseRecord("how about", "いかが"),
+//          word().english("to put in").japanese("いれます").kanji("入れます");
+//          word().english("to take out").japanese("だします").kanji("出します");
+//          word().english("to give").japanese("あげます");
+//          word().english("for someone").japanese("にとって");
+//          word().english("bakery").japanese("パンや").kanji("パン屋");
+//          word().english("cashier").japanese("かいけい").kanji("会計");
+//          word().english("how about").japanese("いかが");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u04() {
 //      return listOf(
-//          new DatabaseRecord("female", "おんな", "女"),
-//          new DatabaseRecord("magnificent", "りっぱ", "立派"),
+//          word().english("female").japanese("おんな").kanji("女");
+//          word().english("magnificent").japanese("りっぱ").kanji("立派");
 //          new DatabaseRecord(expl("who", "formal"), "どなた"),
 //          new DatabaseRecord(expl("person", "formal"), "かた", "方"),
-//          new DatabaseRecord("adult female", "おんなのひと", "女の人"),
-//          new DatabaseRecord("adult male", "おとこのひと", "男の人"),
-//          new DatabaseRecord("child female", "おんなのこ", "女の子"),
-//          new DatabaseRecord("child male", "おとこのこ", "男の子"),
+//          word().english("adult female").japanese("おんなのひと").kanji("女の人");
+//          word().english("adult male").japanese("おとこのひと").kanji("男の人");
+//          word().english("child female").japanese("おんなのこ").kanji("女の子");
+//          word().english("child male").japanese("おとこのこ").kanji("男の子");
 //          new DatabaseRecord(expl("everyone", "formal"), "みなさん", "皆さん"),
 //          new DatabaseRecord(expl("everyone", "informal"), "みんな", "皆"),
-//          new DatabaseRecord("to summon", "よびます", "呼びます"),
-//          new DatabaseRecord("crowd", "おおぜい", "大勢"),
-//          new DatabaseRecord("marriage", "けっこん", "結婚"),
-//          new DatabaseRecord("divorce", "りこん", "離婚"),
-//          new DatabaseRecord("young", "わかい", "若い"),
-//          new DatabaseRecord("adult", "おとな", "大人"),
-//          new DatabaseRecord("baby", "あかちゃん", "赤ちゃん"),
-//          new DatabaseRecord("to die", "しにます", "死にます"),
-//          new DatabaseRecord("to be born", "うまれます", "生まれます"),
-//          new DatabaseRecord("to pass away", "なくなります", "亡くなります"),
-//          new DatabaseRecord("single", "どくしん", "独身"),
-//          new DatabaseRecord("to break up", "わかれます", "別れます"),
-//          new DatabaseRecord("date", "デート"),
-//          new DatabaseRecord("lover", "こいびと", "恋人"),
-//          new DatabaseRecord("intention", "つもり"),
-//          new DatabaseRecord("cool", "すずしい", "涼しい"),
+//          word().english("to summon").japanese("よびます").kanji("呼びます");
+//          word().english("crowd").japanese("おおぜい").kanji("大勢");
+//          word().english("marriage").japanese("けっこん").kanji("結婚");
+//          word().english("divorce").japanese("りこん").kanji("離婚");
+//          word().english("young").japanese("わかい").kanji("若い");
+//          word().english("adult").japanese("おとな").kanji("大人");
+//          word().english("baby").japanese("あかちゃん").kanji("赤ちゃん");
+//          word().english("to die").japanese("しにます").kanji("死にます");
+//          word().english("to be born").japanese("うまれます").kanji("生まれます");
+//          word().english("to pass away").japanese("なくなります").kanji("亡くなります");
+//          word().english("single").japanese("どくしん").kanji("独身");
+//          word().english("to break up").japanese("わかれます").kanji("別れます");
+//          word().english("date").japanese("デート");
+//          word().english("lover").japanese("こいびと").kanji("恋人");
+//          word().english("intention").japanese("つもり");
+//          word().english("cool").japanese("すずしい").kanji("涼しい");
 //          new DatabaseRecord(expl("to hold up", "umbrella"), "?????", "????"),
-//          new DatabaseRecord("however", "しかし"),
-//          new DatabaseRecord("handle it with care", "たいせつにしてね"),
+//          word().english("however").japanese("しかし");
+//          word().english("handle it with care").japanese("たいせつにしてね");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u05() {
 //      return listOf(
 //          new DatabaseRecordAdjectivePair("tight", "きつい"),
 //          new DatabaseRecordAdjectivePair("loose", "ゆるい"),
-//          new DatabaseRecord("socks", "くつした", "靴下"),
+//          word().english("socks").japanese("くつした").kanji("靴下");
 //          new DatabaseRecordAdjectivePair("gray", "はいいろ", "の", Kanji.of("灰色")),
-//          new DatabaseRecord("ash", "はい", "灰"),
-//          new DatabaseRecord("glove", "てぶくろ", "手袋"),
-//          new DatabaseRecord("straight", "まっすぐ"),
-//          new DatabaseRecord("to advance", "すすみます", "進みます"),
-//          new DatabaseRecord("corner", "かど", "角"),
-//          new DatabaseRecord("which　way", "どっち"),
-//          new DatabaseRecord("that way over there", "あっち"),
-//          new DatabaseRecord("that way", "そっち"),
-//          new DatabaseRecord("this way", "こっち"),
-//          new DatabaseRecord("to turn", "まがります", "曲がります"),
+//          word().english("ash").japanese("はい").kanji("灰");
+//          word().english("glove").japanese("てぶくろ").kanji("手袋");
+//          word().english("straight").japanese("まっすぐ");
+//          word().english("to advance").japanese("すすみます").kanji("進みます");
+//          word().english("corner").japanese("かど").kanji("角");
+//          word().english("which　way").japanese("どっち");
+//          word().english("that way over there").japanese("あっち");
+//          word().english("that way").japanese("そっち");
+//          word().english("this way").japanese("こっち");
+//          word().english("to turn").japanese("まがります").kanji("曲がります");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u06() {
 //      return listOf(
-//          new DatabaseRecord("to turn off", "けします", "消します"),
-//          new DatabaseRecord("early morning", "あさはやく", "朝早く"),
-//          new DatabaseRecord("quickly", "はやく", "早く"),
-//          new DatabaseRecord("to work for", "つとめます", "勤めます"),
-//          new DatabaseRecord("door", "ドア"),
-//          new DatabaseRecord("cell phone", "けいたいでんわ", "携帯電話"),
-//          new DatabaseRecord("to possess", "もちます", "持ちます"),
-//          new DatabaseRecord("slowly", "ゆっくり"),
+//          word().english("to turn off").japanese("けします").kanji("消します");
+//          word().english("early morning").japanese("あさはやく").kanji("朝早く");
+//          word().english("quickly").japanese("はやく").kanji("早く");
+//          word().english("to work for").japanese("つとめます").kanji("勤めます");
+//          word().english("door").japanese("ドア");
+//          word().english("cell phone").japanese("けいたいでんわ").kanji("携帯電話");
+//          word().english("to possess").japanese("もちます").kanji("持ちます");
+//          word().english("slowly").japanese("ゆっくり");
 //
-//          new DatabaseRecord("to bloom", "さきます", "咲きます"),
-//          new DatabaseRecord("to fly", "とびます", "飛びます"),
-//          new DatabaseRecord("deer", "しか", "鹿"),
-//          new DatabaseRecord("fox", "キツネ"),
-//          new DatabaseRecord("monkey", "サル"),
-//          new DatabaseRecord("pigeon", "ハト"),
-//          new DatabaseRecord("horse", "うま", "馬"),
-//          new DatabaseRecord("cow", "うし", "牛"),
-//          new DatabaseRecord("bear", "くま", "熊"),
-//          new DatabaseRecord("animal", "どうぶつ", "動物"),
-//          new DatabaseRecord("voice", "こえ", "声"),
+//          word().english("to bloom").japanese("さきます").kanji("咲きます");
+//          word().english("to fly").japanese("とびます").kanji("飛びます");
+//          word().english("deer").japanese("しか").kanji("鹿");
+//          word().english("fox").japanese("キツネ");
+//          word().english("monkey").japanese("サル");
+//          word().english("pigeon").japanese("ハト");
+//          word().english("horse").japanese("うま").kanji("馬");
+//          word().english("cow").japanese("うし").kanji("牛");
+//          word().english("bear").japanese("くま").kanji("熊");
+//          word().english("animal").japanese("どうぶつ").kanji("動物");
+//          word().english("voice").japanese("こえ").kanji("声");
 //          new DatabaseRecord(expl("to make a sound", "animals"), "鳴きます", "なきます"),
-//          new DatabaseRecord("pond", "いけ", "池"),
-//          new DatabaseRecord("river", "かわ", "川"),
-//          new DatabaseRecord("sea", "うみ", "海"),
-//          new DatabaseRecord("to climb", "のぼります", "登ります"),
-//          new DatabaseRecord("tree", "き", "木"),
+//          word().english("pond").japanese("いけ").kanji("池");
+//          word().english("river").japanese("かわ").kanji("川");
+//          word().english("sea").japanese("うみ").kanji("海");
+//          word().english("to climb").japanese("のぼります").kanji("登ります");
+//          word().english("tree").japanese("き").kanji("木");
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u07() {
 //      return listOf(
-//          new DatabaseRecord("already", "もう"),
-//          new DatabaseRecord("textbook", "きょうかしょ", "教科書"),
-//          new DatabaseRecord("like this", "こう"),
-//          new DatabaseRecord("must not", "いけません"),
-//          new DatabaseRecord("meaning", "いみ", "意味"),
-//          new DatabaseRecord("to memorize", "おぼえます", "覚えます"),
-//          new DatabaseRecord("word", "ことば", "言葉"),
-//          new DatabaseRecord("to consult", "ひきます", "引きます"),
-//          new DatabaseRecord("to need", "いります", "要ります"),
-//          new DatabaseRecord("shopping bag", "レジぶくろ", "レジ袋"),
+//          word().english("already").japanese("もう");
+//          word().english("textbook").japanese("きょうかしょ").kanji("教科書");
+//          word().english("like this").japanese("こう");
+//          word().english("must not").japanese("いけません");
+//          word().english("meaning").japanese("いみ").kanji("意味");
+//          word().english("to memorize").japanese("おぼえます").kanji("覚えます");
+//          word().english("word").japanese("ことば").kanji("言葉");
+//          word().english("to consult").japanese("ひきます").kanji("引きます");
+//          word().english("to need").japanese("いります").kanji("要ります");
+//          word().english("shopping bag").japanese("レジぶくろ").kanji("レジ袋");
 //          new DatabaseRecord(expl("a bit", "+ verb, formal"), "しょうしょう", "少々"),
-//          new DatabaseRecord("to heat up", "あたためます", "温めます"),
-//          new DatabaseRecord("fired chicken", "からあげ", "唐揚げ"),
-//          new DatabaseRecord("french fries", "フライドポテト"),
-//          new DatabaseRecord("receipt", "レシート"),
-//          new DatabaseRecord("takeout", "もちかえり", "持ち帰り"),
-//          new DatabaseRecord("in the store", "てんない", "店内"),
+//          word().english("to heat up").japanese("あたためます").kanji("温めます");
+//          word().english("fired chicken").japanese("からあげ").kanji("唐揚げ");
+//          word().english("french fries").japanese("フライドポテト");
+//          word().english("receipt").japanese("レシート");
+//          word().english("takeout").japanese("もちかえり").kanji("持ち帰り");
+//          word().english("in the store").japanese("てんない").kanji("店内");
 //          new DatabaseRecordAdjectivePair("good", "よろしい"),
 //          new DatabaseRecord(expl("to eat", "formal"), "めしあがります", "召し上がります"),
-//          new DatabaseRecord("", "", ""),
-//          new DatabaseRecord("", "", ""),
-//          new DatabaseRecord("", "", "")
+//          word().english("").japanese("").kanji("");
+//          word().english("").japanese("").kanji("");
+//          word().english("").japanese("").kanji("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u08() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u09() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u10() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u11() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u12() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u13() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u14() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u15() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u16() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u17() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u18() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u19() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u20() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u21() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u22() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u23() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u24() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u25() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u26() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u27() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u28() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u29() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u30() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u31() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u32() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u33() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u34() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u35() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u36() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u37() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u38() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u39() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //    public static List<DatabaseRecord> u40() {
 //      return listOf(
 //
-//          new DatabaseRecord("", "")
+//          word().english("").japanese("");
 //      );
 //    }
 //  }
+
+
+  private static List<DatabaseRecord> recs;
+  private static DatabaseRecordBuilder<?> builder;
+
+  private static void reset() {
+    recs = new ArrayList<>();
+    builder = null;
+  }
+
+  private static WordDatabaseRecordBuilder word() {
+    if (builder != null) {
+      recs.addAll(builder.build());
+    }
+    return (WordDatabaseRecordBuilder) (builder = new WordDatabaseRecordBuilder());
+  }
+
+  private static NameDatabaseRecordBuilder name() {
+    if (builder != null) {
+      recs.addAll(builder.build());
+    }
+    return (NameDatabaseRecordBuilder) (builder = new NameDatabaseRecordBuilder());
+  }
+
+  private static CountryDatabaseRecordBuilder country() {
+    if (builder != null) {
+      recs.addAll(builder.build());
+    }
+    return (CountryDatabaseRecordBuilder) (builder = new CountryDatabaseRecordBuilder());
+  }
+
+  private static AdjectiveDatabaseRecordBuilder adj(AdjectiveType type) {
+    if (builder != null) {
+      recs.addAll(builder.build());
+    }
+    return (AdjectiveDatabaseRecordBuilder) (builder = new AdjectiveDatabaseRecordBuilder(type));
+  }
+
+  private static List<DatabaseRecord> dump() {
+    if (builder != null) {
+      recs.addAll(builder.build());
+    }
+    builder = null;
+    return new ArrayList<>(recs);
+  }
+
 }

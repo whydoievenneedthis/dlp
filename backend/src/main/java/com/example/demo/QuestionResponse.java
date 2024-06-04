@@ -8,6 +8,7 @@ public class QuestionResponse {
   private final int id;
   private final String engExplanation;
   private final String japExplanation;
+  private final String kanji;
   private final String category;
   private final String question;
   private final boolean japaneseAnswer;
@@ -21,8 +22,9 @@ public class QuestionResponse {
       int recordsRemaining,
       Points points) {
     this.id = record.getId();
-    this.engExplanation = record.getEngExplanation();
-    this.japExplanation = record.getJapExplanation();
+    this.engExplanation = record.getFromExpl();
+    this.japExplanation = record.getToExpl();
+    this.kanji = record.getKanji();
     this.category = record.getCategory();
     this.question = question;
     this.japaneseAnswer = japaneseAnswer;
@@ -34,6 +36,7 @@ public class QuestionResponse {
     this.id = 0;
     this.engExplanation = null;
     this.japExplanation = null;
+    this.kanji = null;
     this.category = null;
     this.question = null;
     this.japaneseAnswer = false;

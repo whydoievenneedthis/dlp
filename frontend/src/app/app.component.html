@@ -25,11 +25,11 @@
       Question:<br />
       <span class="jap" *ngIf="!question.japaneseAnswer">{{ question.question }}</span>
       <span *ngIf="question.japaneseAnswer">{{ question.question }}</span>
-      <span *ngIf="question.engExplanation && question.japaneseAnswer">
+      <span *ngIf="question.engExplanation">
         ({{ question.engExplanation }})
       </span>
-      <span *ngIf="question.japExplanation && !question.japaneseAnswer" class="jap">
-        ({{ question.japExplanation }})
+      <span *ngIf="question.kanji" class="jap">
+        ({{ question.kanji }})
       </span>
     </div>
 

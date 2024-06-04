@@ -128,6 +128,7 @@ public class Database {
           if (list == null) {
             return;
           }
+//          overall.addAll(list);
           list.forEach(
               dr -> {
                 dr.setCategory(field.getName());

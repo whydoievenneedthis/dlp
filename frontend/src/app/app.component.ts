@@ -20,6 +20,7 @@ export class AppComponent implements AfterViewInit {
     category: '',
     engExplanation: '',
     japExplanation: '',
+    kanji: '',
     id: 0,
     japaneseAnswer: false,
     question: '',
@@ -156,6 +157,7 @@ interface QuestionResponse {
   id: number;
   engExplanation: string;
   japExplanation: string;
+  kanji: string;
   category: string;
   question: string;
   japaneseAnswer: boolean;

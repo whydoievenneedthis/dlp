@@ -53,56 +53,56 @@ class DatabasePopulator {
 //        new DatabaseRecord("week after next", "さらいしゅう", "再来週"),
 //  }
 
-  static List<DatabaseRecord> listOf(Object... objects) {
-    List<DatabaseRecord> recs = new ArrayList<>();
+//  static List<DatabaseRecord> listOf(Object... objects) {
+//    List<DatabaseRecord> recs = new ArrayList<>();
+//
+//    for (Object object : objects) {
+//      if (object instanceof DatabaseRecord dr) {
+//        recs.addAll(of(dr));
+//      } else if (object instanceof DatabaseRecordAdjectivePair drap) {
+//        recs.addAll(of(drap));
+//      }
+//    }
+//
+//    return recs;
+//  }
 
-    for (Object object : objects) {
-      if (object instanceof DatabaseRecord dr) {
-        recs.addAll(of(dr));
-      } else if (object instanceof DatabaseRecordAdjectivePair drap) {
-        recs.addAll(of(drap));
-      }
-    }
+//  static List<DatabaseRecord> of(DatabaseRecord r) {
+//    List<DatabaseRecord> recs = new ArrayList<>();
+//
+//    if ("".equals(r.getFrom()) && "".equals(r.getTo())) {
+//      return recs;
+//    }
+//    if ("".equals(r.getFrom()) || "".equals(r.getTo())) {
+//      throw new IllegalStateException("Found missing english or japanese: " + r.getFrom() + " / " + r.getTo());
+//    }
+//    recs.add(r);
+//
+//    return recs;
+//  }
 
-    return recs;
-  }
+//  private static List<DatabaseRecord> of(DatabaseRecordAdjectivePair r) {
+//    List<DatabaseRecord> recs = new ArrayList<>();
+//
+//    if ("".equals(r.getEnglishMain()) && "".equals(r.getJapaneseMain())) {
+//      return recs;
+//    }
+//    if ("".equals(r.getEnglishMain()) || "".equals(r.getJapaneseMain())) {
+//      throw new IllegalStateException("Found missing english or japanese: " + r.getEnglishMain() + " / " + r.getJapaneseMain());
+//    }
+//    recs.add(new DatabaseRecord(expl(r.getEnglishMain(), r.getEnglishSubject()), expl(r.getJapaneseMain(), r.getJapaneseSubject()), r.getKanji()));
+//    recs.add(new DatabaseRecAdj(r.getEnglishMain() + " " + r.getEnglishSubject(), r.getJapaneseMain() + r.getJapaneseConnector() + r.getJapaneseSubject()));
+//
+//    return recs;
+//  }
 
-  static List<DatabaseRecord> of(DatabaseRecord r) {
-    List<DatabaseRecord> recs = new ArrayList<>();
+//  static Explanation expl(String value, String explanation) {
+//    return new Explanation(value, explanation);
+//  }
 
-    if ("".equals(r.getEnglish()) && "".equals(r.getJapanese())) {
-      return recs;
-    }
-    if ("".equals(r.getEnglish()) || "".equals(r.getJapanese())) {
-      throw new IllegalStateException("Found missing english or japanese: " + r.getEnglish() + " / " + r.getJapanese());
-    }
-    recs.add(r);
-
-    return recs;
-  }
-
-  private static List<DatabaseRecord> of(DatabaseRecordAdjectivePair r) {
-    List<DatabaseRecord> recs = new ArrayList<>();
-
-    if ("".equals(r.getEnglishMain()) && "".equals(r.getJapaneseMain())) {
-      return recs;
-    }
-    if ("".equals(r.getEnglishMain()) || "".equals(r.getJapaneseMain())) {
-      throw new IllegalStateException("Found missing english or japanese: " + r.getEnglishMain() + " / " + r.getJapaneseMain());
-    }
-    recs.add(new DatabaseRecord(expl(r.getEnglishMain(), r.getEnglishSubject()), expl(r.getJapaneseMain(), r.getJapaneseSubject()), r.getKanji()));
-    recs.add(new DatabaseRecAdj(r.getEnglishMain() + " " + r.getEnglishSubject(), r.getJapaneseMain() + r.getJapaneseConnector() + r.getJapaneseSubject()));
-
-    return recs;
-  }
-
-  static Explanation expl(String value, String explanation) {
-    return new Explanation(value, explanation);
-  }
-
-  @Getter
-  @AllArgsConstructor(staticName = "of")
-  static class Kanji {
-    private final String kanji;
-  }
+//  @Getter
+//  @AllArgsConstructor(staticName = "of")
+//  static class Kanji {
+//    private final String kanji;
+//  }
 }

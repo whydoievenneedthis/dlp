@@ -9,10 +9,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ReflectionUtils;
-import org.springframework.util.StringUtils;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
@@ -61,9 +58,8 @@ class PracticeService {
   private void reinitRecords(String cat) {
     database.iterator(cat)
         .forEachRemaining(dr -> {
+          log.info("Adding new question for {}: {} ({}) -- {} ({}) #{}", dr.getCategory(), dr.getFrom(), dr.getFromExpl(), dr.getTo(), dr.getToExpl(), dr.getId());
           if (questions.containsKey(dr.getId())) {
-            log.error(
-                "{} ({}): {} ({})", dr.getEnglish(), dr.getEngExplanation(), dr.getJapanese(), dr.getId());
             throw new IllegalStateException("Duplicate question id!");
           }
           records.add(dr);
@@ -90,12 +86,7 @@ class PracticeService {
       last10Excluded.removeFirst();
     }
     Points points = new Points(sessionTotalPoints, sessionRemainingPoints);
-    double random = Math.random();
-    if (record.oneWay() || random < englishChanceByRecord(record)) {
-      return new QuestionResponse(record, record.getEnglish(), true, recordsRemaining, points);
-    }
-    String question = record.getJapanese();
-    return new QuestionResponse(record, question, false, recordsRemaining, points);
+    return new QuestionResponse(record, record.getFrom(), record.isAnswerInJapanese(), recordsRemaining, points);
   }
 
   private void categoryFinished() {
@@ -111,14 +102,6 @@ class PracticeService {
     return record;
   }
 
-  private double englishChanceByRecord(DatabaseRecord record) {
-    StatBuilder.Stat stat = statBuilder.get(record);
-    if (stat == null || stat.getCorrect() < 4) {
-      return 0.5;
-    }
-    return 0.5 + 0.1 * (stat.getCorrect() - stat.getJapaneseCorrect());
-  }
-
   private int random(int maxSize) {
     return (int) (Math.random() * maxSize);
   }
@@ -129,27 +112,21 @@ class PracticeService {
     DatabaseRecord record;
 
     int id = request.getId();
-    if (request.isJapaneseAnswer()) {
       record = questions.get(id);
-      correct = record.getJapanese().equals(request.getAnswer().replace(" ", ""));
-      answer = record.getJapanese();
-    } else {
-      record = questions.get(id);
-      correct = record.getEnglish().equals(request.getAnswer());
-      answer = record.getEnglish();
-    }
+      correct = record.getTo().equals(request.getAnswer().trim());
+      answer = record.getTo();
 
     this.sessionRemainingPoints -= statBuilder.fetch(record).getPointValue();
 
-    StatBuilder.Stat stat = statBuilder.record(record, correct, request.isJapaneseAnswer());
+    StatBuilder.Stat stat = statBuilder.record(record, correct);
 
     this.sessionRemainingPoints += stat.getPointValue();
 
-    if (stat.getCorrect() > 4 && stat.getJapaneseCorrect() > 2) {
-      log.info("throwing out '{}' from list", record.getEnglish());
+    if (stat.getCorrect() > 4) {
+      log.info("throwing out '{}' from list", record.getFrom());
       records.remove(record);
       if (stat.getIncorrect() == 0) {
-        log.info("disabling '{}' completely", record.getEnglish());
+        log.info("disabling '{}' completely", record.getFrom());
         addToCompleted(record.getId());
       }
     }

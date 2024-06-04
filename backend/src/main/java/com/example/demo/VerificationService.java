@@ -14,18 +14,18 @@ import java.util.List;
 @RequiredArgsConstructor
 class VerificationService {
   private final Database database;
-  private final List<VeriRecord> questions = new ArrayList<>();
+  private final List<DatabaseRecord> questions = new ArrayList<>();
   private int total;
 
   public QuestionResponse getNextQuestion() {
-    VeriRecord q = questions.get(questions.size() - 1);
-    return new QuestionResponse(q.record, q.japan ? q.record.getEnglish() : q.record.getJapanese(), q.japan, questions.size(), new QuestionResponse.Points(total, questions.size()));
+    DatabaseRecord q = questions.getLast();
+    return new QuestionResponse(q, q.getFrom(), q.isAnswerInJapanese(), questions.size(), new QuestionResponse.Points(total, questions.size()));
   }
 
   public VerifyResponse verify(VerifyRequest request) {
-    VeriRecord q = questions.remove(questions.size() - 1);
-    String expectedResponse = q.japan ? q.record.getJapanese() : q.record.getEnglish();
-    if (!expectedResponse.equals(request.getAnswer())) {
+    DatabaseRecord q = questions.removeLast();
+    String expectedResponse = q.getTo();
+    if (!expectedResponse.equals(request.getAnswer().trim())) {
       removeFromCompleted(request.getId());
     }
     return new VerifyResponse(expectedResponse.equals(request.getAnswer()), expectedResponse,
@@ -35,21 +35,12 @@ class VerificationService {
 
   public void init() {
     questions.clear();
-    database.iterator(null).forEachRemaining(dr -> {
-      questions.add(new VeriRecord(true, dr));
-      questions.add(new VeriRecord(false, dr));
-    });
+    database.iterator(null).forEachRemaining(questions::add);
     Collections.shuffle(questions);
     total = questions.size();
   }
 
   public boolean finished() {
     return questions.isEmpty();
-  }
-
-  @AllArgsConstructor
-  private static class VeriRecord {
-    private final boolean japan;
-    private final DatabaseRecord record;
   }
 }

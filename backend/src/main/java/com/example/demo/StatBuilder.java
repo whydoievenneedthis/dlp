@@ -15,13 +15,10 @@ class StatBuilder {
     return thisSession.computeIfAbsent(record, dr -> new Stat());
   }
 
-  public Stat record(DatabaseRecord record, boolean correct, boolean japaneseAnswer) {
+  public Stat record(DatabaseRecord record, boolean correct) {
     Stat stat = thisSession.get(record);
     if (correct) {
       stat.correct++;
-      if (japaneseAnswer) {
-        stat.japaneseCorrect++;
-      }
     } else {
       stat.incorrect++;
     }
@@ -40,11 +37,10 @@ class StatBuilder {
   @Setter
   static class Stat {
     private int correct = 0;
-    private int japaneseCorrect = 0;
     private int incorrect = 0;
 
     public int getPointValue() {
-      return Math.max(5 - correct, 3 - japaneseCorrect);
+      return 5 - correct;
     }
   }
 }
