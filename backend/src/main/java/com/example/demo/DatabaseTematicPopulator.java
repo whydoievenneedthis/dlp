@@ -18,7 +18,7 @@ import java.util.List;
 class DatabaseTematicPopulator {
   static class DbPopCount {
 //    static List<DatabaseRecord> time() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("time", "じかん", "時間"),
 //
 //          new DatabaseRecAdj("one hour", "いちじかん", "一時間"),
@@ -35,10 +35,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("how many hours", "なんじかん", "何時間"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> minute() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("minute", "ふん", "分"),
 //          new DatabaseRecAdj("one minute", "いっぷん", "一分"),
 //          new DatabaseRecAdj("two minutes", "にふん", "ニ分"),
@@ -52,10 +52,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("ten minutes", "じゅっぷん", "十分"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> hour() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("o'clock", "じ", "時"),
 //          new DatabaseRecAdj("one o'clock", "いちじ", "一時"),
 //          new DatabaseRecAdj("two o'clock", "にじ", "ニ時"),
@@ -70,10 +70,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("what time", "なんじ", "何時"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> calendarDay() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("1st", "ついたち", "一日"),
 //          new DatabaseRecAdj("2nd", "ふつか", "二日"),
 //          new DatabaseRecAdj("3rd", "みっか", "三日"),
@@ -85,10 +85,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("20th", "はつか", "二十日"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> month() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("january", "いちがつ", "一月"),
 //          new DatabaseRecAdj("february", "にちがつ", "日月"),
 //          new DatabaseRecAdj("april", "しがつ", "四月"),
@@ -98,10 +98,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("october", "じゅうがつ", "十月"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> timeLength() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("1 day", "いちにち", "一日"),
 //          new DatabaseRecAdj("2 days", "ふつか", "二日"),
 //          new DatabaseRecAdj("3 days", "みっか", "三日"),
@@ -123,10 +123,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("1 year", "いちねん", "一年"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> age() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("age", "さい", "歳"),
 //          new DatabaseRecAdj("one year old", "いっさい", "一歳"),
 //          new DatabaseRecAdj("two years old", "にさい", "ニ歳"),
@@ -142,10 +142,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj(expl("how old", "formal"), "おいくつ"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> anything() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one pie", "ひとつ", "一つ"),
 //          new DatabaseRecAdj("two pies", "ふたつ", "二つ"),
 //          new DatabaseRecAdj("three pies", "みっつ", "三つ"),
@@ -159,10 +159,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("how many pies", "いくつ"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> anythingFormed() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one apple", "いっこ", "一個"),
 //          new DatabaseRecAdj("two apples", "にこ", "二個"),
 //          new DatabaseRecAdj("three apples", "さんこ", "三個"),
@@ -176,10 +176,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("how many apples", "なんこ", "何個"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> person() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one person", "ひとり", "一人"),
 //          new DatabaseRecAdj("two persons", "ふたり", "二人"),
 //          new DatabaseRecAdj("three persons", "さんにん", "三人"),
@@ -187,17 +187,17 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("eight persons", "はちにん", "八人"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> politePerson() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("how many people", "なんめい", "何名"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> floor() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("floor", "かい", "階"),
 //          new DatabaseRecAdj("first floor", "いっかい", "一階"),
 //          new DatabaseRecAdj("second floor", "にかい", "二階"),
@@ -206,50 +206,50 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("which floor", "なんかい", "何階"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> machineFurnitureCake() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("two cars", "にだい", "二台"),
 //          new DatabaseRecAdj("how many tables", "なんだい", "何台"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> legwear() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one pair of socks", "いっそく", "一足"),
 //          new DatabaseRecAdj("two pairs of socks", "にそく", "二足"),
 //          new DatabaseRecAdj("three pairs of socks", "さんそく", "三足"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> pair() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("two pairs of gloves", "ふたくみ", "二組"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> cylinder() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one fork", "いっぽん", "一本"),
 //          new DatabaseRecAdj("two chopsticks", "にほん", "日本"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> flat() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one plate", "いちまい", "一枚"),
 //          new DatabaseRecAdj("hundred pictures", "ひゃくまい", "百枚"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> bird() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one bird", "いちわ", "一羽"),
 //          new DatabaseRecAdj("two birds", "にわ", "二羽"),
 //          new DatabaseRecAdj("three birds", "さんわ", "三羽"),
@@ -257,31 +257,31 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecAdj("seven birds", "ななわ", "七羽"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> book() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one book", "いっさつ", "一冊"),
 //          new DatabaseRecAdj("six books", "ろくさつ", "六冊"),
 //          new DatabaseRecAdj("ten books", "じゅうさつ", "十冊"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> smallAnimal() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecAdj("one cat", "いっぴき", "一匹"),
 //          new DatabaseRecAdj("three dogs", "さんびき", "三匹"),
 //          new DatabaseRecAdj("five cats", "ごひき", "五匹"),
 //
 //          new DatabaseRecAdj("", "")
-//      );
+//     return dump();
 //    }
   }
 
   static class DbPopHiraKata {
 //    static List<DatabaseRecord> hira() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecord("warrior", "ぶし", null),
 //          new DatabaseRecord("ninja", "にんじゃ", null),
 //          new DatabaseRecord("opposite", "りゅなせ", null),
@@ -396,10 +396,10 @@ class DatabaseTematicPopulator {
 //          word().english("").japanese("");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> kata() {
-//      return listOf(
+//      reset();
 //          word().english("impetus").japanese("キッカケ");
 //          word().english("trumpet").japanese("ラッパ");
 //          word().english("stealthily").japanese("コッソリ");
@@ -435,7 +435,7 @@ class DatabaseTematicPopulator {
 //          word().english("").japanese("");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
   }
 
@@ -531,21 +531,20 @@ class DatabaseTematicPopulator {
       return dump();
     }
 
-//    static List<DatabaseRecord> u02() {
-//      return listOf(
-//          word().english("this").japanese("この");
-//          word().english("that").japanese("その");
-//      );
-//    }
-//    static List<DatabaseRecord> u04() {
-//      return listOf(
-//          adj(I).english("cheerful").japanese("あかるい").kanji("明るい");
-//          adj(I).english("funny").japanese("おもしろい");
-//          adj(I).english("cute").japanese("かわいい");
-//      );
-//    }
+    static List<DatabaseRecord> u08() {
+      reset();
+      word().english("this").japanese("この");
+      word().english("that").japanese("その");
+      adj(I).english("cheerful").japanese("あかるい").jExpl("ひと").kanji("明るい");
+      adj(I).english("funny").japanese("おもしろい");
+      adj(I).english("cute").japanese("かわいい");
+      name().english("yamaguchi").japanese("やまぐち");
+      name().english("nakayama").japanese("なかやま");
+      return dump();
+    }
+
 //    static List<DatabaseRecord> u05() {
-//      return listOf(
+//      reset();
 //          word().english("one").japanese("いち").kanji("一");
 //          word().english("two").japanese("に").kanji("二");
 //          word().english("three").japanese("さん").kanji("三");
@@ -561,10 +560,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecord(expl("ticket", "train"), "きっぷ"),
 //          word().english("bag").japanese("かばん").kanji("鞄");
 //          word().english("map").japanese("ちず").kanji("地図");
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> u06() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecord(expl("I", "female"), "わたし", "私"),
 //          word().english("good morning").japanese("おはようございます");
 //          new DatabaseRecord(expl("welcome", "be welcomed"), "ようこそ"),
@@ -601,10 +600,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecordAdjectivePair("famous", "ゆうめい", "な", Kanji.of("有名")),
 //          adj(I).english("busy").japanese("いそがしい").kanji("忙しい");
 //          adj(I).english("smart").japanese("あたまがいい");
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> u07() {
-//      return listOf(
+//      reset();
 //          word().english("often").japanese("よく");
 //          word().english("sometimes").japanese("ときどき").kanji("時々");
 //          word().english("news").japanese("ニュース");
@@ -646,10 +645,10 @@ class DatabaseTematicPopulator {
 //          word().english("eight").japanese("はち").kanji("八");
 //          word().english("nine").japanese("きゅう").kanji("九");
 //          word().english("ten").japanese("じゅう").kanji("十");
-//      );
+//     return dump();
 //    }
 //    static List<DatabaseRecord> u08() {
-//      return listOf(
+//      reset();
 //          word().english("that over there").japanese("あの");
 //          adj(I).english("wanting").japanese("ほしい").kanji("欲しい");
 //          adj(I).english("new").japanese("あたらしい").kanji("新しい");
@@ -690,13 +689,13 @@ class DatabaseTematicPopulator {
 //          word().english("black tea").japanese("こうちゃ").kanji("紅茶");
 //          word().english("rice ball").japanese("おにぎり");
 //          new DatabaseRecord(expl("a bit", "+ verb, informal"), "すこし", "少し")
-//      );
+//     return dump();
 //    }
   }
 
 //  static class DbPopS2 {
 //    public static List<DatabaseRecord> u01() {
-//      return listOf(
+//      reset();
 //          word().english("to swim").japanese("およぎます").kanji("泳ぎます");
 //          word().english("yoga").japanese("ヨガ");
 //          new DatabaseRecord(expl("game", "videogame"), "ゲーム"),
@@ -746,10 +745,10 @@ class DatabaseTematicPopulator {
 //          adj(I).english("far").japanese("とおい").kanji("遠い");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u02() {
-//      return listOf(
+//      reset();
 //          word().english("next week").japanese("らいしゅう").kanji("来週");
 //          word().english("every week").japanese("まいしゅう").kanji("毎週");
 //          word().english("always").japanese("いつも");
@@ -787,10 +786,10 @@ class DatabaseTematicPopulator {
 //          word().english("what kind of").japanese("どんな");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u03() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecord(expl("to move", "house"), "ひっこします"),
 //          word().english("apartment").japanese("アパ-ト");
 //          adj(I).english("spacious").japanese("ひろい").kanji("広い");
@@ -836,10 +835,10 @@ class DatabaseTematicPopulator {
 //          word().english("english").japanese("えいご");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u04() {
-//      return listOf(
+//      reset();
 //          word().english("truth").japanese("ほんとう").kanji("本当");
 //          word().english("shrine").japanese("じんじゃ");
 //          word().english("postcard").japanese("ポストカ-ド");
@@ -878,10 +877,10 @@ class DatabaseTematicPopulator {
 //          new DatabaseRecordAdjectivePair("hard", "たいへん", "な"),
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u05() {
-//      return listOf(
+//      reset();
 //          word().english("weather").japanese("てんき").kanji("天気");
 //          word().english("rain").japanese("あめ").kanji("雨");
 //          word().english("sunny").japanese("はれ").kanji("晴れ");
@@ -926,10 +925,10 @@ class DatabaseTematicPopulator {
 //          word().english("malaysia").japanese("マレ-シア");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u06() {
-//      return listOf(
+//      reset();
 //          word().english("after").japanese("あと");
 //          word().english("chore").japanese("かじ");
 //          word().english("to help").japanese("てつだいます");
@@ -972,10 +971,10 @@ class DatabaseTematicPopulator {
 //          word().english("school").japanese("がっこう").kanji("学校");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u07() {
-//      return listOf(
+//      reset();
 //          word().english("friday").japanese("きんようび").kanji("金曜日");
 //          word().english("castle").japanese("しろ");
 //          word().english("bullet train").japanese("しんかんせん");
@@ -1006,10 +1005,10 @@ class DatabaseTematicPopulator {
 //          word().english("seat").japanese("せき");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u08() {
-//      return listOf(
+//      reset();
 //          word().english("soy sauce").japanese("しょうゆ").kanji("醬油");
 //          word().english("fish").japanese("さかな").kanji("魚");
 //          word().english("class").japanese("じゅぎょう").kanji("授業");
@@ -1050,10 +1049,10 @@ class DatabaseTematicPopulator {
 //          word().english("spanish").japanese("スペインご");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u09() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecord(expl("to wear", "lower body"), "はきます"),
 //          word().english("to wash").japanese("あらいます").kanji("洗います");
 //          word().english("exercise").japanese("うんどう");
@@ -1095,10 +1094,10 @@ class DatabaseTematicPopulator {
 //          word().english("vanilla").japanese("バニラ");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u10() {
-//      return listOf(
+//      reset();
 //          word().english("documentary").japanese("ドキュメンタリ-");
 //          word().english("fiction").japanese("フィクション");
 //          word().english("non-fiction").japanese("ノンフィクション");
@@ -1121,10 +1120,10 @@ class DatabaseTematicPopulator {
 //          word().english("actor").japanese("はいゆう");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u11() {
-//      return listOf(
+//      reset();
 //          word().english("french　fries").japanese("フライドポテト");
 //          word().english("front desk").japanese("うけつけ");
 //          word().english("printer").japanese("プリンター");
@@ -1163,10 +1162,10 @@ class DatabaseTematicPopulator {
 //          word().english("performance").japanese("パフォーマンス");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u12() {
-//      return listOf(
+//      reset();
 //          word().english("shopping").japanese("かいもの").kanji("買い物");
 //          word().english("name").japanese("なまえ").kanji("名前");
 //          word().english("let's eat").japanese("いただきます");
@@ -1177,10 +1176,10 @@ class DatabaseTematicPopulator {
 //          word().english("exactly").japanese("ちょうど");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u13() {
-//      return listOf(
+//      reset();
 //          word().english("which school year").japanese("なんねんせい").kanji("何年生");
 //          new DatabaseRecord(expl("kitchen", "older"), "だいどころ", "台所"),
 //          word().english("bedroom").japanese("しんしつ").kanji("寝室");
@@ -1193,10 +1192,10 @@ class DatabaseTematicPopulator {
 //          word().english("pet").japanese("ペット");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u14() {
-//      return listOf(
+//      reset();
 //          word().english("foreigner").japanese("がいこくじん").kanji("外国人");
 //          word().english("to be called").japanese("もうします").kanji("申します");
 //          word().english("high school").japanese("こうこう").kanji("高校");
@@ -1212,10 +1211,10 @@ class DatabaseTematicPopulator {
 //          word().english("how are you").japanese("ちょうしはいかがですか").kanji("調子はいかがですか");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u15() {
-//      return listOf(
+//      reset();
 //          new DatabaseRecord("brothers", expl("きょうだい", "兄弟"), "兄弟"),
 //          word().english("sisters").japanese("しまい").kanji("姉妹");
 //          word().english("steak").japanese("ステーキ");
@@ -1234,10 +1233,10 @@ class DatabaseTematicPopulator {
 //          word().english("ballet").japanese("バレイ");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u16() {
-//      return listOf(
+//      reset();
 //          word().english("to work").japanese("はたらきます").kanji("働きます");
 //
 //          word().english("upper left").japanese("ひだりうえ").kanji("左上");
@@ -1258,10 +1257,10 @@ class DatabaseTematicPopulator {
 //          word().english("outside").japanese("そと").kanji("外");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u17() {
-//      return listOf(
+//      reset();
 //          word().english("housework").japanese("いえのそうじ").kanji("家の掃除");
 //          word().english("corner").japanese("かたすみ").kanji("片隅");
 //          new DatabaseRecordAdjectivePair("low", "chair", "ひくい", "", "いす", "低い"),
@@ -1276,10 +1275,10 @@ class DatabaseTematicPopulator {
 //          word().english("to stand up").japanese("たちます").kanji("立ちます");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u18() {
-//      return listOf(
+//      reset();
 //          word().english("song").japanese("うた").kanji("歌");
 //          word().english("to learn").japanese("ならいます").kanji("習います");
 //          word().english("stroll").japanese("さんぽ").kanji("散歩");
@@ -1301,10 +1300,10 @@ class DatabaseTematicPopulator {
 //          word().english("being home").japanese("ざいたく").kanji("在宅");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u19() {
-//      return listOf(
+//      reset();
 //          word().english("sweater").japanese("セーター");
 //          new DatabaseRecord(expl("to wear", "head"), "かぶります", "被ります"),
 //          word().english("car").japanese("くるま").kanji("車");
@@ -1318,10 +1317,10 @@ class DatabaseTematicPopulator {
 //          word().english("underwear").japanese("パンツ");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u20() {
-//      return listOf(
+//      reset();
 //          word().english("movie theater").japanese("えいがかん").kanji("映画館");
 //          word().english("this morning").japanese("けさ").kanji("今朝");
 //          word().english("to fall").japanese("ふります").kanji("降ります");
@@ -1342,10 +1341,10 @@ class DatabaseTematicPopulator {
 //          word().english("sky").japanese("そら").kanji("空");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> udelta() {
-//      return listOf(
+//      reset();
 //          word().english("free of charge").japanese("むりょう");
 //          word().english("to look for").japanese("さがします");
 //          word().english("password").japanese("パスワード");
@@ -1388,14 +1387,14 @@ class DatabaseTematicPopulator {
 //          word().english("").japanese("");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //
 //  }
 //
 //  static class DbPopS3 {
 //    public static List<DatabaseRecord> u01() {
-//      return listOf(
+//      reset();
 //          word().english("not sure").japanese("さあ");
 //          new DatabaseRecord(expl("not at all", "formal"), "まったく", "全く"),
 //          new DatabaseRecord(expl("not at all", "informal"), "ぜんぜん", "全然"),
@@ -1435,10 +1434,10 @@ class DatabaseTematicPopulator {
 //          word().english("to pass by").japanese("とおります").kanji("通ります");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u02() {
-//      return listOf(
+//      reset();
 //          word().english("this year").japanese("ことし").kanji("今年");
 //          word().english("next year").japanese("らいねん").kanji("来年");
 //          word().english("last year").japanese("きょねん").kanji("去年");
@@ -1468,10 +1467,10 @@ class DatabaseTematicPopulator {
 //          adj(I).english("sour").japanese("すっぱい");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u03() {
-//      return listOf(
+//      reset();
 //          word().english("money").japanese("おかね").kanji("お金");
 //          word().english("clock").japanese("とけい").kanji("時計");
 //          word().english("watch").japanese("うでどけい").kanji("腕時計");
@@ -1493,10 +1492,10 @@ class DatabaseTematicPopulator {
 //          word().english("how about").japanese("いかが");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u04() {
-//      return listOf(
+//      reset();
 //          word().english("female").japanese("おんな").kanji("女");
 //          word().english("magnificent").japanese("りっぱ").kanji("立派");
 //          new DatabaseRecord(expl("who", "formal"), "どなた"),
@@ -1528,10 +1527,10 @@ class DatabaseTematicPopulator {
 //          word().english("handle it with care").japanese("たいせつにしてね");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u05() {
-//      return listOf(
+//      reset();
 //          adj(I).english("tight").japanese("きつい");
 //          adj(I).english("loose").japanese("ゆるい");
 //          word().english("socks").japanese("くつした").kanji("靴下");
@@ -1548,10 +1547,10 @@ class DatabaseTematicPopulator {
 //          word().english("to turn").japanese("まがります").kanji("曲がります");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u06() {
-//      return listOf(
+//      reset();
 //          word().english("to turn off").japanese("けします").kanji("消します");
 //          word().english("early morning").japanese("あさはやく").kanji("朝早く");
 //          word().english("quickly").japanese("はやく").kanji("早く");
@@ -1580,10 +1579,10 @@ class DatabaseTematicPopulator {
 //          word().english("tree").japanese("き").kanji("木");
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u07() {
-//      return listOf(
+//      reset();
 //          word().english("already").japanese("もう");
 //          word().english("textbook").japanese("きょうかしょ").kanji("教科書");
 //          word().english("like this").japanese("こう");
@@ -1606,205 +1605,205 @@ class DatabaseTematicPopulator {
 //          word().english("").japanese("").kanji("");
 //          word().english("").japanese("").kanji("");
 //          word().english("").japanese("").kanji("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u08() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u09() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u10() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u11() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u12() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u13() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u14() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u15() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u16() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u17() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u18() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u19() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u20() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u21() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u22() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u23() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u24() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u25() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u26() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u27() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u28() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u29() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u30() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u31() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u32() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u33() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u34() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u35() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u36() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u37() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u38() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u39() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //    public static List<DatabaseRecord> u40() {
-//      return listOf(
+//      reset();
 //
 //          word().english("").japanese("");
-//      );
+//     return dump();
 //    }
 //  }
 
