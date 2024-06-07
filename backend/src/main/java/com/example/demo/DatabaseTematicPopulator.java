@@ -538,8 +538,9 @@ class DatabaseTematicPopulator {
       adj(I).english("cheerful").japanese("あかるい").jExpl("ひと").kanji("明るい");
       adj(I).english("funny").japanese("おもしろい");
       adj(I).english("cute").japanese("かわいい");
-      name().english("yamaguchi").japanese("やまぐち");
-      name().english("nakayama").japanese("なかやま");
+      name().english("tanaka").japanese("たなか").kanji("田中");
+      name().english("yamaguchi").japanese("やまぐち").kanji("山口");
+      name().english("nakayama").japanese("なかやま").kanji("中山");
       return dump();
     }
 
