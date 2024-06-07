@@ -17,127 +17,126 @@ import java.util.List;
 // counters: https://www.tofugu.com/japanese/japanese-counters-list/
 class DatabaseTematicPopulator {
   static class DbPopCount {
-//    static List<DatabaseRecord> time() {
+    //    static List<DatabaseRecord> time() {
 //      reset();
-//          new DatabaseRecAdj("time", "じかん", "時間"),
+//          word().english("time").japanese("じかん").kanji("時間");
 //
-//          new DatabaseRecAdj("one hour", "いちじかん", "一時間"),
-//          new DatabaseRecAdj("two hours", "にじかん", "ニ時間"),
-//          new DatabaseRecAdj("three hours", "さんじかん", "三時間"),
-//          new DatabaseRecAdj("four hours", "よじかん", "四時間"),
-//          new DatabaseRecAdj("five hours", "ごじかん", "五時間"),
-//          new DatabaseRecAdj("six hours", "ろくじかん", "六時間"),
-//          new DatabaseRecAdj("seven hours", "しちじかん", "七時間"),
-//          new DatabaseRecAdj("eight hours", "はちじかん", "八時間"),
-//          new DatabaseRecAdj("nine hours", "くじかん", "九時間"),
-//          new DatabaseRecAdj("ten hours", "じゅうじかん", "十時間"),
+//          word().english("one hour").japanese("いちじかん").kanji("一時間");
+//          word().english("two hours").japanese("にじかん").kanji("ニ時間");
+//          word().english("three hours").japanese("さんじかん").kanji("三時間");
+//          word().english("four hours").japanese("よじかん").kanji("四時間");
+//          word().english("five hours").japanese("ごじかん").kanji("五時間");
+//          word().english("six hours").japanese("ろくじかん").kanji("六時間");
+//          word().english("seven hours").japanese("しちじかん").kanji("七時間");
+//          word().english("eight hours").japanese("はちじかん").kanji("八時間");
+//          word().english("nine hours").japanese("くじかん").kanji("九時間");
+//          word().english("ten hours").japanese("じゅうじかん").kanji("十時間");
 //
-//          new DatabaseRecAdj("how many hours", "なんじかん", "何時間"),
+//          word().english("how many hours").japanese("なんじかん").kanji("何時間");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> minute() {
 //      reset();
-//          new DatabaseRecAdj("minute", "ふん", "分"),
-//          new DatabaseRecAdj("one minute", "いっぷん", "一分"),
-//          new DatabaseRecAdj("two minutes", "にふん", "ニ分"),
-//          new DatabaseRecAdj("three minutes", "さんぷん", "三分"),
-//          new DatabaseRecAdj("four minutes", "よんぷん", "四分"),
-//          new DatabaseRecAdj("five minutes", "ごふん", "五分"),
-//          new DatabaseRecAdj("six minutes", "ろっぷん", "六分"),
-//          new DatabaseRecAdj("seven minutes", "ななふん", "七分"),
-//          new DatabaseRecAdj("eight minutes", "はっぷん", "八分"),
-//          new DatabaseRecAdj("nine minutes", "きゅうふん", "九分"),
-//          new DatabaseRecAdj("ten minutes", "じゅっぷん", "十分"),
+//          word().english("minute").japanese("ふん").kanji("分");
+//          word().english("one minute").japanese("いっぷん").kanji("一分");
+//          word().english("two minutes").japanese("にふん").kanji("ニ分");
+//          word().english("three minutes").japanese("さんぷん").kanji("三分");
+//          word().english("four minutes").japanese("よんぷん").kanji("四分");
+//          word().english("five minutes").japanese("ごふん").kanji("五分");
+//          word().english("six minutes").japanese("ろっぷん").kanji("六分");
+//          word().english("seven minutes").japanese("ななふん").kanji("七分");
+//          word().english("eight minutes").japanese("はっぷん").kanji("八分");
+//          word().english("nine minutes").japanese("きゅうふん").kanji("九分");
+//          word().english("ten minutes").japanese("じゅっぷん").kanji("十分");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
-//    static List<DatabaseRecord> hour() {
-//      reset();
-//          new DatabaseRecAdj("o'clock", "じ", "時"),
-//          new DatabaseRecAdj("one o'clock", "いちじ", "一時"),
-//          new DatabaseRecAdj("two o'clock", "にじ", "ニ時"),
-//          new DatabaseRecAdj("three o'clock", "さんじ", "三時"),
-//          new DatabaseRecAdj("four o'clock", "よじ", "四時"),
-//          new DatabaseRecAdj("five o'clock", "ごじ", "五時"),
-//          new DatabaseRecAdj("six o'clock", "ろくじ", "六時"),
-//          new DatabaseRecAdj("seven o'clock", "しちじ", "七時"),
-//          new DatabaseRecAdj("eight o'clock", "はちじ", "八時"),
-//          new DatabaseRecAdj("nine o'clock", "くじ", "九時"),
-//          new DatabaseRecAdj("ten o'clock", "じゅうじ", "十時"),
-//          new DatabaseRecAdj("what time", "なんじ", "何時"),
-//
-//          new DatabaseRecAdj("", "")
-//     return dump();
-//    }
+    static List<DatabaseRecord> hour() {
+      reset();
+      word().english("o'clock").japanese("じ").kanji("時");
+      word().english("one o'clock").japanese("いちじ").kanji("一時");
+      word().english("two o'clock").japanese("にじ").kanji("ニ時");
+      word().english("three o'clock").japanese("さんじ").kanji("三時");
+//          word().english("four o'clock").japanese("よじ").kanji("四時");
+//          word().english("five o'clock").japanese("ごじ").kanji("五時");
+//          word().english("six o'clock").japanese("ろくじ").kanji("六時");
+//          word().english("seven o'clock").japanese("しちじ").kanji("七時");
+//          word().english("eight o'clock").japanese("はちじ").kanji("八時");
+//          word().english("nine o'clock").japanese("くじ").kanji("九時");
+//          word().english("ten o'clock").japanese("じゅうじ").kanji("十時");
+      word().english("what time").japanese("なんじ").kanji("何時");
+      return dump();
+    }
+
 //    static List<DatabaseRecord> calendarDay() {
 //      reset();
-//          new DatabaseRecAdj("1st", "ついたち", "一日"),
-//          new DatabaseRecAdj("2nd", "ふつか", "二日"),
-//          new DatabaseRecAdj("3rd", "みっか", "三日"),
-//          new DatabaseRecAdj("6th", "むいか", "六日"),
-//          new DatabaseRecAdj("7th", "なのか", "七日"),
-//          new DatabaseRecAdj("8th", "ようか", "八日"),
-//          new DatabaseRecAdj("9th", "ここのか", "九日"),
-//          new DatabaseRecAdj("10th", "とおか", "十日"),
-//          new DatabaseRecAdj("20th", "はつか", "二十日"),
+//          word().english("1st").japanese("ついたち").kanji("一日");
+//          word().english("2nd").japanese("ふつか").kanji("二日");
+//          word().english("3rd").japanese("みっか").kanji("三日");
+//          word().english("6th").japanese("むいか").kanji("六日");
+//          word().english("7th").japanese("なのか").kanji("七日");
+//          word().english("8th").japanese("ようか").kanji("八日");
+//          word().english("9th").japanese("ここのか").kanji("九日");
+//          word().english("10th").japanese("とおか").kanji("十日");
+//          word().english("20th").japanese("はつか").kanji("二十日");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> month() {
 //      reset();
-//          new DatabaseRecAdj("january", "いちがつ", "一月"),
-//          new DatabaseRecAdj("february", "にちがつ", "日月"),
-//          new DatabaseRecAdj("april", "しがつ", "四月"),
-//          new DatabaseRecAdj("may", "ごがつ", "五月"),
-//          new DatabaseRecAdj("july", "しちがつ", "七月"),
-//          new DatabaseRecAdj("september", "くがつ", "九月"),
-//          new DatabaseRecAdj("october", "じゅうがつ", "十月"),
+//          word().english("january").japanese("いちがつ").kanji("一月");
+//          word().english("february").japanese("にちがつ").kanji("日月");
+//          word().english("april").japanese("しがつ").kanji("四月");
+//          word().english("may").japanese("ごがつ").kanji("五月");
+//          word().english("july").japanese("しちがつ").kanji("七月");
+//          word().english("september").japanese("くがつ").kanji("九月");
+//          word().english("october").japanese("じゅうがつ").kanji("十月");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> timeLength() {
 //      reset();
-//          new DatabaseRecAdj("1 day", "いちにち", "一日"),
-//          new DatabaseRecAdj("2 days", "ふつか", "二日"),
-//          new DatabaseRecAdj("3 days", "みっか", "三日"),
-//          new DatabaseRecAdj("5 days", "いつか", "五日"),
-//          new DatabaseRecAdj("7 days", "なのか", "七日"),
-//          new DatabaseRecAdj("8 days", "ようか", "八日"),
-//          new DatabaseRecAdj("9 days", "ここのか", "九日"),
-//          new DatabaseRecAdj("10 days", "とおか", "十日"),
-//          new DatabaseRecAdj("20 days", "はつか", "二十日"),
+//          word().english("1 day").japanese("いちにち").kanji("一日");
+//          word().english("2 days").japanese("ふつか").kanji("二日");
+//          word().english("3 days").japanese("みっか").kanji("三日");
+//          word().english("5 days").japanese("いつか").kanji("五日");
+//          word().english("7 days").japanese("なのか").kanji("七日");
+//          word().english("8 days").japanese("ようか").kanji("八日");
+//          word().english("9 days").japanese("ここのか").kanji("九日");
+//          word().english("10 days").japanese("とおか").kanji("十日");
+//          word().english("20 days").japanese("はつか").kanji("二十日");
 //
-//          new DatabaseRecAdj("1 week", "いっしゅうかん", "一週間"),
-//          new DatabaseRecAdj("2 weeks", "にしゅうかん", "二週間"),
-//          new DatabaseRecAdj("3 weeks", "さんしゅうかん", "三週間"),
+//          word().english("1 week").japanese("いっしゅうかん").kanji("一週間");
+//          word().english("2 weeks").japanese("にしゅうかん").kanji("二週間");
+//          word().english("3 weeks").japanese("さんしゅうかん").kanji("三週間");
 //
-//          new DatabaseRecAdj("2 months", "にかげつ", "二ヶ月"),
-//          new DatabaseRecAdj("10 months", "じゅっかげつ", "十ヶ月"),
-//          new DatabaseRecAdj("11 months", "じゅういっかげつ", "十一ヶ月"),
+//          word().english("2 months").japanese("にかげつ").kanji("二ヶ月");
+//          word().english("10 months").japanese("じゅっかげつ").kanji("十ヶ月");
+//          word().english("11 months").japanese("じゅういっかげつ").kanji("十一ヶ月");
 //
-//          new DatabaseRecAdj("1 year", "いちねん", "一年"),
+//          word().english("1 year").japanese("いちねん").kanji("一年");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> age() {
 //      reset();
-//          new DatabaseRecAdj("age", "さい", "歳"),
-//          new DatabaseRecAdj("one year old", "いっさい", "一歳"),
-//          new DatabaseRecAdj("two years old", "にさい", "ニ歳"),
-//          new DatabaseRecAdj("three years old", "さんさい", "三歳"),
-//          new DatabaseRecAdj("four years old", "よんさい", "四歳"),
-//          new DatabaseRecAdj("five years old", "ごさい", "五歳"),
-//          new DatabaseRecAdj("six years old", "ろくさい", "六歳"),
-//          new DatabaseRecAdj("seven years old", "ななさい", "七歳"),
-//          new DatabaseRecAdj("eight years old", "はっさい", "八歳"),
-//          new DatabaseRecAdj("nine years old", "きゅうさい", "九歳"),
-//          new DatabaseRecAdj("ten years old", "じゅっさい", "十歳"),
+//          word().english("age").japanese("さい").kanji("歳");
+//          word().english("one year old").japanese("いっさい").kanji("一歳");
+//          word().english("two years old").japanese("にさい").kanji("ニ歳");
+//          word().english("three years old").japanese("さんさい").kanji("三歳");
+//          word().english("four years old").japanese("よんさい").kanji("四歳");
+//          word().english("five years old").japanese("ごさい").kanji("五歳");
+//          word().english("six years old").japanese("ろくさい").kanji("六歳");
+//          word().english("seven years old").japanese("ななさい").kanji("七歳");
+//          word().english("eight years old").japanese("はっさい").kanji("八歳");
+//          word().english("nine years old").japanese("きゅうさい").kanji("九歳");
+//          word().english("ten years old").japanese("じゅっさい").kanji("十歳");
 //          new DatabaseRecAdj(expl("how old", "informal"), "なんさい", "何歳"),
 //          new DatabaseRecAdj(expl("how old", "formal"), "おいくつ"),
 //
@@ -146,15 +145,15 @@ class DatabaseTematicPopulator {
 //    }
 //    static List<DatabaseRecord> anything() {
 //      reset();
-//          new DatabaseRecAdj("one pie", "ひとつ", "一つ"),
-//          new DatabaseRecAdj("two pies", "ふたつ", "二つ"),
-//          new DatabaseRecAdj("three pies", "みっつ", "三つ"),
-//          new DatabaseRecAdj("four pies", "よっつ", "四つ"),
-//          new DatabaseRecAdj("five pies", "いつつ", "五つ"),
-//          new DatabaseRecAdj("six pies", "むっつ", "六つ"),
-//          new DatabaseRecAdj("seven pies", "ななつ", "七つ"),
-//          new DatabaseRecAdj("eight pies", "やっつ", "八つ"),
-//          new DatabaseRecAdj("nine pies", "ここのつ", "九つ"),
+//          word().english("one pie").japanese("ひとつ").kanji("一つ");
+//          word().english("two pies").japanese("ふたつ").kanji("二つ");
+//          word().english("three pies").japanese("みっつ").kanji("三つ");
+//          word().english("four pies").japanese("よっつ").kanji("四つ");
+//          word().english("five pies").japanese("いつつ").kanji("五つ");
+//          word().english("six pies").japanese("むっつ").kanji("六つ");
+//          word().english("seven pies").japanese("ななつ").kanji("七つ");
+//          word().english("eight pies").japanese("やっつ").kanji("八つ");
+//          word().english("nine pies").japanese("ここのつ").kanji("九つ");
 //
 //          new DatabaseRecAdj("how many pies", "いくつ"),
 //
@@ -163,116 +162,116 @@ class DatabaseTematicPopulator {
 //    }
 //    static List<DatabaseRecord> anythingFormed() {
 //      reset();
-//          new DatabaseRecAdj("one apple", "いっこ", "一個"),
-//          new DatabaseRecAdj("two apples", "にこ", "二個"),
-//          new DatabaseRecAdj("three apples", "さんこ", "三個"),
-//          new DatabaseRecAdj("four apples", "よんこ", "四個"),
-//          new DatabaseRecAdj("five apples", "ごこ", "五個"),
-//          new DatabaseRecAdj("six apples", "ろっこ", "六個"),
-//          new DatabaseRecAdj("seven apples", "ななこ", "七個"),
-//          new DatabaseRecAdj("eight apples", "はちこ", "八個"),
-//          new DatabaseRecAdj("nine apples", "きゅうこ", "九個"),
-//          new DatabaseRecAdj("ten apples", "じゅっこ", "十個"),
-//          new DatabaseRecAdj("how many apples", "なんこ", "何個"),
+//          word().english("one apple").japanese("いっこ").kanji("一個");
+//          word().english("two apples").japanese("にこ").kanji("二個");
+//          word().english("three apples").japanese("さんこ").kanji("三個");
+//          word().english("four apples").japanese("よんこ").kanji("四個");
+//          word().english("five apples").japanese("ごこ").kanji("五個");
+//          word().english("six apples").japanese("ろっこ").kanji("六個");
+//          word().english("seven apples").japanese("ななこ").kanji("七個");
+//          word().english("eight apples").japanese("はちこ").kanji("八個");
+//          word().english("nine apples").japanese("きゅうこ").kanji("九個");
+//          word().english("ten apples").japanese("じゅっこ").kanji("十個");
+//          word().english("how many apples").japanese("なんこ").kanji("何個");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> person() {
 //      reset();
-//          new DatabaseRecAdj("one person", "ひとり", "一人"),
-//          new DatabaseRecAdj("two persons", "ふたり", "二人"),
-//          new DatabaseRecAdj("three persons", "さんにん", "三人"),
-//          new DatabaseRecAdj("four persons", "よにん", "四人"),
-//          new DatabaseRecAdj("eight persons", "はちにん", "八人"),
+//          word().english("one person").japanese("ひとり").kanji("一人");
+//          word().english("two persons").japanese("ふたり").kanji("二人");
+//          word().english("three persons").japanese("さんにん").kanji("三人");
+//          word().english("four persons").japanese("よにん").kanji("四人");
+//          word().english("eight persons").japanese("はちにん").kanji("八人");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> politePerson() {
 //      reset();
-//          new DatabaseRecAdj("how many people", "なんめい", "何名"),
+//          word().english("how many people").japanese("なんめい").kanji("何名");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> floor() {
 //      reset();
-//          new DatabaseRecAdj("floor", "かい", "階"),
-//          new DatabaseRecAdj("first floor", "いっかい", "一階"),
-//          new DatabaseRecAdj("second floor", "にかい", "二階"),
-//          new DatabaseRecAdj("third floor", "さんかい", "三階"),
-//          new DatabaseRecAdj("fourth floor", "よんかい", "四階"),
-//          new DatabaseRecAdj("which floor", "なんかい", "何階"),
+//          word().english("floor").japanese("かい").kanji("階");
+//          word().english("first floor").japanese("いっかい").kanji("一階");
+//          word().english("second floor").japanese("にかい").kanji("二階");
+//          word().english("third floor").japanese("さんかい").kanji("三階");
+//          word().english("fourth floor").japanese("よんかい").kanji("四階");
+//          word().english("which floor").japanese("なんかい").kanji("何階");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> machineFurnitureCake() {
 //      reset();
-//          new DatabaseRecAdj("two cars", "にだい", "二台"),
-//          new DatabaseRecAdj("how many tables", "なんだい", "何台"),
+//          word().english("two cars").japanese("にだい").kanji("二台");
+//          word().english("how many tables").japanese("なんだい").kanji("何台");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> legwear() {
 //      reset();
-//          new DatabaseRecAdj("one pair of socks", "いっそく", "一足"),
-//          new DatabaseRecAdj("two pairs of socks", "にそく", "二足"),
-//          new DatabaseRecAdj("three pairs of socks", "さんそく", "三足"),
+//          word().english("one pair of socks").japanese("いっそく").kanji("一足");
+//          word().english("two pairs of socks").japanese("にそく").kanji("二足");
+//          word().english("three pairs of socks").japanese("さんそく").kanji("三足");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> pair() {
 //      reset();
-//          new DatabaseRecAdj("two pairs of gloves", "ふたくみ", "二組"),
+//          word().english("two pairs of gloves").japanese("ふたくみ").kanji("二組");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> cylinder() {
 //      reset();
-//          new DatabaseRecAdj("one fork", "いっぽん", "一本"),
-//          new DatabaseRecAdj("two chopsticks", "にほん", "日本"),
+//          word().english("one fork").japanese("いっぽん").kanji("一本");
+//          word().english("two chopsticks").japanese("にほん").kanji("日本");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> flat() {
 //      reset();
-//          new DatabaseRecAdj("one plate", "いちまい", "一枚"),
-//          new DatabaseRecAdj("hundred pictures", "ひゃくまい", "百枚"),
+//          word().english("one plate").japanese("いちまい").kanji("一枚");
+//          word().english("hundred pictures").japanese("ひゃくまい").kanji("百枚");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> bird() {
 //      reset();
-//          new DatabaseRecAdj("one bird", "いちわ", "一羽"),
-//          new DatabaseRecAdj("two birds", "にわ", "二羽"),
-//          new DatabaseRecAdj("three birds", "さんわ", "三羽"),
-//          new DatabaseRecAdj("four birds", "よんわ", "四羽"),
-//          new DatabaseRecAdj("seven birds", "ななわ", "七羽"),
+//          word().english("one bird").japanese("いちわ").kanji("一羽");
+//          word().english("two birds").japanese("にわ").kanji("二羽");
+//          word().english("three birds").japanese("さんわ").kanji("三羽");
+//          word().english("four birds").japanese("よんわ").kanji("四羽");
+//          word().english("seven birds").japanese("ななわ").kanji("七羽");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> book() {
 //      reset();
-//          new DatabaseRecAdj("one book", "いっさつ", "一冊"),
-//          new DatabaseRecAdj("six books", "ろくさつ", "六冊"),
-//          new DatabaseRecAdj("ten books", "じゅうさつ", "十冊"),
+//          word().english("one book").japanese("いっさつ").kanji("一冊");
+//          word().english("six books").japanese("ろくさつ").kanji("六冊");
+//          word().english("ten books").japanese("じゅうさつ").kanji("十冊");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
 //    }
 //    static List<DatabaseRecord> smallAnimal() {
 //      reset();
-//          new DatabaseRecAdj("one cat", "いっぴき", "一匹"),
-//          new DatabaseRecAdj("three dogs", "さんびき", "三匹"),
-//          new DatabaseRecAdj("five cats", "ごひき", "五匹"),
+//          word().english("one cat").japanese("いっぴき").kanji("一匹");
+//          word().english("three dogs").japanese("さんびき").kanji("三匹");
+//          word().english("five cats").japanese("ごひき").kanji("五匹");
 //
 //          new DatabaseRecAdj("", "")
 //     return dump();
@@ -544,15 +543,21 @@ class DatabaseTematicPopulator {
       return dump();
     }
 
+    static List<DatabaseRecord> u09() {
+      reset();
+      word().english("one").japanese("いち").kanji("一");
+      word().english("two").japanese("に").kanji("二");
+      word().english("three").japanese("さん").kanji("三");
+      word().english("half-").japanese("はん").kanji("半");
+      word().english("excuse me").japanese("すみません");
+      word().english("now").japanese("いま").kanji("今");
+      word().english("about").eExpl("time").japanese("ごろ");
+
+      return dump();
+    }
+
 //    static List<DatabaseRecord> u05() {
 //      reset();
-//          word().english("one").japanese("いち").kanji("一");
-//          word().english("two").japanese("に").kanji("二");
-//          word().english("three").japanese("さん").kanji("三");
-//          word().english("half-").japanese("はん").kanji("半");
-//          word().english("excuse me").japanese("すみません");
-//          word().english("now").japanese("いま").kanji("今");
-//          new DatabaseRecord(expl("about", "time"), "ごろ"),
 //
 //          word().english("airport").japanese("くうこう").kanji("空港");
 //          word().english("subway").japanese("ちかてつ").kanji("地下鉄");

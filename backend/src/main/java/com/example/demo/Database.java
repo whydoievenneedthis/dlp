@@ -23,7 +23,7 @@ public class Database {
 //
 //  private List<DatabaseRecord> countTime = DbPopCount.time();
 //  private List<DatabaseRecord> countMinute = DbPopCount.minute();
-//  private List<DatabaseRecord> countHour = DbPopCount.hour();
+  private List<DatabaseRecord> countHour = DbPopCount.hour();
 //  private List<DatabaseRecord> countCalendarDay = DbPopCount.calendarDay();
 //  private List<DatabaseRecord> countMonth = DbPopCount.month();
 //  private List<DatabaseRecord> countTimeLength = DbPopCount.timeLength();
@@ -50,7 +50,7 @@ public class Database {
   private List<DatabaseRecord> sec1un06 = DbPopS1.u06();
   private List<DatabaseRecord> sec1un07 = DbPopS1.u07();
   private List<DatabaseRecord> sec1un08 = DbPopS1.u08();
-//  private List<DatabaseRecord> sec1un09 = DbPopS1.u09();
+  private List<DatabaseRecord> sec1un09 = DbPopS1.u09();
 //  private List<DatabaseRecord> sec1un10 = DbPopS1.u10();
 //
 //  private List<DatabaseRecord> sec2un01 = DbPopS2.u01();
