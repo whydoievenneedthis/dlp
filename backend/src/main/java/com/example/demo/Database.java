@@ -42,6 +42,9 @@ public class Database {
 //  private List<DatabaseRecord> countBook = DbPopCount.book();
 //  private List<DatabaseRecord> countSmallAnimal = DbPopCount.smallAnimal();
 
+  private List<DatabaseRecord> numbersKango = DbPopCount.numbersKango();
+  private List<DatabaseRecord> numbersWago = DbPopCount.numbersWago();
+
   private List<DatabaseRecord> sec1un01 = DbPopS1.u01();
   private List<DatabaseRecord> sec1un02 = DbPopS1.u02();
   private List<DatabaseRecord> sec1un03 = DbPopS1.u03();

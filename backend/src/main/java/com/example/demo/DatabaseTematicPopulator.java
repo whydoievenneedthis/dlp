@@ -17,6 +17,49 @@ import java.util.List;
 // counters: https://www.tofugu.com/japanese/japanese-counters-list/
 class DatabaseTematicPopulator {
   static class DbPopCount {
+    static List<DatabaseRecord> numbersKango() {
+      reset();
+      word().english("zero").japanese("れい").kanji("零");
+      word().english("one").japanese("いち").kanji("一");
+      word().english("two").japanese("に").kanji("二");
+      word().english("three").japanese("さん").kanji("三");
+      word().english("four").japanese("よん").kanji("四");
+      word().english("five").japanese("ご").kanji("五");
+      word().english("six").japanese("ろく").kanji("六");
+      word().english("seven").japanese("なな").kanji("七");
+      word().english("eight").japanese("はち").kanji("八");
+      word().english("nine").japanese("きゅう").kanji("九");
+      word().english("ten").japanese("じゅう").kanji("十");
+      word().english("forty").japanese("よんじゅう").kanji("四十");
+      word().english("seventy").japanese("ななじゅう").kanji("七十");
+      word().english("ninety").japanese("きゅうじゅう").kanji("九十");
+      word().english("hundred").japanese("ひゃく").kanji("百");
+      word().english("three hundred").japanese("さんびゃく").kanji("三百");
+      word().english("six hundred").japanese("ろっぴゃく").kanji("六百");
+      word().english("eight hundred").japanese("はっぴゃく").kanji("八百");
+      word().english("thousand").japanese("せん").kanji("千");
+      word().english("three thousand").japanese("さんぜん").kanji("三千");
+      word().english("eight thousand").japanese("はっせん").kanji("八千");
+      word().english("ten thousand").japanese("まん").kanji("万");
+      return dump();
+    }
+
+    static List<DatabaseRecord> numbersWago() {
+      reset();
+      word().english("zero").japanese("なし").kanji("零");
+      word().english("one").japanese("ひと").kanji("一");
+      word().english("two").japanese("ふた").kanji("二");
+      word().english("three").japanese("み").kanji("三");
+      word().english("four").japanese("よ").kanji("四");
+      word().english("five").japanese("いつ").kanji("五");
+      word().english("six").japanese("む").kanji("六");
+      word().english("seven").japanese("なな").kanji("七");
+      word().english("eight").japanese("や").kanji("八");
+      word().english("nine").japanese("ここの").kanji("九");
+      word().english("ten").japanese("とお").kanji("十");
+      return dump();
+    }
+
     //    static List<DatabaseRecord> time() {
 //      reset();
 //          word().english("time").japanese("じかん").kanji("時間");
@@ -545,9 +588,6 @@ class DatabaseTematicPopulator {
 
     static List<DatabaseRecord> u09() {
       reset();
-      word().english("one").japanese("いち").kanji("一");
-      word().english("two").japanese("に").kanji("二");
-      word().english("three").japanese("さん").kanji("三");
       word().english("half-").japanese("はん").kanji("半");
       word().english("excuse me").japanese("すみません");
       word().english("now").japanese("いま").kanji("今");
@@ -610,10 +650,6 @@ class DatabaseTematicPopulator {
 //          word().english("office worker").japanese("かいしゃいん");
 //          word().english("engineer").japanese("エンジニア");
 //          word().english("nurse").japanese("かんごし");
-//          word().english("four").japanese("よん").kanji("四");
-//          word().english("five").japanese("ご").kanji("五");
-//          word().english("six").japanese("ろく").kanji("六");
-//          word().english("seven").japanese("なな").kanji("七");
 //          word().english("years old").japanese("さい").kanji("歳");
 //          adj(I).english("noisy").japanese("うるさい");
 //          adj(NA).english("famous").japanese("ゆうめい").kanji("有名");
@@ -661,9 +697,6 @@ class DatabaseTematicPopulator {
 //          word().english("breakfast").japanese("あさごはん").kanji("朝ご飯");
 //          word().english("lunch").japanese("ひるごはん").kanji("昼ご飯");
 //          word().english("dinner").japanese("ばんごはん").kanji("晩ご飯");
-//          word().english("eight").japanese("はち").kanji("八");
-//          word().english("nine").japanese("きゅう").kanji("九");
-//          word().english("ten").japanese("じゅう").kanji("十");
 //     return dump();
 //    }
 //    static List<DatabaseRecord> u08() {
@@ -687,8 +720,6 @@ class DatabaseTematicPopulator {
 //          word().english("wallet").japanese("さいふ").kanji("財布");
 //          word().english("wait a moment").japanese("ちょっとまって");
 //          word().english("how much").japanese("いくら");
-//          word().english("hundred").japanese("ひゃく").kanji("百");
-//          word().english("thousand").japanese("せん").kanji("千");
 //          word().english("yen").japanese("えん").kanji("円");
 //          word().english("thank you").japanese("ありがとうございます");
 //          word().english("store").japanese("みせ").kanji("店");
@@ -1236,7 +1267,6 @@ class DatabaseTematicPopulator {
 //          word().english("sisters").japanese("しまい").kanji("姉妹");
 //          word().english("steak").japanese("ステーキ");
 //          word().english("menu").japanese("メニュー");
-//          word().english("ten thousand").japanese("まん").kanji("万");
 //          adj(NA).english("disliked").japanese("きらい").kanji("嫌い");
 //          new DatabaseRecordAdjectivePair("bad tasting", "tea", "まずい", "おちゃ"),
 //          adj(I).english("spicy").japanese("からい");
