@@ -51,8 +51,8 @@ public class Database {
   private List<DatabaseRecord> sec1un07 = DbPopS1.u07();
   private List<DatabaseRecord> sec1un08 = DbPopS1.u08();
   private List<DatabaseRecord> sec1un09 = DbPopS1.u09();
-//  private List<DatabaseRecord> sec1un10 = DbPopS1.u10();
-//
+  private List<DatabaseRecord> sec1un10 = DbPopS1.u10();
+
 //  private List<DatabaseRecord> sec2un01 = DbPopS2.u01();
 //  private List<DatabaseRecord> sec2un02 = DbPopS2.u02();
 //  private List<DatabaseRecord> sec2un03 = DbPopS2.u03();
@@ -73,7 +73,6 @@ public class Database {
 //  private List<DatabaseRecord> sec2un18 = DbPopS2.u18();
 //  private List<DatabaseRecord> sec2un19 = DbPopS2.u19();
 //  private List<DatabaseRecord> sec2un20 = DbPopS2.u20();
-//  private List<DatabaseRecord> sec2unΔ = DbPopS2.udelta();
 //
 //  private List<DatabaseRecord> sec3un01 = DbPopS3.u01();
 //  private List<DatabaseRecord> sec3un02 = DbPopS3.u02();

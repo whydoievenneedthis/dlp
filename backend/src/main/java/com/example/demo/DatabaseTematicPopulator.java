@@ -552,25 +552,23 @@ class DatabaseTematicPopulator {
       word().english("excuse me").japanese("すみません");
       word().english("now").japanese("いま").kanji("今");
       word().english("about").eExpl("time").japanese("ごろ");
-
       return dump();
     }
 
-//    static List<DatabaseRecord> u05() {
-//      reset();
-//
-//          word().english("airport").japanese("くうこう").kanji("空港");
-//          word().english("subway").japanese("ちかてつ").kanji("地下鉄");
-//          word().english("passport").japanese("パスポート");
-//          word().english("smartphone").japanese("スマホ");
-//          new DatabaseRecord(expl("ticket", "train"), "きっぷ"),
-//          word().english("bag").japanese("かばん").kanji("鞄");
-//          word().english("map").japanese("ちず").kanji("地図");
-//     return dump();
-//    }
+    static List<DatabaseRecord> u10() {
+      reset();
+      word().english("airport").japanese("くうこう").kanji("空港");
+      word().english("subway").japanese("ちかてつ").kanji("地下鉄");
+      word().english("passport").japanese("パスポート");
+      word().english("smartphone").japanese("スマホ");
+      word().english("ticket").eExpl("train").japanese("きっぷ");
+      word().english("bag").japanese("かばん").kanji("鞄");
+      word().english("map").japanese("ちず").kanji("地図");
+      return dump();
+    }
+
 //    static List<DatabaseRecord> u06() {
 //      reset();
-//          new DatabaseRecord(expl("I", "female"), "わたし", "私"),
 //          word().english("good morning").japanese("おはようございます");
 //          new DatabaseRecord(expl("welcome", "be welcomed"), "ようこそ"),
 //          new DatabaseRecord(expl("welcome", "to this shop"), "いらっしゃいませ"),
