@@ -1,8 +1,8 @@
 package com.example.demo;
 
 import com.example.demo.DatabaseTematicPopulator.DbPopCount;
-import com.example.demo.DatabaseTematicPopulator.DbPopHiraKata;
 import com.example.demo.DatabaseTematicPopulator.DbPopS1;
+import com.example.demo.DatabaseTematicPopulator.DbPopS2;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -53,7 +53,7 @@ public class Database {
   private List<DatabaseRecord> sec1un09 = DbPopS1.u09();
   private List<DatabaseRecord> sec1un10 = DbPopS1.u10();
 
-//  private List<DatabaseRecord> sec2un01 = DbPopS2.u01();
+  private List<DatabaseRecord> sec2un01 = DbPopS2.u01();
 //  private List<DatabaseRecord> sec2un02 = DbPopS2.u02();
 //  private List<DatabaseRecord> sec2un03 = DbPopS2.u03();
 //  private List<DatabaseRecord> sec2un04 = DbPopS2.u04();
