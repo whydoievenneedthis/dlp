@@ -32,7 +32,7 @@ public class Database {
 //  private List<DatabaseRecord> countPerson = DbPopCount.person();
 //  private List<DatabaseRecord> countPolitePerson = DbPopCount.politePerson();
 //  private List<DatabaseRecord> countFloor = DbPopCount.floor();
-//  private List<DatabaseRecord> countAge = DbPopCount.age();
+  private List<DatabaseRecord> countAge = DbPopCount.age();
 //  private List<DatabaseRecord> countMachine = DbPopCount.machineFurnitureCake();
 //  private List<DatabaseRecord> countLegwear = DbPopCount.legwear();
 //  private List<DatabaseRecord> countPair = DbPopCount.pair();
@@ -42,8 +42,8 @@ public class Database {
 //  private List<DatabaseRecord> countBook = DbPopCount.book();
 //  private List<DatabaseRecord> countSmallAnimal = DbPopCount.smallAnimal();
 
-  private List<DatabaseRecord> numbersKango = DbPopCount.numbersKango();
-  private List<DatabaseRecord> numbersWago = DbPopCount.numbersWago();
+  private List<DatabaseRecord> numKango = DbPopCount.numbersKango();
+  private List<DatabaseRecord> numWago = DbPopCount.numbersWago();
 
   private List<DatabaseRecord> sec1un01 = DbPopS1.u01();
   private List<DatabaseRecord> sec1un02 = DbPopS1.u02();
@@ -57,7 +57,7 @@ public class Database {
   private List<DatabaseRecord> sec1un10 = DbPopS1.u10();
 
   private List<DatabaseRecord> sec2un01 = DbPopS2.u01();
-//  private List<DatabaseRecord> sec2un02 = DbPopS2.u02();
+  private List<DatabaseRecord> sec2un02 = DbPopS2.u02();
 //  private List<DatabaseRecord> sec2un03 = DbPopS2.u03();
 //  private List<DatabaseRecord> sec2un04 = DbPopS2.u04();
 //  private List<DatabaseRecord> sec2un05 = DbPopS2.u05();
