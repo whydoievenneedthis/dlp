@@ -106,13 +106,13 @@ class DatabaseTematicPopulator {
       word().english("one o'clock").japanese("いちじ").kanji("一時");
       word().english("two o'clock").japanese("にじ").kanji("ニ時");
       word().english("three o'clock").japanese("さんじ").kanji("三時");
-//          word().english("four o'clock").japanese("よじ").kanji("四時");
-//          word().english("five o'clock").japanese("ごじ").kanji("五時");
-//          word().english("six o'clock").japanese("ろくじ").kanji("六時");
-//          word().english("seven o'clock").japanese("しちじ").kanji("七時");
-//          word().english("eight o'clock").japanese("はちじ").kanji("八時");
-//          word().english("nine o'clock").japanese("くじ").kanji("九時");
-//          word().english("ten o'clock").japanese("じゅうじ").kanji("十時");
+      word().english("four o'clock").japanese("よじ").kanji("四時");
+      word().english("five o'clock").japanese("ごじ").kanji("五時");
+      word().english("six o'clock").japanese("ろくじ").kanji("六時");
+      word().english("seven o'clock").japanese("しちじ").kanji("七時");
+      word().english("eight o'clock").japanese("はちじ").kanji("八時");
+      word().english("nine o'clock").japanese("くじ").kanji("九時");
+      word().english("ten o'clock").japanese("じゅうじ").kanji("十時");
       word().english("what time").japanese("なんじ").kanji("何時");
       return dump();
     }
@@ -660,6 +660,51 @@ class DatabaseTematicPopulator {
       return dump();
     }
 
+    static List<DatabaseRecord> u03() {
+      reset();
+      word().english("tv").japanese("テレビ");
+      word().english("sometimes").japanese("ときどき").kanji("時々");
+      word().english("news").japanese("ニュース");
+      word().english("magazine").japanese("ざっし");
+      word().english("movie").japanese("えいが").kanji("映画");
+      word().english("music").japanese("おんがく").kanji("音楽");
+      word().english("manga").japanese("まんが");
+      word().english("jazz").japanese("ジャズ");
+      word().english("baseball").japanese("やきゅう");
+      word().english("anime").japanese("アニメ");
+      word().english("to watch").japanese("みます").kanji("見ます");
+      word().english("soccer").japanese("サッカー");
+      word().english("to do").japanese("します");
+      word().english("basketball").japanese("バスケットボール");
+      word().english("often").japanese("よく");
+      word().english("book").japanese("ほん").kanji("本");
+      word().english("to read").japanese("よみます").kanji("読みます");
+      word().english("to listen").japanese("ききます").jExpl("おんがく").kanji("聞きます");
+      word().english("pop").japanese("ポップス");
+      word().english("rock").japanese("ロック");
+      return dump();
+    }
+
+    static List<DatabaseRecord> u04() {
+      reset();
+      word().english("to eat").japanese("たべます").kanji("食べる");
+      word().english("to drink").japanese("のみます").kanji("飲む");
+      word().english("bread").japanese("パン");
+      word().english("coffee").japanese("コーヒー");
+      word().english("juice").japanese("ジュース");
+      word().english("boxed lunch").japanese("べんとう").kanji("弁当");
+      word().english("sandwich").japanese("サンドイッチ");
+      word().english("every").japanese("まい").kanji("舞");
+      word().english("morning").japanese("あさ").kanji("朝");
+      word().english("every morning").japanese("まいあさ").kanji("毎朝");
+      word().english("every day").japanese("まいにち").kanji("毎日");
+      word().english("every night").japanese("まいばん").kanji("毎晩");
+      word().english("breakfast").japanese("あさごはん").kanji("朝ご飯");
+      word().english("lunch").japanese("ひるごはん").kanji("昼ご飯");
+      word().english("dinner").japanese("ばんごはん").kanji("晩ご飯");
+      return dump();
+    }
+
 //    static List<DatabaseRecord> u06() {
 //      reset();
 //          new DatabaseRecord(expl("welcome", "to this shop"), "いらっしゃいませ"),
@@ -667,44 +712,10 @@ class DatabaseTematicPopulator {
 //    }
 //    static List<DatabaseRecord> u07() {
 //      reset();
-//          word().english("often").japanese("よく");
-//          word().english("sometimes").japanese("ときどき").kanji("時々");
-//          word().english("news").japanese("ニュース");
-//          word().english("anime").japanese("アニメ");
-//          word().english("book").japanese("ほん").kanji("本");
-//          word().english("magazine").japanese("ざっし");
-//          word().english("movie").japanese("えいが").kanji("映画");
-//          word().english("music").japanese("おんがく").kanji("音楽");
-//          word().english("manga").japanese("まんが");
-//          word().english("tv").japanese("テレビ");
-//          word().english("jazz").japanese("ジャズ");
-//          word().english("pop").japanese("ポップス");
-//          word().english("rock").japanese("ロック");
-//          word().english("baseball").japanese("やきゅう");
-//          word().english("soccer").japanese("サッカー");
-//          word().english("basketball").japanese("バスケットボール");
-//          word().english("volleyball").japanese("バレ-ボ-ル");
-//          word().english("to watch").japanese("みます").kanji("見ます");
-//          word().english("to do").japanese("します");
-//          word().english("to read").japanese("よみます").kanji("読みます");
-//          new DatabaseRecord("to listen", expl("ききます", "おんがく"), "聞きます"),
-//
-//          word().english("to eat").japanese("たべます").kanji("食べる");
-//          word().english("to drink").japanese("のみます").kanji("飲む");
 //          word().english("vegetable").japanese("やさい").kanji("野菜");
-//          word().english("boxed lunch").japanese("べんとう").kanji("弁当");
-//          word().english("sandwich").japanese("サンドイッチ");
-//          word().english("bread").japanese("パン");
-//          word().english("coffee").japanese("コーヒー");
-//          word().english("juice").japanese("ジュース");
 //          word().english("which one").japanese("どれ");
-//          word().english("every").japanese("まい").kanji("舞");
-//          word().english("morning").japanese("あさ").kanji("朝");
-//          word().english("every morning").japanese("まいあさ").kanji("毎朝");
-//          word().english("every day").japanese("まいにち").kanji("毎日");
-//          word().english("breakfast").japanese("あさごはん").kanji("朝ご飯");
-//          word().english("lunch").japanese("ひるごはん").kanji("昼ご飯");
-//          word().english("dinner").japanese("ばんごはん").kanji("晩ご飯");
+//          word().english("volleyball").japanese("バレ-ボ-ル");
+//
 //     return dump();
 //    }
 //    static List<DatabaseRecord> u08() {
@@ -769,7 +780,6 @@ class DatabaseTematicPopulator {
 //          word().english("weekend").japanese("しゅうまつ").kanji("週末");
 //          word().english("day before yesterday").japanese("おととい").kanji("一昨日");
 //          word().english("yesterday").japanese("きのう").kanji("昨日");
-//          word().english("every night").japanese("まいばん").kanji("毎晩");
 //          word().english("friend").japanese("ともだち").kanji("友達");
 //          word().english("to talk").japanese("はなします").kanji("話します");
 //          word().english("to buy").japanese("かいます").kanji("買います");
