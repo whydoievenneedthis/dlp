@@ -680,15 +680,15 @@ class DatabaseTematicPopulator {
       word().english("book").japanese("ほん").kanji("本");
       word().english("to read").japanese("よみます").kanji("読みます");
       word().english("to listen").japanese("ききます").jExpl("おんがく").kanji("聞きます");
-      word().english("pop").japanese("ポップス");
+      word().english("pop").japanese("ポップ");
       word().english("rock").japanese("ロック");
       return dump();
     }
 
     static List<DatabaseRecord> u04() {
       reset();
-      word().english("to eat").japanese("たべます").kanji("食べる");
-      word().english("to drink").japanese("のみます").kanji("飲む");
+      word().english("to eat").japanese("たべます").kanji("食べます");
+      word().english("to drink").japanese("のみます").kanji("飲みます");
       word().english("bread").japanese("パン");
       word().english("coffee").japanese("コーヒー");
       word().english("juice").japanese("ジュース");
