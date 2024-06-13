@@ -24,11 +24,11 @@ public class Database {
 //  private List<DatabaseRecord> countTime = DbPopCount.time();
 //  private List<DatabaseRecord> countMinute = DbPopCount.minute();
   private List<DatabaseRecord> countHour = DbPopCount.hour();
-//  private List<DatabaseRecord> countCalendarDay = DbPopCount.calendarDay();
+  //  private List<DatabaseRecord> countCalendarDay = DbPopCount.calendarDay();
 //  private List<DatabaseRecord> countMonth = DbPopCount.month();
 //  private List<DatabaseRecord> countTimeLength = DbPopCount.timeLength();
-//  private List<DatabaseRecord> countAny = DbPopCount.anything();
-//  private List<DatabaseRecord> countAnyFormed = DbPopCount.anythingFormed();
+  private List<DatabaseRecord> countAny = DbPopCount.anything();
+  //  private List<DatabaseRecord> countAnyFormed = DbPopCount.anythingFormed();
 //  private List<DatabaseRecord> countPerson = DbPopCount.person();
 //  private List<DatabaseRecord> countPolitePerson = DbPopCount.politePerson();
 //  private List<DatabaseRecord> countFloor = DbPopCount.floor();
@@ -61,7 +61,7 @@ public class Database {
   private List<DatabaseRecord> sec2un03 = DbPopS2.u03();
   private List<DatabaseRecord> sec2un04 = DbPopS2.u04();
   private List<DatabaseRecord> sec2un05 = DbPopS2.u05();
-//  private List<DatabaseRecord> sec2un06 = DbPopS2.u06();
+  private List<DatabaseRecord> sec2un06 = DbPopS2.u06();
 //  private List<DatabaseRecord> sec2un07 = DbPopS2.u07();
 //  private List<DatabaseRecord> sec2un08 = DbPopS2.u08();
 //  private List<DatabaseRecord> sec2un09 = DbPopS2.u09();

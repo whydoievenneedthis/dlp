@@ -6,15 +6,11 @@
   color: red;
 }
 
-#cats:hover {
+#cats {
   font-size: 30px;
+
   div {
     width: 25%;
-  }
-}
-#cats {
-  div {
-    width: 12%;
     display: inline-block;
 
     span {
