@@ -21,9 +21,9 @@ public abstract class DatabaseRecordBuilder<T> {
     this.english = english;
     return (T) this;
   }
-
-  public T eExpl(String english) {
-    this.englishExpl = english;
+  public T english(String english, String expl) {
+    this.english = english;
+    this.englishExpl = expl;
     return (T) this;
   }
 
@@ -32,14 +32,14 @@ public abstract class DatabaseRecordBuilder<T> {
     return (T) this;
   }
 
-  public T honorific(Honorific honorific) {
-    this.honorific = honorific;
+  public T japanese(String japanese, String expl) {
+    this.japanese = japanese;
+    this.japaneseExpl = expl;
     return (T) this;
   }
 
-
-  public T jExpl(String japanese) {
-    this.japaneseExpl = japanese;
+  public T honorific(Honorific honorific) {
+    this.honorific = honorific;
     return (T) this;
   }
 

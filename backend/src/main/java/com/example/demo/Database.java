@@ -31,7 +31,7 @@ public class Database {
   //  private List<DatabaseRecord> countAnyFormed = DbPopCount.anythingFormed();
 //  private List<DatabaseRecord> countPerson = DbPopCount.person();
 //  private List<DatabaseRecord> countPolitePerson = DbPopCount.politePerson();
-//  private List<DatabaseRecord> countFloor = DbPopCount.floor();
+  private List<DatabaseRecord> countFloor = DbPopCount.floor();
   private List<DatabaseRecord> countAge = DbPopCount.age();
 //  private List<DatabaseRecord> countMachine = DbPopCount.machineFurnitureCake();
 //  private List<DatabaseRecord> countLegwear = DbPopCount.legwear();
@@ -63,7 +63,7 @@ public class Database {
   private List<DatabaseRecord> sec2un05 = DbPopS2.u05();
   private List<DatabaseRecord> sec2un06 = DbPopS2.u06();
   private List<DatabaseRecord> sec2un07 = DbPopS2.u07();
-//  private List<DatabaseRecord> sec2un08 = DbPopS2.u08();
+  private List<DatabaseRecord> sec2un08 = DbPopS2.u08();
 //  private List<DatabaseRecord> sec2un09 = DbPopS2.u09();
 //  private List<DatabaseRecord> sec2un10 = DbPopS2.u10();
 //  private List<DatabaseRecord> sec2un11 = DbPopS2.u11();
