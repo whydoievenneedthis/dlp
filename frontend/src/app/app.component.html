@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div *ngIf="question !== null && question.id != 0">Session questions: {{ question.recordsRemaining }} (points: {{ question.points.total }} / {{ question.points.remaining }}, {{ perc() }}%)</div>
+<div *ngIf="question !== null && question.id != 0">Session questions: {{ question.recordsRemaining }} (points: {{ question.points.total }} / <span class="rem">{{ question.points.remaining }}, {{ perc() }}%</span>)</div>
 <div>
   <button (click)="sessionReset()">session reset</button>
   <button (click)="allQuestionsReset()">reschedule all questions</button>

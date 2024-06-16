@@ -28,14 +28,18 @@ public abstract class DatabaseRecordBuilder<T> {
   }
 
   public T japanese(String japanese) {
-    this.japanese = japanese;
+    this.japanese = jesc(japanese);
     return (T) this;
   }
 
   public T japanese(String japanese, String expl) {
-    this.japanese = japanese;
-    this.japaneseExpl = expl;
+    this.japanese = jesc(japanese);
+    this.japaneseExpl = jesc(expl);
     return (T) this;
+  }
+
+  private String jesc(String string) {
+    return string.replace("-", "ー");
   }
 
   public T honorific(Honorific honorific) {
@@ -44,7 +48,7 @@ public abstract class DatabaseRecordBuilder<T> {
   }
 
   public T kanji(String kanji) {
-    this.kanji = kanji;
+    this.kanji = jesc(kanji);
     return (T) this;
   }
 
