@@ -637,6 +637,30 @@ class DatabaseTematicPopulator {
       word().english("shower").japanese("シャワ-");
       return dump();
     }
+    static List<DatabaseRecord> u10() {
+      reset();
+      word().english("to be named").japanese("いいます").kanji("言います");
+      word().english("girlfriend").japanese("かのじょ").kanji("彼女");
+      word().english("boyfriend").japanese("かれし");
+      word().english("this way").japanese("こちら");
+      name().english("erika").japanese("エリカ");
+      name().english("andrew").japanese("アンドリュ-");
+      name().english("daniel").japanese("ダニエル");
+      word().english("hobby").japanese("しゅみ");
+      word().english("horror").japanese("ホラ-");
+      word().english("fantasy").japanese("ファンタジー");
+      word().english("action").japanese("アクション");
+      word().english("mystery").japanese("ミステリ-");
+      word().english("comedy").japanese("コメディ");
+      word().english("romance").japanese("れんあい");
+      adj(NA).english("liked").japanese("すき").hito();
+      word().english("vietnam").japanese("ベトナム");
+      word().english("china").japanese("ちゅうごく");
+      word().english("korea").japanese("かんこく").kanji("韓国");
+      word().english("what kind of").japanese("どんな");
+      word().english("truth").japanese("ほんとう").kanji("本当");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
@@ -658,23 +682,7 @@ class DatabaseTematicPopulator {
 //      word().english("to take", "a picture").japanese("とります").kanji("撮ります");
 //      word().english("photo").japanese("しゃしん").kanji("写真");
 //      word().english("trip").japanese("りょこう").kanji("旅行");
-//      word().english("to be named").japanese("いいます").kanji("言います");
-//      word().english("girlfriend").japanese("かのじょ").kanji("彼女");
-//      word().english("boyfriend").japanese("かれし");
-//      word().english("this way").japanese("こちら");
-//      word().english("hobby").japanese("しゅみ");
-//      word().english("horror").japanese("ホラ-");
-//      word().english("fantasy").japanese("ファンタジー");
-//      word().english("action").japanese("アクション");
-//      word().english("mystery").japanese("ミステリ-");
-//      word().english("comedy").japanese("コメディ");
-//      word().english("romance").japanese("れんあい");
-//      new DatabaseRecordAdjectivePair("liked", "すき", "な"),
-//      word().english("vietnam").japanese("ベトナム");
-//      word().english("china").japanese("ちゅうごく");
-//      word().english("korea").japanese("かんこく").kanji("韓国");
 //      word().english("to be able").japanese("できます");
-//      word().english("what kind of").japanese("どんな");
 //
 //      word().english("").japanese("");
 //     return dump();
@@ -730,7 +738,6 @@ class DatabaseTematicPopulator {
 //    }
 //    public static List<DatabaseRecord> u04() {
 //      reset();
-//      word().english("truth").japanese("ほんとう").kanji("本当");
 //      word().english("shrine").japanese("じんじゃ");
 //      word().english("postcard").japanese("ポストカ-ド");
 //      word().english("that one over there").japanese("あれ");
