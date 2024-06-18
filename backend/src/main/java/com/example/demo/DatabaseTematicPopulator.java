@@ -654,11 +654,39 @@ class DatabaseTematicPopulator {
       word().english("comedy").japanese("コメディ");
       word().english("romance").japanese("れんあい");
       adj(NA).english("liked").japanese("すき").hito();
-      word().english("vietnam").japanese("ベトナム");
-      word().english("china").japanese("ちゅうごく");
-      word().english("korea").japanese("かんこく").kanji("韓国");
+      country().english("vietnam").japanese("ベトナム");
+      country().english("china").japanese("ちゅうごく");
+      country().english("korea").japanese("かんこく").kanji("韓国");
       word().english("what kind of").japanese("どんな");
       word().english("truth").japanese("ほんとう").kanji("本当");
+      return dump();
+    }
+    static List<DatabaseRecord> u11() {
+      reset();
+      word().english("house").japanese("いえ").kanji("家");
+      word().english("desk").japanese("つくえ").kanji("机");
+      word().english("microwave").japanese("でんしレンジ");
+      word().english("futon").japanese("ふとん").kanji("布団");
+      adj(I).english("cramped").japanese("せまい").kanji("狭い").subject("kitchen", "キッチン");
+      adj(I).english("well lit", "kitchen").japanese("あかるい").subject("kitchen", "キッチン");
+      word().english("fridge").japanese("れいぞうこ").kanji("冷蔵庫");
+      word().english("table").japanese("テ-ブル");
+      word().english("chair").japanese("いす").kanji("椅子");
+      word().english("perhaps").japanese("たぶん");
+      word().english("living room").japanese("リビング");
+      word().english("bed").japanese("ベッド");
+      word().english("when", "time-wise").japanese("いつ");
+      word().english("to move", "house").japanese("ひっこします");
+      word().english("apartment").japanese("アパ-ト");
+      adj(I).english("spacious").japanese("ひろい").kanji("広い").subject("kitchen", "キッチン");
+      word().english("kitchen", "modern").japanese("キッチン");
+      word().english("air conditioner").japanese("エアコン");
+      word().english("still").japanese("まだ");
+      word().english("washing machine").japanese("せんたくき").kanji("洗濯機");
+      word().english("vacuum cleaner").japanese("そうじき").kanji("掃除機");
+      word().english("bookshelf").japanese("ほんだな").kanji("本棚");
+      word().english("shelf").japanese("たな").kanji("棚");
+      word().english("this week").japanese("こんしゅう").kanji("今週");
       return dump();
     }
   }
@@ -689,16 +717,6 @@ class DatabaseTematicPopulator {
 //    }
 //    public static List<DatabaseRecord> u03() {
 //      reset();
-//      new DatabaseRecord(expl("to move", "house"), "ひっこします"),
-//      word().english("apartment").japanese("アパ-ト");
-//      adj(I).english("spacious").japanese("ひろい").kanji("広い");
-//      new DatabaseRecord(expl("kitchen", "modern"), "キッチン"),
-//      word().english("air conditioner").japanese("エアコン");
-//      word().english("still").japanese("まだ");
-//      word().english("washing machine").japanese("せんたくき").kanji("洗濯機");
-//      word().english("vacuum cleaner").japanese("そうじき").kanji("掃除機");
-//      word().english("bookshelf").japanese("ほんだな").kanji("本棚");
-//      word().english("this week").japanese("こんしゅう").kanji("今週");
 //      word().english("window").japanese("まど").kanji("窓");
 //      word().english("bathroom").japanese("トイレ");
 //      word().english("cat").japanese("ねこ").kanji("猫");
@@ -710,19 +728,6 @@ class DatabaseTematicPopulator {
 //      word().english("about how long").japanese("どのぐらい");
 //      new DatabaseRecord(expl("to take", "time"), "かかります"),
 //      new DatabaseRecord(expl("about", "approximately"), "ぐらい"),
-//      word().english("house").japanese("いえ").kanji("家");
-//      word().english("desk").japanese("つくえ").kanji("机");
-//      word().english("microwave").japanese("でんしレンジ");
-//      word().english("futon").japanese("ふとん").kanji("布団");
-//      adj(I).english("cramped").japanese("せまい").kanji("狭い");
-//      new DatabaseRecordAdjectivePair("well lit", "kitchen", "あかるい", "キッチン"),
-//      word().english("fridge").japanese("れいぞうこ").kanji("冷蔵庫");
-//      word().english("chair").japanese("いす").kanji("椅子");
-//      word().english("perhaps").japanese("たぶん");
-//      word().english("living room").japanese("リビング");
-//      word().english("shelf").japanese("たな").kanji("棚");
-//      word().english("bed").japanese("ベッド");
-//      new DatabaseRecord(expl("when", "what time"), "いつ"),
 //      adj(I).english("fast").japanese("はやい").kanji("速い");
 //      word().english("to come").japanese("きます").kanji("来ます");
 //      adj(I).english("long").japanese("ながい").kanji("長い");
@@ -932,7 +937,6 @@ class DatabaseTematicPopulator {
 //      word().english("sauce").japanese("ソ-ス");
 //      word().english("available").japanese("ひま");
 //      adj(I).english("salty").japanese("しょっぱい");
-//      word().english("table").japanese("テ-ブル");
 //      word().english("what day").japanese("なんようび").kanji("何曜日");
 //      word().english("wednesday").japanese("すいようび").kanji("水曜日");
 //      word().english("test").japanese("テスト");
