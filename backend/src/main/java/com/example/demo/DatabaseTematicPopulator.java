@@ -705,28 +705,33 @@ class DatabaseTematicPopulator {
       adj(I).english("long").japanese("ながい").kanji("長い").subject("train", "でんしゃ");
       return dump();
     }
+    static List<DatabaseRecord> u13() {
+      reset();
+      word().english("shrine").japanese("じんじゃ");
+      word().english("postcard").japanese("ポストカ-ド");
+      adj(I).english("tall", "mountain").japanese("たかい").kanji("高い").subject("mountain", "やま");
+      word().english("mountain").japanese("やま").kanji("山");
+      adj(NA).english("pretty", "flower").japanese("きれい").subject("flower", "はな");
+      word().english("flower").japanese("はな").kanji("花");
+      word().english("building").japanese("たてもの").kanji("建物");
+      word().english("temple").japanese("てら").honorific(O);
+      word().english("dessert").japanese("デザ-ト");
+      word().english("snack").japanese("かし").kanji("菓子").honorific(O);
+      word().english("souvenir").japanese("みやげ").kanji("土産").honorific(O);
+      word().english("shop").japanese("や");
+      word().english("place").japanese("ところ");
+      word().english("what").japanese("なに").kanji("何");
+      word().english("that one over there").japanese("あれ");
+      word().english("harajuku").japanese("はらじゅく");
+      word().english("mt fuji").japanese("ふじさん").kanji("富士山");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
-//    public static List<DatabaseRecord> u03() {
-//      reset();
-//      word().english("window").japanese("まど").kanji("窓");
-//      word().english("bathroom").japanese("トイレ");
-//      word().english("cat").japanese("ねこ").kanji("猫");
-//      word().english("dog").japanese("いぬ").kanji("犬");
-//      new DatabaseRecord(expl("to have", "living thing"), "います"),
 
-//      word().english("coach").japanese("コ-チ");
-//      word().english("english").japanese("えいご");
-//
-//      word().english("").japanese("");
-//     return dump();
-//    }
 //    public static List<DatabaseRecord> u04() {
 //      reset();
-//      word().english("shrine").japanese("じんじゃ");
-//      word().english("postcard").japanese("ポストカ-ド");
-//      word().english("that one over there").japanese("あれ");
 //      word().english("all right").japanese("だいじょうぶ");
 //      word().english("condition").japanese("ぐあい");
 //      adj(I).english("bad").japanese("わるい").kanji("悪い");
@@ -735,17 +740,6 @@ class DatabaseTematicPopulator {
 //      word().english("phone number").japanese("でんわばんごう");
 //      word().english("number").japanese("ばんごう");
 //      word().english("allergy").japanese("アレルギ-");
-//      new DatabaseRecordAdjectivePair("tall", "mountain", "たかい", "", "やま", "高い"),
-//      word().english("mountain").japanese("やま").kanji("山");
-//      new DatabaseRecordAdjectivePair("pretty", "flower", "きれい", "な", "はな"),
-//      word().english("flower").japanese("はな").kanji("花");
-//      word().english("building").japanese("たてもの").kanji("建物");
-//      word().english("temple").japanese("おてら");
-//      word().english("dessert").japanese("デザ-ト");
-//      word().english("snack").japanese("おかし").kanji("お菓子");
-//      word().english("souvenir").japanese("おみやげ").kanji("お土産");
-//      word().english("shop").japanese("や");
-//      word().english("place").japanese("ところ");
 //      new DatabaseRecordAdjectivePair("dangerous", "あぶない", "な"),
 //      word().english("today").japanese("きょう").kanji("今日");
 //      new DatabaseRecord(expl("parents", "formal"), "ごりょうしん"),
@@ -1734,7 +1728,20 @@ class DatabaseTematicPopulator {
 //      word().english("").japanese("");
 //     return dump();
 //    }
+//    public static List<DatabaseRecord> u03() {
+//      reset();
+//      word().english("window").japanese("まど").kanji("窓");
+//      word().english("bathroom").japanese("トイレ");
+//      word().english("cat").japanese("ねこ").kanji("猫");
+//      word().english("dog").japanese("いぬ").kanji("犬");
+//      new DatabaseRecord(expl("to have", "living thing"), "います"),
 
+//      word().english("coach").japanese("コ-チ");
+//      word().english("english").japanese("えいご");
+//
+//      word().english("").japanese("");
+//     return dump();
+//    }
 
   private static List<DatabaseRecord> recs;
   private static DatabaseRecordBuilder<?> builder;
