@@ -64,32 +64,32 @@ class DatabaseTematicPopulator {
     static List<DatabaseRecord> time() {
       reset();
       word().english("time").japanese("じかん").kanji("時間");
-      word().english("one hour").japanese("いちじかん").kanji("一時間");
-      word().english("two hours").japanese("にじかん").kanji("ニ時間");
-      word().english("three hours").japanese("さんじかん").kanji("三時間");
-      word().english("four hours").japanese("よじかん").kanji("四時間");
-      word().english("five hours").japanese("ごじかん").kanji("五時間");
-      word().english("six hours").japanese("ろくじかん").kanji("六時間");
-      word().english("seven hours").japanese("しちじかん").kanji("七時間");
-      word().english("eight hours").japanese("はちじかん").kanji("八時間");
-      word().english("nine hours").japanese("くじかん").kanji("九時間");
-      word().english("ten hours").japanese("じゅうじかん").kanji("十時間");
+      word().english("one hour").japanese("いちじかん").kanji("一時間").askJapanOnly();
+      word().english("two hours").japanese("にじかん").kanji("ニ時間").askJapanOnly();
+      word().english("three hours").japanese("さんじかん").kanji("三時間").askJapanOnly();
+      word().english("four hours").japanese("よじかん").kanji("四時間").askJapanOnly();
+      word().english("five hours").japanese("ごじかん").kanji("五時間").askJapanOnly();
+      word().english("six hours").japanese("ろくじかん").kanji("六時間").askJapanOnly();
+      word().english("seven hours").japanese("しちじかん").kanji("七時間").askJapanOnly();
+      word().english("eight hours").japanese("はちじかん").kanji("八時間").askJapanOnly();
+      word().english("nine hours").japanese("くじかん").kanji("九時間").askJapanOnly();
+      word().english("ten hours").japanese("じゅうじかん").kanji("十時間").askJapanOnly();
       word().english("how many hours").japanese("なんじかん").kanji("何時間");
       return dump();
     }
     static List<DatabaseRecord> minute() {
       reset();
       word().english("minute").japanese("ふん").kanji("分");
-      word().english("one minute").japanese("いっぷん").kanji("一分");
-      word().english("two minutes").japanese("にふん").kanji("ニ分");
-      word().english("three minutes").japanese("さんぷん").kanji("三分");
-      word().english("four minutes").japanese("よんぷん").kanji("四分");
-      word().english("five minutes").japanese("ごふん").kanji("五分");
-      word().english("six minutes").japanese("ろっぷん").kanji("六分");
-      word().english("seven minutes").japanese("ななふん").kanji("七分");
-      word().english("eight minutes").japanese("はっぷん").kanji("八分");
-      word().english("nine minutes").japanese("きゅうふん").kanji("九分");
-      word().english("ten minutes").japanese("じゅっぷん").kanji("十分");
+      word().english("one minute").japanese("いっぷん").kanji("一分").askJapanOnly();
+      word().english("two minutes").japanese("にふん").kanji("ニ分").askJapanOnly();
+      word().english("three minutes").japanese("さんぷん").kanji("三分").askJapanOnly();
+      word().english("four minutes").japanese("よんぷん").kanji("四分").askJapanOnly();
+      word().english("five minutes").japanese("ごふん").kanji("五分").askJapanOnly();
+      word().english("six minutes").japanese("ろっぷん").kanji("六分").askJapanOnly();
+      word().english("seven minutes").japanese("ななふん").kanji("七分").askJapanOnly();
+      word().english("eight minutes").japanese("はっぷん").kanji("八分").askJapanOnly();
+      word().english("nine minutes").japanese("きゅうふん").kanji("九分").askJapanOnly();
+      word().english("ten minutes").japanese("じゅっぷん").kanji("十分").askJapanOnly();
       return dump();
     }
     static List<DatabaseRecord> hour() {
@@ -711,7 +711,7 @@ class DatabaseTematicPopulator {
       word().english("postcard").japanese("ポストカ-ド");
       adj(I).english("tall").japanese("たかい", "山").kanji("高い").subject("mountain", "やま");
       word().english("mountain").japanese("やま").kanji("山");
-      adj(NA).english("pretty").japanese("きれい","花").subject("flower", "はな");
+      adj(NA).english("pretty").japanese("きれい", "花").subject("flower", "はな");
       word().english("flower").japanese("はな").kanji("花");
       word().english("building").japanese("たてもの").kanji("建物");
       word().english("temple").japanese("てら").honorific(O);
@@ -726,34 +726,33 @@ class DatabaseTematicPopulator {
       word().english("mt fuji").japanese("ふじさん").kanji("富士山");
       return dump();
     }
+    static List<DatabaseRecord> u14() {
+      reset();
+      word().english("all right").japanese("だいじょうぶ");
+      word().english("condition").japanese("ぐあい");
+      adj(I).english("bad").japanese("わるい").kanji("悪い").hito();
+      word().english("ambulance").japanese("きゅうきゅうしゃ");
+      word().english("number").japanese("ばんごう");
+      word().english("allergy").japanese("アレルギ-");
+      adj(I).english("dangerous").japanese("あぶない").hito();
+      word().english("today").japanese("きょう").kanji("今日");
+      word().english("parents").japanese("りょうしん").honorific(GO);
+      word().english("hospital").japanese("びょういん").kanji("病院");
+      word().english("police").japanese("けいさつ");
+      word().english("to rest").japanese("やすみます").kanji("休みます");
+      word().english("medicine").japanese("くすり");
+      word().english("make sure").japanese("ちゃんと");
+      word().english("to sit").japanese("すわります").kanji("座ります");
+      word().english("wish").japanese("ねがい").kanji("願い").honorific(O);
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
 
 //    public static List<DatabaseRecord> u04() {
 //      reset();
-//      word().english("all right").japanese("だいじょうぶ");
-//      word().english("condition").japanese("ぐあい");
-//      adj(I).english("bad").japanese("わるい").kanji("悪い");
-//      word().english("ambulance").japanese("きゅうきゅうしゃ");
-//      new DatabaseRecord(expl("to need", "I need help please"), "おねがいします"),
-//      word().english("phone number").japanese("でんわばんごう");
-//      word().english("number").japanese("ばんごう");
-//      word().english("allergy").japanese("アレルギ-");
-//      new DatabaseRecordAdjectivePair("dangerous", "あぶない", "な"),
-//      word().english("today").japanese("きょう").kanji("今日");
-//      new DatabaseRecord(expl("parents", "formal"), "ごりょうしん"),
-//      word().english("parents", "informal").japanese("りょうしん").kanji("両親");
-//      word().english("hospital").japanese("びょういん").kanji("病院");
-//      word().english("police").japanese("けいさつ");
-//      word().english("to rest").japanese("やすみます").kanji("休みます");
-//      new DatabaseRecord(expl("family", "formal"), "ごかぞく"),
-//      word().english("medicine").japanese("くすり");
-//      word().english("make sure").japanese("ちゃんと");
-//      word().english("to sit").japanese("すわります").kanji("座ります");
 //      new DatabaseRecordAdjectivePair("hard", "たいへん", "な"),
-//
-//      word().english("").japanese("");
 //     return dump();
 //    }
 //    public static List<DatabaseRecord> u05() {
