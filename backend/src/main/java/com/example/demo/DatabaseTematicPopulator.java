@@ -709,9 +709,9 @@ class DatabaseTematicPopulator {
       reset();
       word().english("shrine").japanese("じんじゃ");
       word().english("postcard").japanese("ポストカ-ド");
-      adj(I).english("tall", "mountain").japanese("たかい").kanji("高い").subject("mountain", "やま");
+      adj(I).english("tall").japanese("たかい", "山").kanji("高い").subject("mountain", "やま");
       word().english("mountain").japanese("やま").kanji("山");
-      adj(NA).english("pretty", "flower").japanese("きれい").subject("flower", "はな");
+      adj(NA).english("pretty").japanese("きれい","花").subject("flower", "はな");
       word().english("flower").japanese("はな").kanji("花");
       word().english("building").japanese("たてもの").kanji("建物");
       word().english("temple").japanese("てら").honorific(O);
