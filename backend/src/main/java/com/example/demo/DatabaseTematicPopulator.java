@@ -123,20 +123,25 @@ class DatabaseTematicPopulator {
 //      new DatabaseRecAdj("", "")
 //     return dump();
 //    }
-//    static List<DatabaseRecord> month() {
-//      reset();
-//      word().english("january").japanese("いちがつ").kanji("一月");
-//      word().english("february").japanese("にちがつ").kanji("日月");
-//      word().english("april").japanese("しがつ").kanji("四月");
-//      word().english("may").japanese("ごがつ").kanji("五月");
-//      word().english("july").japanese("しちがつ").kanji("七月");
-//      word().english("september").japanese("くがつ").kanji("九月");
-//      word().english("october").japanese("じゅうがつ").kanji("十月");
-//
-//      new DatabaseRecAdj("", "")
-//     return dump();
-//    }
-//    static List<DatabaseRecord> timeLength() {
+    static List<DatabaseRecord> calendarMonth() {
+      reset();
+      word().english("month", "calendar").japanese("がつ").kanji("月");
+      word().english("january").japanese("いちがつ").kanji("一月");
+      word().english("february").japanese("にがつ").kanji("二月");
+      word().english("march").japanese("さんがつ").kanji("三月");
+      word().english("april").japanese("しがつ").kanji("四月");
+      word().english("may").japanese("ごがつ").kanji("五月");
+      word().english("june").japanese("ろくがつ").kanji("六月");
+      word().english("july").japanese("しちがつ").kanji("七月");
+      word().english("august").japanese("はちがつ").kanji("八月");
+      word().english("september").japanese("くがつ").kanji("九月");
+      word().english("october").japanese("じゅうがつ").kanji("十月");
+      word().english("november").japanese("じゅういちがつ").kanji("十一月");
+      word().english("december").japanese("じゅうにがつ").kanji("十二月");
+      word().english("which month").japanese("なんがつ").kanji("何月");
+      return dump();
+    }
+    //    static List<DatabaseRecord> timeLength() {
 //      reset();
 //      word().english("1 day").japanese("いちにち").kanji("一日");
 //      word().english("2 days").japanese("ふつか").kanji("二日");
@@ -648,9 +653,9 @@ class DatabaseTematicPopulator {
       word().english("comedy").japanese("コメディ");
       word().english("romance").japanese("れんあい");
       adj(NA).english("liked").japanese("すき").hito();
-      country().english("vietnam").japanese("ベトナム");
-      country().english("china").japanese("ちゅうごく");
-      country().english("korea").japanese("かんこく").kanji("韓国");
+      country().english("vietnam").person("vietnamese").japanese("ベトナム");
+      country().english("china").person("chinese").japanese("ちゅうごく");
+      country().english("korea").person("korean").japanese("かんこく").kanji("韓国");
       word().english("what kind of").japanese("どんな");
       word().english("truth").japanese("ほんとう").kanji("本当");
       return dump();
@@ -746,6 +751,36 @@ class DatabaseTematicPopulator {
       word().english("wish").japanese("ねがい").kanji("願い").honorific(O);
       return dump();
     }
+    static List<DatabaseRecord> u15() {
+      reset();
+      word().english("weather").japanese("てんき").kanji("天気");
+      word().english("rain").japanese("あめ").kanji("雨");
+      word().english("rainy day").japanese("あめのひ").kanji("雨の日");
+      word().english("sunny").japanese("はれ").kanji("晴れ");
+      word().english("sunny day").japanese("はれのひ").kanji("晴れの日");
+      word().english("snow").japanese("ゆき").kanji("雪");
+      word().english("snowy day").japanese("ゆきのひ").kanji("雪の日");
+      adj(I).english("warm").japanese("あたたかい").subject("weather", "てんき");
+      word().english("pool").japanese("プ-ル");
+      word().english("firework").japanese("はなび");
+      word().english("concert").japanese("コンサ-ト");
+      word().english("break").japanese("やすみ").kanji("休み");
+      word().english("autumn").japanese("あき").kanji("秋");
+      adj(I).english("hot").japanese("あつい").kanji("熱い").subject("weather", "てんき");
+      word().english("spring").japanese("はる").kanji("春");
+      word().english("winter").japanese("ふゆ").kanji("冬");
+      word().english("cocoa").japanese("ココア");
+      word().english("day").japanese("ひ").kanji("日");
+      word().english("summer").japanese("なつ").kanji("夏");
+      word().english("cloud").japanese("くも").kanji("雲");
+      word().english("cloudy").japanese("くもり").kanji("曇り");
+      word().english("cloudy day").japanese("くもりのひ").kanji("曇りの日");
+      adj(I).english("cold").japanese("さむい").kanji("寒い").subject("weather", "てんき");
+      word().english("beach").japanese("うみ", "砂").kanji("海");
+      word().english("this night").japanese("こんばん").kanji("今晩");
+      word().english("hot spring").japanese("おんせん");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
@@ -757,20 +792,10 @@ class DatabaseTematicPopulator {
 //    }
 //    public static List<DatabaseRecord> u05() {
 //      reset();
-//      word().english("weather").japanese("てんき").kanji("天気");
-//      word().english("rain").japanese("あめ").kanji("雨");
-//      word().english("sunny").japanese("はれ").kanji("晴れ");
-//      word().english("sunny day").japanese("はれのひ");
-//      new DatabaseRecordAdjectivePair("nice", "weather", "いい", "てんき"),
-//      word().english("snow").japanese("ゆき").kanji("雪");
-//      word().english("snowy day").japanese("ゆきのひ").kanji("雪の日");
-//      adj(I).english("warm").japanese("あたたかい");
 //      word().english("every year").japanese("まいとし").kanji("毎年");
 //      word().english("every month").japanese("まいつき").kanji("毎月");
 //      new DatabaseRecord("siblings", expl("きょうだい", "兄弟姉妹"), "兄弟"),
-//      word().english("chinese").japanese("ちゅうごくご").kanji("中国語");
 //      word().english("australia").japanese("オーストラリア");
-//      word().english("japanese").japanese("にほんご").kanji("日本語");
 //      word().english("mother", "other's").japanese("おかあ").kanji("お母");
 //      word().english("father", "other's").japanese("おとう").kanji("お父");
 //      new DatabaseRecordAdjectivePair("good health", "げんき", "な"),
@@ -778,22 +803,6 @@ class DatabaseTematicPopulator {
 //      word().english("he").japanese("かれ").kanji("彼");
 //      new DatabaseRecord(expl("older sister", "other's"), "おねえ"),
 //      word().english("older brother", "other's").japanese("おにい").kanji("お兄");
-//      word().english("pool").japanese("プ-ル");
-//      word().english("firework").japanese("はなび");
-//      word().english("concert").japanese("コンサ-ト");
-//      word().english("break").japanese("やすみ").kanji("休み");
-//      word().english("autumn").japanese("あき").kanji("秋");
-//      adj(I).english("hot").japanese("あつい").kanji("熱い");
-//      word().english("spring").japanese("はる").kanji("春");
-//      word().english("winter").japanese("ふゆ").kanji("冬");
-//      word().english("cocoa").japanese("ココア");
-//      word().english("day").japanese("ひ").kanji("日");
-//      word().english("summer").japanese("なつ").kanji("夏");
-//      word().english("cloud").japanese("くも").kanji("雲");
-//      word().english("cloudy").japanese("くもり").kanji("曇り");
-//      word().english("cloudy day").japanese("くもりのひ");
-//      adj(I).english("cold").japanese("さむい").kanji("寒い");
-//      word().english("korean").japanese("かんこくご").kanji("韓国語");
 //      word().english("taiwan").japanese("たいわん");
 //      word().english("seoul").japanese("ソウル");
 //      word().english("child", "own").japanese("こども").kanji("子供");
@@ -843,9 +852,7 @@ class DatabaseTematicPopulator {
 //      word().english("week").japanese("しゅう").kanji("週");
 //      word().english("month").japanese("つき").kanji("月");
 //      word().english("year").japanese("とし").kanji("年");
-//      word().english("hot spring").japanese("おんせん");
 //      word().english("school").japanese("がっこう").kanji("学校");
-//
 //      word().english("").japanese("");
 //     return dump();
 //    }
@@ -905,7 +912,7 @@ class DatabaseTematicPopulator {
 //      word().english("to use").japanese("つかいます").kanji("使います");
 //      word().english("raw").japanese("なま");
 //      word().english("supermarket").japanese("ス-パ-");
-//      word().english("this night").japanese("こんばん").kanji("今晩");
+
 //      word().english("together").japanese("いっしょ").kanji("一緒");
 //      word().english("but").japanese("でも");
 //      word().english("sauce").japanese("ソ-ス");
@@ -1447,7 +1454,7 @@ class DatabaseTematicPopulator {
 //      word().english("to make a sound", "animals").japanese("鳴きます").kanji("なきます");
 //      word().english("pond").japanese("いけ").kanji("池");
 //      word().english("river").japanese("かわ").kanji("川");
-//      word().english("sea").japanese("うみ").kanji("海");
+//      word().english("sea").japanese("うみ", "水").kanji("海");
 //      word().english("to climb").japanese("のぼります").kanji("登ります");
 //      word().english("tree").japanese("き").kanji("木");
 //
