@@ -16,8 +16,8 @@ public class NameDatabaseRecordBuilder extends DatabaseRecordBuilder<NameDatabas
   @Override
   public Collection<DatabaseRecord> build() {
     return new ArrayList<>(List.of(
-        new DatabaseRecord(english, englishExpl, japanese, "名前", null, true),
-        new DatabaseRecord(japanese, "名前", english, englishExpl, kanji, false)
+        new DatabaseRecord(english, englishExpl, japanese, "名前", null, null, true),
+        new DatabaseRecord(japanese, "名前", english, englishExpl, kanji, practiceKanji ? null : kanji, false)
     ));
   }
 

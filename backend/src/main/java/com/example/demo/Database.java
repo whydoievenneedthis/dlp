@@ -29,7 +29,7 @@ public class Database {
 //  private List<DatabaseRecord> countTimeLength = DbPopCount.timeLength();
   private List<DatabaseRecord> countAny = DbPopCount.anything();
   //  private List<DatabaseRecord> countAnyFormed = DbPopCount.anythingFormed();
-//  private List<DatabaseRecord> countPerson = DbPopCount.person();
+  private List<DatabaseRecord> countPerson = DbPopCount.person();
 //  private List<DatabaseRecord> countPolitePerson = DbPopCount.politePerson();
   private List<DatabaseRecord> countFloor = DbPopCount.floor();
   private List<DatabaseRecord> countAge = DbPopCount.age();
@@ -71,7 +71,7 @@ public class Database {
   private List<DatabaseRecord> sec2un13 = DbPopS2.u13();
   private List<DatabaseRecord> sec2un14 = DbPopS2.u14();
   private List<DatabaseRecord> sec2un15 = DbPopS2.u15();
-//  private List<DatabaseRecord> sec2un16 = DbPopS2.u16();
+  private List<DatabaseRecord> sec2un16 = DbPopS2.u16();
 //  private List<DatabaseRecord> sec2un17 = DbPopS2.u17();
 //  private List<DatabaseRecord> sec2un18 = DbPopS2.u18();
 //  private List<DatabaseRecord> sec2un19 = DbPopS2.u19();

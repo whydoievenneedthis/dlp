@@ -17,6 +17,8 @@
   <button (click)="allQuestionsReset()">reschedule all questions</button>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <button (click)="switchToVerification()">switch to verification</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button (click)="switchToKanjiPractice()">kanji practice</button>
 </div>
 
 <div class="main" [hidden]="question.recordsRemaining == 0">
@@ -58,5 +60,16 @@
       <span *ngIf="!n.correct">({{ n.correctAnswer }})</span>
       ({{ n.stat.correct }} / {{ n.stat.incorrect }})
     </div>
+  </div>
+</div>
+<div *ngIf="kanjiPractice.size > 0">
+  <div class="kanjiPractice">{{ kpKey }}</div>
+  <button *ngIf="!showKanji" (click)="this.showKanji = true">drawn</button>
+  <div *ngIf="showKanji">
+    <button (click)="kanjiDone(true)">was good</button>
+    <button (click)="kanjiDone(false)">was not good</button>
+  </div>
+  <div *ngIf="showKanji" class="kanjiPractice">
+    {{ kpValue }}
   </div>
 </div>

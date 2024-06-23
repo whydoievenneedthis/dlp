@@ -34,7 +34,7 @@ public class AdjectiveDatabaseRecordBuilder extends DatabaseRecordBuilder<Adject
     }
     List<DatabaseRecord> base = base();
     base.add(
-        new DatabaseRecord(english + " " + englishSubject, null, japanese + type.link + japaneseSubject, null, null, true)
+        new DatabaseRecord(english + " " + englishSubject, null, japanese + type.link + japaneseSubject, null, null, null, true)
     );
     return base;
   }

@@ -29,6 +29,8 @@ export class AppComponent implements AfterViewInit {
   };
   answer = '';
 
+  kanjiPractice: Map<string, string> = new Map();
+
   history: Entry[] = [];
 
   constructor(private http: HttpClient) {
@@ -78,8 +80,8 @@ export class AppComponent implements AfterViewInit {
   getQuestion() {
     if (this.question.recordsRemaining == 0) {
       this.http.get('http://localhost:8080/cats').subscribe((data) => {
-       const r = <CategoriesResponse>data;
-       this.categories = r.categories;
+        const r = <CategoriesResponse>data;
+        this.categories = r.categories;
       });
       return;
     }
@@ -91,8 +93,8 @@ export class AppComponent implements AfterViewInit {
 
       if (this.question.recordsRemaining == 0) {
         this.http.get('http://localhost:8080/cats').subscribe((data) => {
-         const r = <CategoriesResponse>data;
-         this.categories = r.categories;
+          const r = <CategoriesResponse>data;
+          this.categories = r.categories;
         });
         return;
       }
@@ -142,6 +144,32 @@ export class AppComponent implements AfterViewInit {
     this.http.get(`http://localhost:8080/next-session/${c.name}`).subscribe(() => {
       this.getQuestion();
     });
+  }
+
+  switchToKanjiPractice() {
+    this.question.recordsRemaining = 0;
+    this.http.get("http://localhost:8080/kanji").subscribe((response) => {
+      this.kanjiPractice = new Map(Object.entries(response));
+      this.kanjiPracticeNext();
+    })
+  }
+
+  kpKey = "";
+  kpValue = "";
+  showKanji = false;
+  kanjiPracticeNext() {
+    if (this.kanjiPractice.size === 0) return;
+    let keys = Array.from(this.kanjiPractice.keys());
+    this.kpKey = keys[Math.floor(Math.random() * keys.length)];
+    this.kpValue = <string>this.kanjiPractice.get(this.kpKey);
+  }
+
+  kanjiDone(wasGood: boolean) {
+    if (wasGood) {
+      this.kanjiPractice.delete(this.kpKey);
+    }
+    this.showKanji = false;
+    this.kanjiPracticeNext();
   }
 }
 

@@ -13,9 +13,9 @@ public class DatabaseRecord {
   private final String to;
   private final String toExpl;
   private final String kanji;
+  private final String practicableKanji;
   private final boolean answerInJapanese;
   private String category;
-
 
   public int getId() {
     return (from + " -- " + to).hashCode();

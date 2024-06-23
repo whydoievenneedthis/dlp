@@ -15,6 +15,7 @@ public abstract class DatabaseRecordBuilder<T> {
   String japanese;
   String japaneseExpl;
   String kanji;
+  boolean practiceKanji;
   Honorific honorific;
 
   public T english(String english) {
@@ -52,16 +53,22 @@ public abstract class DatabaseRecordBuilder<T> {
     return (T) this;
   }
 
+  public T pKanji(String kanji) {
+    this.kanji = jesc(kanji);
+    this.practiceKanji = true;
+    return (T) this;
+  }
+
   public abstract Collection<DatabaseRecord> build();
 
   List<DatabaseRecord> base() {
     ArrayList<DatabaseRecord> recs = new ArrayList<>(List.of(
-        new DatabaseRecord(english, englishExpl, japanese, japaneseExpl, null, true),
-        new DatabaseRecord(japanese, japaneseExpl, english, englishExpl, kanji, false)
+        new DatabaseRecord(english, englishExpl, japanese, japaneseExpl, null, null, true),
+        new DatabaseRecord(japanese, japaneseExpl, english, englishExpl, kanji, practiceKanji ? kanji : null, false)
     ));
     if (honorific != null) {
       recs.add(
-          new DatabaseRecord(english, englishExpl == null ? "honorified" : englishExpl + ", honorified", honorific.honorificPrefix + japanese, japaneseExpl, null, true)
+          new DatabaseRecord(english, englishExpl == null ? "honorified" : englishExpl + ", honorified", honorific.honorificPrefix + japanese, japaneseExpl, null, null, true)
       );
     }
     return recs;
