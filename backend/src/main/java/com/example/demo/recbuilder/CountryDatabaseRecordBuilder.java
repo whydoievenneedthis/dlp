@@ -27,12 +27,12 @@ public class CountryDatabaseRecordBuilder extends DatabaseRecordBuilder<CountryD
       throw new IllegalStateException("Person needs to be specified for " + english + " --" + japanese);
     }
     base.addAll(List.of(
-        new DatabaseRecord(person, null, japanese + "じん", null, null, null, true),
+        new DatabaseRecord(person, "person", japanese + "じん", null, null, null, true),
         new DatabaseRecord(japanese + "じん", null, person, null, kanji == null ? null : kanji + "人", null, false)
     ));
     if (language != null) {
       base.addAll(List.of(
-          new DatabaseRecord(person, null, japanese + "ご", null, null, null, true),
+          new DatabaseRecord(person, "language", japanese + "ご", null, null, null, true),
           new DatabaseRecord(japanese + "ご", null, person, null, kanji == null ? null : kanji + "語", null, false)
       ));
     }
