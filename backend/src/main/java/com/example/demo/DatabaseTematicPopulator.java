@@ -231,7 +231,7 @@ class DatabaseTematicPopulator {
       word().english("twelve persons").japanese("じゅうににん").kanji("十二人").askJapanOnly();
       return dump();
     }
-//    static List<DatabaseRecord> politePerson() {
+    //    static List<DatabaseRecord> politePerson() {
 //      reset();
 //      word().english("how many people").japanese("なんめい").kanji("何名");
 //
@@ -436,7 +436,7 @@ class DatabaseTematicPopulator {
       word().english("subway").japanese("ちかてつ").kanji("地下鉄");
       word().english("passport").japanese("パスポート");
       word().english("smartphone").japanese("スマホ");
-      word().english("ticket", "train").japanese("きっぷ");
+      word().english("ticket", "travel").japanese("きっぷ");
       word().english("bag").japanese("かばん").kanji("鞄");
       word().english("map").japanese("ちず").kanji("地図");
       return dump();
@@ -625,6 +625,7 @@ class DatabaseTematicPopulator {
     static List<DatabaseRecord> u09() {
       reset();
       word().english("volleyball").japanese("バレ-ボ-ル");
+      word().english("week").japanese("しゅう").kanji("週");
       word().english("next week").japanese("らいしゅう").kanji("来週");
       word().english("every week").japanese("まいしゅう").kanji("毎週");
       word().english("always").japanese("いつも");
@@ -830,26 +831,31 @@ class DatabaseTematicPopulator {
       word().english("shopping").japanese("かいもの").kanji("買い物");
       return dump();
     }
+    static List<DatabaseRecord> u18() {
+      reset();
+      word().english("next month").japanese("らいげつ").kanji("来月");
+      country().english("france").japanese("フランス").personAndLanguage("french");
+      word().english("to take", "a picture").japanese("とります").kanji("撮ります");
+      word().english("photo").japanese("しゃしん").kanji("写真");
+      word().english("trip").japanese("りょこう").kanji("旅行");
+      word().english("zoo").japanese("どうぶつえん").kanji("動物園");
+      word().english("suitcase").japanese("スーツケース");
+      word().english("ticket", "generic").japanese("チケット");
+      word().english("airplane").japanese("ひこうき").kanji("飛行機");
+      word().english("plaza").japanese("ひろば");
+      word().english("lion").japanese("ライオン");
+      word().english("meat").japanese("にく").kanji("肉");
+      word().english("art museum").japanese("びじゅつかん");
+      word().english("to meet").japanese("あいます").kanji("会います");
+      word().english("painting").japanese("え").kanji("絵");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
-
 //    public static List<DatabaseRecord> u06() {
 //      reset();
-//      word().english("next month").japanese("らいげつ").kanji("来月");
-//      word().english("france").japanese("フランス");
 //      word().english("foreign language").japanese("ごが");
-//      word().english("zoo").japanese("どうぶつえん").kanji("動物園");
-//      word().english("suitcase").japanese("スーツケース");
-//      new DatabaseRecord(expl("ticket", "sports games"), "チケット"),
-//      word().english("airplane").japanese("ひこうき").kanji("飛行機");
-//      word().english("plaza").japanese("ひろば");
-//      word().english("lion").japanese("ライオン");
-//      word().english("meat").japanese("にく").kanji("肉");
-//      word().english("art museum").japanese("びじゅつかん");
-//      word().english("to meet").japanese("あいます").kanji("会います");
-//      word().english("painting").japanese("え").kanji("絵");
-//      word().english("like").japanese("すき").kanji("好き");
 //      word().english("night", "not the rice one").japanese("よる").kanji("夜");
 //      word().english("night", "the rice one").japanese("ばん").kanji("夜");
 //      word().english("week").japanese("しゅう").kanji("週");
@@ -1520,15 +1526,6 @@ class DatabaseTematicPopulator {
 //      word().english("day before yesterday").japanese("おととい").kanji("一昨日");
 //      word().english("yesterday").japanese("きのう").kanji("昨日");
 //
-//
-//      word().english("").japanese("");
-//     return dump();
-//    }
-//    public static List<DatabaseRecord> u02() {
-//      reset();
-//      word().english("to take", "a picture").japanese("とります").kanji("撮ります");
-//      word().english("photo").japanese("しゃしん").kanji("写真");
-//      word().english("trip").japanese("りょこう").kanji("旅行");
 //
 //      word().english("").japanese("");
 //     return dump();

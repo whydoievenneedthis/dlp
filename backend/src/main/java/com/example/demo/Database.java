@@ -73,7 +73,7 @@ public class Database {
   private List<DatabaseRecord> sec2un15 = DbPopS2.u15();
   private List<DatabaseRecord> sec2un16 = DbPopS2.u16();
   private List<DatabaseRecord> sec2un17 = DbPopS2.u17();
-//  private List<DatabaseRecord> sec2un18 = DbPopS2.u18();
+  private List<DatabaseRecord> sec2un18 = DbPopS2.u18();
 //  private List<DatabaseRecord> sec2un19 = DbPopS2.u19();
 //  private List<DatabaseRecord> sec2un20 = DbPopS2.u20();
 //
