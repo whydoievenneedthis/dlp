@@ -75,8 +75,23 @@ public class Database {
   private List<DatabaseRecord> sec2un17 = DbPopS2.u17();
   private List<DatabaseRecord> sec2un18 = DbPopS2.u18();
   private List<DatabaseRecord> sec2un19 = DbPopS2.u19();
-//  private List<DatabaseRecord> sec2un20 = DbPopS2.u20();
-//
+  private List<DatabaseRecord> sec2un20 = DbPopS2.u20();
+//  private List<DatabaseRecord> sec2un21 = DbPopS2.u21();
+//  private List<DatabaseRecord> sec2un22 = DbPopS2.u22();
+//  private List<DatabaseRecord> sec2un23 = DbPopS2.u23();
+//  private List<DatabaseRecord> sec2un24 = DbPopS2.u24();
+//  private List<DatabaseRecord> sec2un25 = DbPopS2.u25();
+//  private List<DatabaseRecord> sec2un26 = DbPopS2.u26();
+//  private List<DatabaseRecord> sec2un27 = DbPopS2.u27();
+//  private List<DatabaseRecord> sec2un28 = DbPopS2.u28();
+//  private List<DatabaseRecord> sec2un29 = DbPopS2.u29();
+//  private List<DatabaseRecord> sec2un30 = DbPopS2.u30();
+//  private List<DatabaseRecord> sec2un31 = DbPopS2.u31();
+//  private List<DatabaseRecord> sec2un32 = DbPopS2.u32();
+//  private List<DatabaseRecord> sec2un33 = DbPopS2.u33();
+//  private List<DatabaseRecord> sec2un34 = DbPopS2.u34();
+//  private List<DatabaseRecord> sec2un35 = DbPopS2.u35();
+
 //  private List<DatabaseRecord> sec3un01 = DbPopS3.u01();
 //  private List<DatabaseRecord> sec3un02 = DbPopS3.u02();
 //  private List<DatabaseRecord> sec3un03 = DbPopS3.u03();

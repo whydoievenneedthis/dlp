@@ -517,7 +517,7 @@ class DatabaseTematicPopulator {
     static List<DatabaseRecord> u04() {
       reset();
       word().english("to eat").japanese("たべます").pKanji("食べます");
-      word().english("to drink").japanese("のみます").kanji("飲みます");
+      word().english("to drink").japanese("のみます").pKanji("飲みます");
       word().english("bread").japanese("パン");
       word().english("coffee").japanese("コーヒー");
       word().english("juice").japanese("ジュース");
@@ -871,6 +871,23 @@ class DatabaseTematicPopulator {
       word().english("nagoya").japanese("なごや");
       return dump();
     }
+    static List<DatabaseRecord> u20() {
+      reset();
+      adj(NA).english("loved", "like a lot").japanese("だいすき").kanji("大好き").hito();
+      word().english("matcha").japanese("まっちゃ");
+      word().english("cheesecake").japanese("チ-ズケ-キ");
+      word().english("donut").japanese("ド-ナツ");
+      word().english("chocolate").japanese("チョコレ-ト");
+      word().english("pie").japanese("パイ");
+      word().english("which").japanese("どの");
+      word().english("strawberry").japanese("いちご");
+      word().english("cookie").japanese("クッキ-");
+      adj(NO).english("green").japanese("みどりいろ").kanji("緑色").subject("bread", "パン");
+      word().english("cupcake").japanese("カップケ-キ");
+      adj(I).english("sweet").japanese("あまい").kanji("甘い").subject("stuff", "もの");
+      word().english("stuff").japanese("もの");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
@@ -882,25 +899,11 @@ class DatabaseTematicPopulator {
 //      word().english("week").japanese("しゅう").kanji("週");
 //      word().english("month").japanese("つき").kanji("月");
 //      word().english("year").japanese("とし").kanji("年");
-//      word().english("").japanese("");
 //     return dump();
 //    }
 //    public static List<DatabaseRecord> u07() {
 //      reset();
 //      word().english("tuesday").japanese("かようび").kanji("火曜日");
-//      word().english("love", "like a lot").japanese("だいすき").kanji("大好き");
-//      word().english("matcha").japanese("まっちゃ");
-//      word().english("cheesecake").japanese("チ-ズケ-キ");
-//      word().english("donut").japanese("ド-ナツ");
-//      word().english("chocolate").japanese("チョコレ-ト");
-//      word().english("pie").japanese("パイ");
-//      new DatabaseRecord("which", expl("どの", "物")),
-//      word().english("strawberry").japanese("いちご");
-//      word().english("cookie").japanese("クッキ-");
-//      new DatabaseRecordAdjectivePair("green", "みどりいろ", "の", Kanji.of("緑色")),
-//      word().english("cupcake").japanese("カップケ-キ");
-//      adj(I).english("sweet").japanese("あまい").kanji("甘い");
-//      word().english("stuff").japanese("もの");
 //      word().english("").japanese("");
 //     return dump();
 //    }
