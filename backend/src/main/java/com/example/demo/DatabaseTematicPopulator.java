@@ -888,6 +888,32 @@ class DatabaseTematicPopulator {
       word().english("stuff").japanese("もの");
       return dump();
     }
+    static List<DatabaseRecord> u21() {
+      reset();
+      word().english("soy sauce").japanese("しょうゆ").kanji("醬油");
+      word().english("fish").japanese("さかな").kanji("魚");
+      word().english("tofu").japanese("とうふ");
+      word().english("egg").japanese("たまご");
+      word().english("pork cutlet").japanese("とんかつ");
+      word().english("thursday").japanese("もくようび").kanji("木曜日");
+      word().english("cola").japanese("コ-ラ");
+      word().english("beef bowl").japanese("ぎゅうどん");
+      word().english("pork").japanese("ぶたにく");
+      word().english("pig").japanese("ぶた");
+      word().english("beer").japanese("ビ-ル");
+      word().english("salt").japanese("しお").kanji("塩");
+      word().english("more").japanese("もっと");
+      word().english("to use").japanese("つかいます").kanji("使います");
+      word().english("raw").japanese("なま");
+      word().english("supermarket").japanese("ス-パ-");
+      word().english("together").japanese("いっしょ").kanji("一緒");
+      word().english("but").japanese("でも");
+      word().english("sauce").japanese("ソ-ス");
+      word().english("available").japanese("ひま");
+      adj(I).english("salty").japanese("しょっぱい").subject("pork", "ぶたにく");
+      word().english("vegetable").japanese("やさい").kanji("野菜");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
@@ -909,32 +935,10 @@ class DatabaseTematicPopulator {
 //    }
 //    public static List<DatabaseRecord> u08() {
 //      reset();
-//      word().english("soy sauce").japanese("しょうゆ").kanji("醬油");
-//      word().english("fish").japanese("さかな").kanji("魚");
 //      word().english("class").japanese("じゅぎょう").kanji("授業");
 //      new DatabaseRecordAdjectivePair("interesting", "class", "おもしろい", "じゅぎょう"),
 //      word().english("to end", "finishes").japanese("おわります").kanji("終わります");
 //      new DatabaseRecord("to ask", expl("ききます", "しつもん"), "聞きます"),
-//      word().english("tofu").japanese("とうふ");
-//      word().english("egg").japanese("たまご");
-//      word().english("pork cutlet").japanese("とんかつ");
-//      word().english("thursday").japanese("もくようび").kanji("木曜日");
-//      word().english("cola").japanese("コ-ラ");
-//      word().english("beef bowl").japanese("ぎゅうどん");
-//      word().english("pork").japanese("ぶたにく");
-//      word().english("pig").japanese("ぶた");
-//      word().english("beer").japanese("ビ-ル");
-//      word().english("salt").japanese("しお").kanji("塩");
-//      word().english("more").japanese("もっと");
-//      word().english("to use").japanese("つかいます").kanji("使います");
-//      word().english("raw").japanese("なま");
-//      word().english("supermarket").japanese("ス-パ-");
-
-//      word().english("together").japanese("いっしょ").kanji("一緒");
-//      word().english("but").japanese("でも");
-//      word().english("sauce").japanese("ソ-ス");
-//      word().english("available").japanese("ひま");
-//      adj(I).english("salty").japanese("しょっぱい");
 //      word().english("what day").japanese("なんようび").kanji("何曜日");
 //      word().english("wednesday").japanese("すいようび").kanji("水曜日");
 //      word().english("test").japanese("テスト");
@@ -1508,12 +1512,6 @@ class DatabaseTematicPopulator {
   //    static List<DatabaseRecord> u06() {
 //      reset();
 //      new DatabaseRecord(expl("welcome", "to this shop"), "いらっしゃいませ"),
-//     return dump();
-//    }
-//    static List<DatabaseRecord> u07() {
-//      reset();
-//      word().english("vegetable").japanese("やさい").kanji("野菜");
-//
 //     return dump();
 //    }
 //    static List<DatabaseRecord> u08() {
