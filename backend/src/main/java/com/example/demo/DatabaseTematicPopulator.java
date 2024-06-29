@@ -904,7 +904,7 @@ class DatabaseTematicPopulator {
       word().english("salt").japanese("しお").kanji("塩");
       word().english("more").japanese("もっと");
       word().english("to use").japanese("つかいます").kanji("使います");
-      word().english("raw").japanese("なま");
+      adj(NO).english("raw").japanese("なま").subject("vegetable", "やさい");
       word().english("supermarket").japanese("ス-パ-");
       word().english("together").japanese("いっしょ").kanji("一緒");
       word().english("but").japanese("でも");
@@ -912,6 +912,27 @@ class DatabaseTematicPopulator {
       word().english("available").japanese("ひま");
       adj(I).english("salty").japanese("しょっぱい").subject("pork", "ぶたにく");
       word().english("vegetable").japanese("やさい").kanji("野菜");
+      return dump();
+    }
+    static List<DatabaseRecord> u22() {
+      reset();
+      word().english("tuesday").japanese("かようび").kanji("火曜日");
+      word().english("class").japanese("じゅぎょう").kanji("授業");
+      adj(I).english("interesting", "class").japanese("おもしろい", "じゅぎょう").subject("class", "じゅぎょう");
+      word().english("to end", "finishes").japanese("おわります").kanji("終わります");
+      word().english("to ask").japanese("ききます", "しつもん").kanji("聞きます");
+      word().english("what day").japanese("なんようび").kanji("何曜日");
+      word().english("wednesday").japanese("すいようび").kanji("水曜日");
+      word().english("test").japanese("テスト");
+      word().english("many").japanese("たくさん");
+      word().english("question").japanese("しつもん");
+      word().english("early").japanese("はやく");
+      word().english("classroom").japanese("きょうしつ");
+      word().english("deadline").japanese("しめきり");
+      word().english("project").japanese("プロジェクト");
+      country().english("spain").japanese("スペイン").personAndLanguage("spanish");
+      name().english("yamada").japanese("やまだ").pKanji("山田");
+      name().english("smith").japanese("スミス");
       return dump();
     }
   }
@@ -925,33 +946,6 @@ class DatabaseTematicPopulator {
 //      word().english("week").japanese("しゅう").kanji("週");
 //      word().english("month").japanese("つき").kanji("月");
 //      word().english("year").japanese("とし").kanji("年");
-//     return dump();
-//    }
-//    public static List<DatabaseRecord> u07() {
-//      reset();
-//      word().english("tuesday").japanese("かようび").kanji("火曜日");
-//      word().english("").japanese("");
-//     return dump();
-//    }
-//    public static List<DatabaseRecord> u08() {
-//      reset();
-//      word().english("class").japanese("じゅぎょう").kanji("授業");
-//      new DatabaseRecordAdjectivePair("interesting", "class", "おもしろい", "じゅぎょう"),
-//      word().english("to end", "finishes").japanese("おわります").kanji("終わります");
-//      new DatabaseRecord("to ask", expl("ききます", "しつもん"), "聞きます"),
-//      word().english("what day").japanese("なんようび").kanji("何曜日");
-//      word().english("wednesday").japanese("すいようび").kanji("水曜日");
-//      word().english("test").japanese("テスト");
-//      word().english("lot of").japanese("たくさん");
-//      word().english("question").japanese("しつもん");
-//      word().english("early").japanese("はやく");
-//      word().english("classroom").japanese("きょうしつ");
-//      word().english("deadline").japanese("しめきり");
-//      word().english("project").japanese("プロジェクト");
-//      word().english("spain").japanese("スペイン");
-//      word().english("spanish").japanese("スペインご");
-//
-//      word().english("").japanese("");
 //     return dump();
 //    }
 //    public static List<DatabaseRecord> u09() {
