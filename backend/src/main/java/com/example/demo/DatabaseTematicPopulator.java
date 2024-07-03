@@ -63,7 +63,7 @@ class DatabaseTematicPopulator {
     }
     static List<DatabaseRecord> time() {
       reset();
-      word().english("time").japanese("じかん").kanji("時間");
+      word().english("time").japanese("じかん").pKanji("時間");
       word().english("one hour").japanese("いちじかん").kanji("一時間").askJapanOnly();
       word().english("two hours").japanese("にじかん").kanji("ニ時間").askJapanOnly();
       word().english("three hours").japanese("さんじかん").kanji("三時間").askJapanOnly();
@@ -79,7 +79,7 @@ class DatabaseTematicPopulator {
     }
     static List<DatabaseRecord> minute() {
       reset();
-      word().english("minute").japanese("ふん").kanji("分");
+      word().english("minute").japanese("ふん").pKanji("分");
       word().english("one minute").japanese("いっぷん").kanji("一分").askJapanOnly();
       word().english("two minutes").japanese("にふん").kanji("ニ分").askJapanOnly();
       word().english("three minutes").japanese("さんぷん").kanji("三分").askJapanOnly();
@@ -644,7 +644,7 @@ class DatabaseTematicPopulator {
     }
     static List<DatabaseRecord> u10() {
       reset();
-      word().english("to be named").japanese("いいます").kanji("言います");
+      word().english("to be named").japanese("いいます").pKanji("言います");
       word().english("girlfriend").japanese("かのじょ").kanji("彼女");
       word().english("boyfriend").japanese("かれし");
       word().english("this way").japanese("こちら");
@@ -698,7 +698,7 @@ class DatabaseTematicPopulator {
       reset();
       word().english("train").japanese("でんしゃ").kanji("電車");
       word().english("shibuya").japanese("しぶや");
-      word().english("to go", "away").japanese("いきます").kanji("行きます");
+      word().english("to go", "away").japanese("いきます").pKanji("行きます");
       word().english("bus").japanese("バス");
       word().english("next").japanese("つぎ").kanji("次");
       word().english("akihabara").japanese("あきはばら");
@@ -707,7 +707,7 @@ class DatabaseTematicPopulator {
       word().english("soon").japanese("もうすぐ");
       word().english("park").japanese("こうえん").kanji("公園");
       adj(I).english("fast").japanese("はやい").kanji("速い").subject("train", "でんしゃ");
-      word().english("to come").japanese("きます").kanji("来ます");
+      word().english("to come").japanese("きます").pKanji("来ます");
       word().english("to take", "time").japanese("かかります");
       word().english("about", "approximately").japanese("ぐらい");
       word().english("about how long").japanese("どのぐらい");
@@ -720,7 +720,7 @@ class DatabaseTematicPopulator {
       reset();
       word().english("shrine").japanese("じんじゃ");
       word().english("postcard").japanese("ポストカ-ド");
-      adj(I).english("tall").japanese("たかい", "山").kanji("高い").subject("mountain", "やま");
+      adj(I).english("tall").japanese("たかい", "山").pKanji("高い").subject("mountain", "やま");
       word().english("mountain").japanese("やま").pKanji("山");
       adj(NA).english("pretty").japanese("きれい", "花").subject("flower", "はな");
       word().english("flower").japanese("はな").kanji("花");
@@ -731,7 +731,7 @@ class DatabaseTematicPopulator {
       word().english("souvenir").japanese("みやげ").kanji("土産").honorific(O);
       word().english("shop").japanese("や");
       word().english("place").japanese("ところ");
-      word().english("what").japanese("なに").kanji("何");
+      word().english("what").japanese("なに").pKanji("何");
       word().english("that one over there").japanese("あれ");
       word().english("harajuku").japanese("はらじゅく");
       word().english("mt fuji").japanese("ふじさん").kanji("富士山");
@@ -770,7 +770,7 @@ class DatabaseTematicPopulator {
       word().english("pool").japanese("プ-ル");
       word().english("firework").japanese("はなび");
       word().english("concert").japanese("コンサ-ト");
-      word().english("break").japanese("やすみ").kanji("休み");
+      word().english("break").japanese("やすみ").pKanji("休み");
       word().english("autumn").japanese("あき").kanji("秋");
       adj(I).english("hot").japanese("あつい").kanji("熱い").subject("weather", "てんき");
       word().english("spring").japanese("はる").kanji("春");
@@ -935,6 +935,54 @@ class DatabaseTematicPopulator {
       name().english("smith").japanese("スミス");
       return dump();
     }
+    static List<DatabaseRecord> u23() {
+      reset();
+      word().english("to wash").japanese("あらいます").kanji("洗います");
+      word().english("exercise").japanese("うんどう");
+      word().english("driving").japanese("うんてん");
+      word().english("translation").japanese("ほんやく");
+      word().english("pro").japanese("プロ");
+      word().english("gym").japanese("ジム");
+      word().english("player").japanese("せんしゅ");
+      word().english("team").japanese("チ-ム");
+      word().english("dictionary").japanese("じしょ").kanji("辞書");
+      word().english("library").japanese("としょかん");
+      word().english("company").japanese("かいしゃ").kanji("会社");
+      word().english("photographer").japanese("しゃしんか");
+      word().english("driver").japanese("うんてんしゅ");
+      word().english("translator").japanese("ほんやくか");
+      word().english("manager").japanese("マネージャー");
+      word().english("coworker").japanese("どうりょう");
+      word().english("gps").japanese("ナビ");
+      word().english("a.m.").japanese("ごぜん").kanji("午前");
+      word().english("camera").japanese("カメラ");
+      word().english("event").japanese("イベント");
+
+      return dump();
+    }
+    static List<DatabaseRecord> u24() {
+      reset();
+      adj(I).english("scary").japanese("こわい").subject("face", "かお");
+      word().english("go-kart").japanese("ゴ-カ-ト");
+      word().english("attraction").japanese("アトラクション");
+      word().english("theme park").japanese("ゆうえんち");
+      word().english("museum").japanese("はくぶつかん");
+      word().english("p.m.").japanese("ごご").kanji("午後");
+      word().english("entrance").japanese("いりぐち");
+      word().english("entrance fee").japanese("にゅうじょうりょう");
+      word().english("roller coaster").japanese("ジェットコースター");
+      adj(I).english("boring").japanese("つまらない").subject("art museum", "びじゅつかん");
+      word().english("adult").japanese("おとな").kanji("大人");
+      adj(I).english("yellow").japanese("きいろい").kanji("黄色い").subject("book", "ほん");
+      word().english("mint chocolate chip").japanese("チョコミント");
+      word().english("vanilla").japanese("バニラ");
+      word().english("mascot").japanese("キャラクタ-");
+      word().english("face").japanese("かお");
+      word().english("flavor").japanese("あじ");
+      word().english("size").japanese("サイズ");
+      word().english("show").japanese("ショ-");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
@@ -951,46 +999,8 @@ class DatabaseTematicPopulator {
 //    public static List<DatabaseRecord> u09() {
 //      reset();
 //      new DatabaseRecord(expl("to wear", "lower body"), "はきます"),
-//      word().english("to wash").japanese("あらいます").kanji("洗います");
-//      word().english("exercise").japanese("うんどう");
-//      word().english("driving").japanese("うんてん");
-//      word().english("translation").japanese("ほんやく");
-//      word().english("pro").japanese("プロ");
-//      word().english("gym").japanese("ジム");
-//      word().english("player").japanese("せんしゅ");
-//      word().english("team").japanese("チ-ム");
-//      word().english("entrance").japanese("いりぐち");
-//      word().english("event").japanese("イベント");
-//      word().english("entrance fee").japanese("にゅうじょうりょう");
-//      word().english("roller coaster").japanese("ジェットコースター");
-//      word().english("mascot").japanese("キャラクタ-");
-//      word().english("face").japanese("かお");
-//      word().english("flavor").japanese("あじ");
-//      word().english("camera").japanese("カメラ");
-//      word().english("dictionary").japanese("じしょ").kanji("辞書");
-//      word().english("size").japanese("サイズ");
-//      word().english("show").japanese("ショ-");
-//      word().english("go-kart").japanese("ゴ-カ-ト");
-//      word().english("attraction").japanese("アトラクション");
-//      word().english("theme park").japanese("ゆうえんち");
-//      word().english("museum").japanese("はくぶつかん");
-//      word().english("a.m.").japanese("ごぜん").kanji("午前");
-//      word().english("p.m.").japanese("ごご").kanji("午後");
 //      new DatabaseRecordAdjectivePair("orange", "オレンジいろ", "の"),
 //      new DatabaseRecordAdjectivePair("pink", "ピンクいろ", "の"),
-//      adj(I).english("yellow").japanese("きいろい").kanji("黄色い");
-//      word().english("library").japanese("としょかん");
-//      word().english("company").japanese("かいしゃ").kanji("会社");
-//      adj(I).english("scary").japanese("こわい");
-//      word().english("photographer").japanese("しゃしんか");
-//      word().english("driver").japanese("うんてんしゅ");
-//      word().english("translator").japanese("ほんやくか");
-//      word().english("manager").japanese("マネージャー");
-//      word().english("coworker").japanese("どうりょう");
-//      word().english("mint chocolate chip").japanese("チョコミント");
-//      word().english("vanilla").japanese("バニラ");
-//
-//      word().english("").japanese("");
 //     return dump();
 //    }
 //    public static List<DatabaseRecord> u10() {
@@ -1001,9 +1011,7 @@ class DatabaseTematicPopulator {
 //      word().english("anime music").japanese("アニソン");
 //      new DatabaseRecord(expl("really", "don't really read"), "あまり"),
 //      adj(I).english("difficult").japanese("むずかしい").kanji("難しい");
-//      adj(I).english("boring").japanese("つまらない");
 //      word().english("story").japanese("はなし").kanji("話");
-//      word().english("gps").japanese("ナビ");
 //
 //      word().english("section").japanese("コ-ナ-");
 //      word().english("sale").japanese("セ-ル");
@@ -1404,7 +1412,6 @@ class DatabaseTematicPopulator {
 //      word().english("marriage").japanese("けっこん").kanji("結婚");
 //      word().english("divorce").japanese("りこん").kanji("離婚");
 //      word().english("young").japanese("わかい").kanji("若い");
-//      word().english("adult").japanese("おとな").kanji("大人");
 //      word().english("baby").japanese("あかちゃん").kanji("赤ちゃん");
 //      word().english("to die").japanese("しにます").kanji("死にます");
 //      word().english("to be born").japanese("うまれます").kanji("生まれます");
@@ -1502,7 +1509,6 @@ class DatabaseTematicPopulator {
 //    }
 //  }
 
-
   //    static List<DatabaseRecord> u06() {
 //      reset();
 //      new DatabaseRecord(expl("welcome", "to this shop"), "いらっしゃいませ"),
@@ -1517,7 +1523,6 @@ class DatabaseTematicPopulator {
 //
 //     return dump();
 //    }
-
 
   //    public static List<DatabaseRecord> u01() {
 //      reset();
