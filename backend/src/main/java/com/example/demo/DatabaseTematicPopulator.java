@@ -957,7 +957,6 @@ class DatabaseTematicPopulator {
       word().english("a.m.").japanese("ごぜん").kanji("午前");
       word().english("camera").japanese("カメラ");
       word().english("event").japanese("イベント");
-
       return dump();
     }
     static List<DatabaseRecord> u24() {
@@ -983,6 +982,25 @@ class DatabaseTematicPopulator {
       word().english("show").japanese("ショ-");
       return dump();
     }
+    static List<DatabaseRecord> u25() {
+      reset();
+      word().english("documentary").japanese("ドキュメンタリ-");
+      word().english("fiction").japanese("フィクション");
+      word().english("non-fiction").japanese("ノンフィクション");
+      word().english("anime music").japanese("アニソン");
+      word().english("really", "don't really read").japanese("あまり");
+      adj(I).english("difficult").japanese("むずかしい").kanji("難しい").subject("homework", "しゅくだい");
+      word().english("story").japanese("はなし").kanji("話");
+      word().english("section").japanese("コ-ナ-");
+      word().english("sale").japanese("セ-ル");
+      word().english("poster").japanese("ポスタ-");
+      word().english("card game").japanese("カ-ドゲ-ム");
+      word().english("puzzle").japanese("パズル");
+      word().english("band").japanese("バンド");
+      word().english("album").japanese("アルバム");
+      word().english("actor").japanese("はいゆう");
+      return dump();
+    }
   }
 
 //  static class DbPopS2 {
@@ -1001,30 +1019,6 @@ class DatabaseTematicPopulator {
 //      new DatabaseRecord(expl("to wear", "lower body"), "はきます"),
 //      new DatabaseRecordAdjectivePair("orange", "オレンジいろ", "の"),
 //      new DatabaseRecordAdjectivePair("pink", "ピンクいろ", "の"),
-//     return dump();
-//    }
-//    public static List<DatabaseRecord> u10() {
-//      reset();
-//      word().english("documentary").japanese("ドキュメンタリ-");
-//      word().english("fiction").japanese("フィクション");
-//      word().english("non-fiction").japanese("ノンフィクション");
-//      word().english("anime music").japanese("アニソン");
-//      new DatabaseRecord(expl("really", "don't really read"), "あまり"),
-//      adj(I).english("difficult").japanese("むずかしい").kanji("難しい");
-//      word().english("story").japanese("はなし").kanji("話");
-//
-//      word().english("section").japanese("コ-ナ-");
-//      word().english("sale").japanese("セ-ル");
-//
-//      word().english("poster").japanese("ポスタ-");
-//      word().english("card game").japanese("カ-ドゲ-ム");
-//      word().english("puzzle").japanese("パズル");
-//      word().english("band").japanese("バンド");
-//      word().english("album").japanese("アルバム");
-//
-//      word().english("actor").japanese("はいゆう");
-//
-//      word().english("").japanese("");
 //     return dump();
 //    }
 //    public static List<DatabaseRecord> u11() {
