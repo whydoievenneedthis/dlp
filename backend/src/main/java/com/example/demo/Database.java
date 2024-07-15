@@ -18,7 +18,7 @@ import java.util.List;
 @Accessors(chain = true)
 @Component
 public class Database {
-//  private List<DatabaseRecord> hiras = DbPopHiraKata.hira();
+  //  private List<DatabaseRecord> hiras = DbPopHiraKata.hira();
 //  private List<DatabaseRecord> katas = DbPopHiraKata.kata();
 //
   private List<DatabaseRecord> countTime = DbPopCount.time();
@@ -26,11 +26,11 @@ public class Database {
   private List<DatabaseRecord> countHour = DbPopCount.hour();
   //  private List<DatabaseRecord> countCalendarDay = DbPopCount.calendarDay();
   private List<DatabaseRecord> countCalendarMonth = DbPopCount.calendarMonth();
-//  private List<DatabaseRecord> countTimeLength = DbPopCount.timeLength();
+  //  private List<DatabaseRecord> countTimeLength = DbPopCount.timeLength();
   private List<DatabaseRecord> countAny = DbPopCount.anything();
   //  private List<DatabaseRecord> countAnyFormed = DbPopCount.anythingFormed();
   private List<DatabaseRecord> countPerson = DbPopCount.person();
-//  private List<DatabaseRecord> countPolitePerson = DbPopCount.politePerson();
+  //  private List<DatabaseRecord> countPolitePerson = DbPopCount.politePerson();
   private List<DatabaseRecord> countFloor = DbPopCount.floor();
   private List<DatabaseRecord> countAge = DbPopCount.age();
 //  private List<DatabaseRecord> countMachine = DbPopCount.machineFurnitureCake();
@@ -81,10 +81,10 @@ public class Database {
   private List<DatabaseRecord> sec2un23 = DbPopS2.u23();
   private List<DatabaseRecord> sec2un24 = DbPopS2.u24();
   private List<DatabaseRecord> sec2un25 = DbPopS2.u25();
-//  private List<DatabaseRecord> sec2un26 = DbPopS2.u26();
-//  private List<DatabaseRecord> sec2un27 = DbPopS2.u27();
-//  private List<DatabaseRecord> sec2un28 = DbPopS2.u28();
-//  private List<DatabaseRecord> sec2un29 = DbPopS2.u29();
+  private List<DatabaseRecord> sec2un26 = DbPopS2.u26();
+  private List<DatabaseRecord> sec2un27 = DbPopS2.u27();
+  private List<DatabaseRecord> sec2un28 = DbPopS2.u28();
+  private List<DatabaseRecord> sec2un29 = DbPopS2.u29();
 //  private List<DatabaseRecord> sec2un30 = DbPopS2.u30();
 //  private List<DatabaseRecord> sec2un31 = DbPopS2.u31();
 //  private List<DatabaseRecord> sec2un32 = DbPopS2.u32();
