@@ -112,9 +112,9 @@ class PracticeService {
     DatabaseRecord record;
 
     int id = request.getId();
-      record = questions.get(id);
-      correct = record.getTo().equals(request.getAnswer().trim());
-      answer = record.getTo();
+    record = questions.get(id);
+    correct = record.getTos().contains(request.getAnswer().trim());
+    answer = record.getTo();
 
     this.sessionRemainingPoints -= statBuilder.fetch(record).getPointValue();
 

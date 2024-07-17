@@ -415,7 +415,7 @@ class DatabaseTematicPopulator {
       word().english("this").japanese("この");
       word().english("that").japanese("その");
       adj(I).english("cheerful").japanese("あかるい", "ひと").kanji("明るい").hito();
-      adj(I).english("funny").japanese("おもしろい").hito();
+      adj(I).english("funny", "person").japanese("おもしろい", "ひと").hito();
       adj(I).english("cute").japanese("かわいい").hito();
       name().english("tanaka").japanese("たなか").pKanji("田中");
       name().english("yamaguchi").japanese("やまぐち").pKanji("山口");
@@ -924,9 +924,9 @@ class DatabaseTematicPopulator {
       word().english("what day").japanese("なんようび").kanji("何曜日");
       word().english("wednesday").japanese("すいようび").kanji("水曜日");
       word().english("test").japanese("テスト");
-      word().english("many").japanese("たくさん");
+      word().english("many").englishAlt("lot of","lots of","a lot of").japanese("たくさん");
       word().english("question").japanese("しつもん");
-      word().english("early").japanese("はやく");
+      word().english("early","train").japanese("はやく","でんしゃ");
       word().english("classroom").japanese("きょうしつ");
       word().english("deadline").japanese("しめきり");
       word().english("project").japanese("プロジェクト");
@@ -986,9 +986,9 @@ class DatabaseTematicPopulator {
       reset();
       word().english("documentary").japanese("ドキュメンタリ-");
       word().english("fiction").japanese("フィクション");
-      word().english("non-fiction").japanese("ノンフィクション");
+      word().english("non-fiction").englishAlt("nonfiction","non fiction").japanese("ノンフィクション");
       word().english("anime music").japanese("アニソン");
-      word().english("really", "don't really read").japanese("あまり");
+      word().english("really", "don't really read").englishAlt("not really").japanese("あまり");
       adj(I).english("difficult").japanese("むずかしい").kanji("難しい").subject("homework", "しゅくだい");
       word().english("story").japanese("はなし").kanji("話");
       word().english("section").japanese("コ-ナ-");
@@ -1052,7 +1052,7 @@ class DatabaseTematicPopulator {
       word().english("lights display").japanese("イルミネーション");
       word().english("christmas").japanese("クリスマス");
       word().english("new year's eve").japanese("おおみそか");
-      word().english("parade").japanese("パレ－ド");
+      word().english("parade").japanese("パレード");
       word().english("halloween").japanese("ハロウィン");
       word().english("party").japanese("パーティー");
       word().english("taiko drum").japanese("たいこ");
@@ -1061,7 +1061,7 @@ class DatabaseTematicPopulator {
       word().english("dance").japanese("ダンス");
       word().english("chocolate covered banana").japanese("チョコバナナ");
       word().english("food").japanese("たべもの").kanji("食べ物");
-      word().english("festival").japanese("祭り").honorific(O);
+      word().english("festival").japanese("まつり").kanji("祭り").honorific(O);
       word().english("this weekend").japanese("こんしゅうまつ");
       word().english("firework display").japanese("はなびたいかい");
       return dump();
@@ -1083,7 +1083,7 @@ class DatabaseTematicPopulator {
       word().english("present").japanese("プレセント");
       word().english("watch").japanese("うでどけい");
       word().english("date").japanese("デート");
-      adj(NA).english("energetic").japanese("げんき").hito();
+      adj(NA).english("energetic").englishAlt("lively").japanese("げんき").hito();
       word().english("birthday").japanese("たんじょうび").kanji("誕生日");
       return dump();
     }

@@ -6,11 +6,14 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @SuppressWarnings("unchecked")
 public abstract class DatabaseRecordBuilder<T> {
   String english;
+  Set<String> alsoAcceptableEnglish = Set.of();
   String englishExpl;
   String japanese;
   String japaneseExpl;
@@ -25,6 +28,10 @@ public abstract class DatabaseRecordBuilder<T> {
   public T english(String english, String expl) {
     this.english = english;
     this.englishExpl = expl;
+    return (T) this;
+  }
+  public T englishAlt(String... alts) {
+    alsoAcceptableEnglish = Set.of(alts);
     return (T) this;
   }
 
@@ -62,13 +69,16 @@ public abstract class DatabaseRecordBuilder<T> {
   public abstract Collection<DatabaseRecord> build();
 
   List<DatabaseRecord> base() {
+    Set<String> acceptableEnglish = new HashSet<>();
+    acceptableEnglish.add(english);
+    acceptableEnglish.addAll(alsoAcceptableEnglish);
     ArrayList<DatabaseRecord> recs = new ArrayList<>(List.of(
-        new DatabaseRecord(english, englishExpl, japanese, japaneseExpl, null, null, true),
-        new DatabaseRecord(japanese, japaneseExpl, english, englishExpl, kanji, practiceKanji ? kanji : null, false)
+        new DatabaseRecord(english, englishExpl, japanese, Set.of(japanese), japaneseExpl, null, null, true),
+        new DatabaseRecord(japanese, japaneseExpl, english, acceptableEnglish, englishExpl, kanji, practiceKanji ? kanji : null, false)
     ));
     if (honorific != null) {
       recs.add(
-          new DatabaseRecord(english, englishExpl == null ? "honorified" : englishExpl + ", honorified", honorific.honorificPrefix + japanese, japaneseExpl, null, null, true)
+          new DatabaseRecord(english, englishExpl == null ? "honorified" : englishExpl + ", honorified", honorific.honorificPrefix + japanese, Set.of(honorific.honorificPrefix + japanese), japaneseExpl, null, null, true)
       );
     }
     return recs;

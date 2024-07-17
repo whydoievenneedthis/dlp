@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public class AdjectiveDatabaseRecordBuilder extends DatabaseRecordBuilder<AdjectiveDatabaseRecordBuilder> {
   private final AdjectiveType type;
@@ -33,8 +34,9 @@ public class AdjectiveDatabaseRecordBuilder extends DatabaseRecordBuilder<Adject
       throw new IllegalStateException("Subject needs to be specified for " + english + " --" + japanese);
     }
     List<DatabaseRecord> base = base();
+    String mainAnswer = japanese + type.link + japaneseSubject;
     base.add(
-        new DatabaseRecord(english + " " + englishSubject, null, japanese + type.link + japaneseSubject, null, null, null, true)
+        new DatabaseRecord(english + " " + englishSubject, null, mainAnswer, Set.of(mainAnswer), null, null, null, true)
     );
     return base;
   }

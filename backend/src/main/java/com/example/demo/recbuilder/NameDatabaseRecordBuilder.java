@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public class NameDatabaseRecordBuilder extends DatabaseRecordBuilder<NameDatabaseRecordBuilder> {
 
@@ -16,8 +17,8 @@ public class NameDatabaseRecordBuilder extends DatabaseRecordBuilder<NameDatabas
   @Override
   public Collection<DatabaseRecord> build() {
     return new ArrayList<>(List.of(
-        new DatabaseRecord(english, englishExpl, japanese, "名前", null, null, true),
-        new DatabaseRecord(japanese, "名前", english, englishExpl, kanji, practiceKanji ? null : kanji, false)
+        new DatabaseRecord(english, englishExpl, japanese, Set.of(japanese), "名前", null, null, true),
+        new DatabaseRecord(japanese, "名前", english, Set.of(english), englishExpl, kanji, practiceKanji ? null : kanji, false)
     ));
   }
 
