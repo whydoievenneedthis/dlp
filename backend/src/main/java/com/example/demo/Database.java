@@ -41,6 +41,7 @@ public class Database {
 //  private List<DatabaseRecord> countBird = DbPopCount.bird();
 //  private List<DatabaseRecord> countBook = DbPopCount.book();
 //  private List<DatabaseRecord> countSmallAnimal = DbPopCount.smallAnimal();
+  private List<DatabaseRecord> countOrder = DbPopCount.order();
 
   private List<DatabaseRecord> numKango = DbPopCount.numbersKango();
   private List<DatabaseRecord> numWago = DbPopCount.numbersWago();
@@ -85,8 +86,8 @@ public class Database {
   private List<DatabaseRecord> sec2un27 = DbPopS2.u27();
   private List<DatabaseRecord> sec2un28 = DbPopS2.u28();
   private List<DatabaseRecord> sec2un29 = DbPopS2.u29();
-//  private List<DatabaseRecord> sec2un30 = DbPopS2.u30();
-//  private List<DatabaseRecord> sec2un31 = DbPopS2.u31();
+  private List<DatabaseRecord> sec2un30 = DbPopS2.u30();
+  private List<DatabaseRecord> sec2un31 = DbPopS2.u31();
 //  private List<DatabaseRecord> sec2un32 = DbPopS2.u32();
 //  private List<DatabaseRecord> sec2un33 = DbPopS2.u33();
 //  private List<DatabaseRecord> sec2un34 = DbPopS2.u34();
